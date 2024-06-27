@@ -8,6 +8,7 @@ TagManager:
   - Thruster
   - Powerup
   - CapitalShip
+  - Flame
   layers:
   - Default
   - TransparentFX
