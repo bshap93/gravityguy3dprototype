@@ -9,6 +9,7 @@ TagManager:
   - Powerup
   - CapitalShip
   - Flame
+  - Debris
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Environment
+  - GameObjects
   - 
   - 
   - 
