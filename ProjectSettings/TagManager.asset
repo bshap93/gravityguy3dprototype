@@ -11,6 +11,7 @@ TagManager:
   - PlayerThrustFlame
   - CapitalShipPart
   - Asteroid
+  - Tutorial
   layers:
   - Default
   - TransparentFX

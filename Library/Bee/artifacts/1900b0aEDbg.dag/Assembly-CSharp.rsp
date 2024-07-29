@@ -437,6 +437,7 @@
 "Assets/_Entities/Player/Scripts/PlayerMovement.cs"
 "Assets/_Entities/Player/Scripts/PlayerShipMesh.cs"
 "Assets/_Entities/Player/Scripts/TopDown/TopDownCameraController.cs"
+"Assets/_Entities/Tutorial/TutorialController.cs"
 "Assets/_Entities/Vehicles/Scripts/SMStation01Controller.cs"
 -langversion:9.0
 /deterministic

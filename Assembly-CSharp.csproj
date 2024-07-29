@@ -63,6 +63,7 @@
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\_Entities\Player\Scripts\PlayerShipMesh.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\_Entities\Tutorial\TutorialController.cs" />
     <Compile Include="Assets\ExternalAssets\Player\Mini First Person Controller\Scripts\Components\Zoom.cs" />
     <Compile Include="Assets\ExternalAssets\Player\Mini First Person Controller\Scripts\Components\Jump.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
