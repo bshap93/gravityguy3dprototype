@@ -26,7 +26,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\Assembly-CSharp-firstpass\</OutputPath>
-    <DefineConstants>UNITY_2022_3_32;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2022_3_32;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITY_POST_PROCESSING_STACK_V2;DOTWEEN;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169,0649</NoWarn>
@@ -131,7 +131,9 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\UI\Unity UI\Quest\UnityUIQuestTemplateAlternateDescriptions.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Quests\IncrementOnDestroy.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\Message System\MessageEvents.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\MVC\Model\Data\Utility\Template.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Importers\Arcweave\ArcweaveProject.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\Save System\Transitions\LoadingScreenProgressBar.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Expr\Operation.cs" />
@@ -173,10 +175,12 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Chunk\DoStmt.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Utility\LuaWatchItem.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Unity UI\Dialogue\UnityUISubtitleControls.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\Text\TextTable.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Abstract\Dialogue\AbstractUIControls.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Save System\Serializers\DataSerializer.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Demo\DemoMenu.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Triggers\Interaction\ProximitySelector.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Importers\Chat Mapper\ChatMapperUtility.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Importers\Articy\Schemas\Articy 2.4\XmlContentExport_FullProject_2_4.cs" />
@@ -264,6 +268,7 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Wrapper\Lua Interpreter\LuaTableWrapper.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Expr\OperatorExpr.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Triggers\Triggers\OnEvent\StartConversationOnDialogueEvent.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenTextMeshPro.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Standard\Bark\StandardBarkUI.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Misc\DictionaryExtensions.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Parser\Parser.cs" />
@@ -289,6 +294,7 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Legacy\Quest\QuestTracker.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Triggers\Triggers\Condition.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Legacy\GUI Controls\GUIControl.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\UI\Utility\ConversationControl.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\Text\StringAsset.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Legacy\Dialogue\Controls\UnityQTEControls.cs" />
@@ -312,6 +318,7 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Utility\ConversationLogger.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\MVC\Model\Logic\Text\Emphasis.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Parser\Syntax\Field.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenProShortcuts.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Utility\SymbolExtensions.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Standard\Dialogue\StandardUISubtitlePanel.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\LuaValue\LuaString.cs" />
@@ -433,12 +440,14 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\MVC\Actor\Override\OverrideDialogueUI.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\MVC\Sequencer\Commands\SequencerCommandAudioWait.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\MVC\Actor\Override\OverrideDisplaySettings.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Save System\Misc\SaveSystemEvents.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\MVC\Sequencer\Commands\SequencerCommandFade.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Utility\Toggle.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Legacy\Dialogue\UnityTextFieldUI.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Deprecated\Legacy GUI\TimerEffect.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Unity UI\Selector\UnityUISelectorElements.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenDeAudio.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\UI\Standard\Bark\StandardBarkUI.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\UI\DeselectPreviousOnPointerEnter.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Options\Timeline\Triggers\TimelineTrigger.cs" />
@@ -554,6 +563,7 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\MVC\Sequencer\Commands\SequencerCommandAnimatorLayer.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Demo Scripts\DemoMenu.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Importers\Articy\ConverterPrefs.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Parser\Syntax\StringLiteral.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Chunk\Function.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Scripts\PersistentDataTemplate.cs" />
@@ -636,6 +646,7 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Save System\Savers\ActiveSaver.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\MVC\View\BarkDialogueUI.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Parser\Syntax\Statement.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenTk2d.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Parser\Syntax\LocalVar.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\LuaValue\LuaNumber.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Wrappers\Message System\MessageSystemLogger.cs" />
@@ -660,6 +671,7 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Options\Timeline\Playables\RunLua\RunLuaTrack.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Save System\LevelManager.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\UI\Standard\Selector\SelectorUseStandardUIElements.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\MVC\Sequencer\Commands\SequencerCommandQTE.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Triggers\Triggers\OnEvent\StopConversationIfTooFar.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Save System\Transitions\StandardSceneTransitionManager.cs" />
@@ -704,6 +716,7 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\MVC\Sequencer\Commands\SequencerCommandMoveTo.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Importers\Aurora\NWNUtility.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\UI\Standard\Quest\Common\StandardUIToggleTemplate.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenDeUnityExtended.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Options\Timeline\Playables\RunLua\RunLuaClip.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\UI\UIAnimatorMonitor.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Triggers\Interaction\SelectorFollowTarget.cs" />
@@ -817,6 +830,7 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Message System\MessageEvents.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Unity UI\Dialogue\Portraits\AnimatedPortrait.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Triggers\Interaction\Usable.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\Expr\VariableArg.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Options\Timeline\Playables\RunLua\RunLuaBehaviour.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Utility\Attributes\QuestPopupAttribute.cs" />
@@ -859,6 +873,7 @@
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Camera Angle Studio\_README.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Art\Textures\Circle\_README.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Art\Textures\UnityUI\_README.txt" />
+    <None Include="Assets\Plugins\Demigiant\readme_DOTweenPro.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Common\_README.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Demo\Scenes\New Input System\_New_Input_System_Setup.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Demo\_README.txt" />
@@ -870,11 +885,14 @@
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Prefabs\Art\Fonts\Bitwise Font\!license.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\UI\Legacy\_README.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Link\link.xml" />
+    <None Include="Assets\Plugins\Demigiant\DOTweenPro\readme.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\_README.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Demo\Art\Sounds\_README.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\_README.txt" />
+    <None Include="Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.xml" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Third Party Support\_README.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Lua\Lua Interpreter\_README.txt" />
+    <None Include="Assets\Plugins\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Templates\Scripts\_README.txt" />
     <None Include="Assets\Plugins\Pixel Crushers\Dialogue System\Wrappers\Deprecated\_README.txt" />
     <Reference Include="UnityEngine">
@@ -1128,6 +1146,15 @@
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>C:\Users\bshap\Prototype_4\Library\PackageCache\com.unity.testtools.codecoverage@1.2.5\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>C:\Users\bshap\Prototype_4\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro">
+      <HintPath>C:\Users\bshap\Prototype_4\Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="DemiLib">
+      <HintPath>C:\Users\bshap\Prototype_4\Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\Studio Folders\Unity\2022.3.32f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
