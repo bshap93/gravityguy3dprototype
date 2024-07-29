@@ -9,20 +9,25 @@ public class CapitalShipController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Thruster"))
-        {
-            gameManager.GetComponent<GameManager>().GameOver();
-        }
+        throw new NotImplementedException();
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        throw new NotImplementedException();
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        throw new NotImplementedException();
     }
 }

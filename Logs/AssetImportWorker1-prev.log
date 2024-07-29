@@ -15,7 +15,7 @@ C:/Users/bshap/Prototype_4
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-62715
+50658
 Successfully changed project path to: C:/Users/bshap/Prototype_4
 C:/Users/bshap/Prototype_4
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/bshap/Prototype_4
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [38840] Host "[IP] 192.168.40.84 [Port] 0 [Flags] 2 [Guid] 1450815707 [EditorId] 1450815707 [Version] 1048832 [Id] WindowsEditor(7,prospector) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [23188] Host "[IP] 192.168.40.84 [Port] 0 [Flags] 2 [Guid] 116428056 [EditorId] 116428056 [Version] 1048832 [Id] WindowsEditor(7,prospector) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [38840] Host "[IP] 192.168.40.84 [Port] 0 [Flags] 2 [Guid] 1450815707 [EditorId] 1450815707 [Version] 1048832 [Id] WindowsEditor(7,prospector) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [23188] Host "[IP] 192.168.40.84 [Port] 0 [Flags] 2 [Guid] 116428056 [EditorId] 116428056 [Version] 1048832 [Id] WindowsEditor(7,prospector) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 6.45 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 4.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.32f1 (c8300dc0a3fa)
 [Subsystems] Discovering subsystems at path D:/Studio Folders/Unity/2022.3.32f1/Editor/Data/Resources/UnitySubsystems
@@ -65,51 +65,51 @@ Direct3D:
     Renderer: Radeon RX 5700 (ID=0x731f)
     Vendor:   ATI
     VRAM:     8151 MB
-    Driver:   31.0.24031.5001
+    Driver:   31.0.24033.1003
 Initialize mono
 Mono path[0] = 'D:/Studio Folders/Unity/2022.3.32f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Studio Folders/Unity/2022.3.32f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Studio Folders/Unity/2022.3.32f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56740
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Studio Folders/Unity/2022.3.32f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: D:/Studio Folders/Unity/2022.3.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003191 seconds.
-- Loaded All Assemblies, in  0.282 seconds
+Registered in 0.003089 seconds.
+- Loaded All Assemblies, in  1.017 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.251 seconds
-Domain Reload Profiling: 533ms
-	BeginReloadAssembly (87ms)
+- Finished resetting the current domain, in  0.254 seconds
+Domain Reload Profiling: 1270ms
+	BeginReloadAssembly (114ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (28ms)
+	RebuildCommonClasses (248ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (115ms)
-		LoadAssemblies (86ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (601ms)
+		LoadAssemblies (114ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (113ms)
-			TypeCache.Refresh (112ms)
-				TypeCache.ScanAssembly (101ms)
+		AnalyzeDomain (599ms)
+			TypeCache.Refresh (598ms)
+				TypeCache.ScanAssembly (379ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (251ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (254ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (196ms)
+		SetupLoadedEditorAssemblies (199ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (6ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (139ms)
-			ProcessInitializeOnLoadMethodAttributes (41ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (140ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,8 +117,8 @@ Domain Reload Profiling: 533ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.472 seconds
-Refreshing native plugins compatible for Editor in 2.45 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.694 seconds
+Refreshing native plugins compatible for Editor in 2.56 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -126,55 +126,63 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.541 seconds
-Domain Reload Profiling: 1013ms
-	BeginReloadAssembly (115ms)
+- Finished resetting the current domain, in  0.808 seconds
+Domain Reload Profiling: 2501ms
+	BeginReloadAssembly (125ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (21ms)
-	RebuildCommonClasses (26ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (27ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (292ms)
-		LoadAssemblies (224ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (1501ms)
+		LoadAssemblies (1311ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (130ms)
-			TypeCache.Refresh (113ms)
-				TypeCache.ScanAssembly (102ms)
-			ScanForSourceGeneratedMonoScriptInfo (11ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (542ms)
+		AnalyzeDomain (261ms)
+			TypeCache.Refresh (227ms)
+				TypeCache.ScanAssembly (176ms)
+			ScanForSourceGeneratedMonoScriptInfo (19ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (809ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (415ms)
+		SetupLoadedEditorAssemblies (647ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (72ms)
-			ProcessInitializeOnLoadAttributes (315ms)
-			ProcessInitializeOnLoadMethodAttributes (17ms)
+			BeforeProcessingInitializeOnLoad (73ms)
+			ProcessInitializeOnLoadAttributes (544ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 2.65 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 2.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3153 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (58.1 KB). Loaded Objects now: 3635.
-Memory consumption went from 135.0 MB to 135.0 MB.
-Total: 2.992200 ms (FindLiveObjects: 0.220800 ms CreateObjectMapping: 0.154900 ms MarkObjects: 2.475600 ms  DeleteObjects: 0.140200 ms)
+Unloading 3809 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 99 unused Assets / (1.9 MB). Loaded Objects now: 4309.
+Memory consumption went from 177.6 MB to 175.7 MB.
+Total: 4.636800 ms (FindLiveObjects: 0.298000 ms CreateObjectMapping: 0.173400 ms MarkObjects: 3.599400 ms  DeleteObjects: 0.564900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/fileName/ExampleFracture.cs: 4c647582e1bbfd53c4d260488dc8e8ce -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -182,85 +190,87 @@ AssetImportParameters requested are different than current active one (requested
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 290670.573704 seconds.
-  path: Assets/Scripts/Debris/RockFracture1Controller.cs
-  artifactKey: Guid(bc104b2f9f1263943a5c9a0552dbe269) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Debris/RockFracture1Controller.cs using Guid(bc104b2f9f1263943a5c9a0552dbe269) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '956eaa7430f935e0a468c42ea62faefb') in 0.002542 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Scripts/HUD/ThrusterTextController.cs
-  artifactKey: Guid(ca19919f0ffa16b4d9fe18217ce7ccb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/HUD/ThrusterTextController.cs using Guid(ca19919f0ffa16b4d9fe18217ce7ccb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '6e05c27425e8689e436bd1fa3f4a1855') in 0.000616 seconds
+  Time since last request: 4656.815651 seconds.
+  path: Assets/_Entities/Vehicles
+  artifactKey: Guid(0173c35635e8f874c9719cdc62648493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Entities/Vehicles using Guid(0173c35635e8f874c9719cdc62648493) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '22c426019b0a5c11e9f3a3c8c0bd7cec') in 0.002818 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in  0.360 seconds
-Refreshing native plugins compatible for Editor in 3.80 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.33 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.858 seconds
-Domain Reload Profiling: 1218ms
-	BeginReloadAssembly (129ms)
+- Finished resetting the current domain, in  1.041 seconds
+Domain Reload Profiling: 1401ms
+	BeginReloadAssembly (136ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (31ms)
+		CreateAndSetChildDomain (35ms)
 	RebuildCommonClasses (25ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (21ms)
-	LoadAllAssembliesAndSetupDomain (176ms)
-		LoadAssemblies (225ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (169ms)
+		LoadAssemblies (207ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (18ms)
+		AnalyzeDomain (31ms)
 			TypeCache.Refresh (7ms)
 				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (5ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (859ms)
+			ScanForSourceGeneratedMonoScriptInfo (12ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1041ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (413ms)
+		SetupLoadedEditorAssemblies (701ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (72ms)
-			ProcessInitializeOnLoadAttributes (307ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (592ms)
 			ProcessInitializeOnLoadMethodAttributes (20ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
-Refreshing native plugins compatible for Editor in 2.71 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.52 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3130 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (32.7 KB). Loaded Objects now: 3636.
-Memory consumption went from 130.6 MB to 130.6 MB.
-Total: 2.322500 ms (FindLiveObjects: 0.222900 ms CreateObjectMapping: 0.087300 ms MarkObjects: 1.966200 ms  DeleteObjects: 0.044900 ms)
+Unloading 3756 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4325.
+Memory consumption went from 164.4 MB to 162.4 MB.
+Total: 4.236100 ms (FindLiveObjects: 0.390300 ms CreateObjectMapping: 0.146000 ms MarkObjects: 3.060400 ms  DeleteObjects: 0.638200 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/fileName/ExampleFracture.cs: 4c647582e1bbfd53c4d260488dc8e8ce -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -268,67 +278,640 @@ AssetImportParameters requested are different than current active one (requested
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 42.274444 seconds.
+  path: Assets/_Entities/Vehicles/Scripts/SMStation01Controller.cs
+  artifactKey: Guid(ee99fa7ec0532e340b94c540b1db0e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Entities/Vehicles/Scripts/SMStation01Controller.cs using Guid(ee99fa7ec0532e340b94c540b1db0e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5a30995d3caa662ecd6e069448086a01') in 0.002085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.414 seconds
+Refreshing native plugins compatible for Editor in 2.24 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.139 seconds
+Domain Reload Profiling: 1553ms
+	BeginReloadAssembly (140ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (205ms)
+		LoadAssemblies (230ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (45ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (19ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (1140ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (764ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (79ms)
+			ProcessInitializeOnLoadAttributes (651ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.24 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3756 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4340.
+Memory consumption went from 164.4 MB to 162.4 MB.
+Total: 3.416000 ms (FindLiveObjects: 0.296900 ms CreateObjectMapping: 0.125100 ms MarkObjects: 2.572500 ms  DeleteObjects: 0.420500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.346 seconds
+Refreshing native plugins compatible for Editor in 2.22 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.978 seconds
+Domain Reload Profiling: 1324ms
+	BeginReloadAssembly (125ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (167ms)
+		LoadAssemblies (211ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (979ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (626ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (69ms)
+			ProcessInitializeOnLoadAttributes (527ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 3.27 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4355.
+Memory consumption went from 164.6 MB to 162.7 MB.
+Total: 3.737500 ms (FindLiveObjects: 0.472100 ms CreateObjectMapping: 0.125700 ms MarkObjects: 2.710500 ms  DeleteObjects: 0.428400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.427 seconds
+Refreshing native plugins compatible for Editor in 2.42 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.106 seconds
+Domain Reload Profiling: 1531ms
+	BeginReloadAssembly (140ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (210ms)
+		LoadAssemblies (238ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (41ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (19ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (1106ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (725ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (79ms)
+			ProcessInitializeOnLoadAttributes (610ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 3.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4370.
+Memory consumption went from 164.7 MB to 162.7 MB.
+Total: 4.052000 ms (FindLiveObjects: 0.247200 ms CreateObjectMapping: 0.096200 ms MarkObjects: 3.202900 ms  DeleteObjects: 0.504800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.351 seconds
+Refreshing native plugins compatible for Editor in 2.37 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.989 seconds
+Domain Reload Profiling: 1340ms
+	BeginReloadAssembly (141ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (37ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (154ms)
+		LoadAssemblies (207ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (990ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (651ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (67ms)
+			ProcessInitializeOnLoadAttributes (551ms)
+			ProcessInitializeOnLoadMethodAttributes (22ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 3.31 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4385.
+Memory consumption went from 164.7 MB to 162.7 MB.
+Total: 4.899400 ms (FindLiveObjects: 0.297600 ms CreateObjectMapping: 0.144400 ms MarkObjects: 3.883600 ms  DeleteObjects: 0.572800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.361 seconds
+Refreshing native plugins compatible for Editor in 2.21 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.974 seconds
+Domain Reload Profiling: 1334ms
+	BeginReloadAssembly (137ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (167ms)
+		LoadAssemblies (214ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (16ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (975ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (641ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (84ms)
+			ProcessInitializeOnLoadAttributes (525ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.28 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4400.
+Memory consumption went from 164.7 MB to 162.7 MB.
+Total: 3.532900 ms (FindLiveObjects: 0.257500 ms CreateObjectMapping: 0.090900 ms MarkObjects: 2.750500 ms  DeleteObjects: 0.433200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.337 seconds
+Refreshing native plugins compatible for Editor in 2.23 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.946 seconds
+Domain Reload Profiling: 1282ms
+	BeginReloadAssembly (127ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (154ms)
+		LoadAssemblies (198ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (947ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (594ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (492ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 2.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4415.
+Memory consumption went from 164.7 MB to 162.8 MB.
+Total: 3.379800 ms (FindLiveObjects: 0.259100 ms CreateObjectMapping: 0.093700 ms MarkObjects: 2.607500 ms  DeleteObjects: 0.418800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in  0.354 seconds
-Refreshing native plugins compatible for Editor in 2.71 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.26 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.842 seconds
-Domain Reload Profiling: 1196ms
-	BeginReloadAssembly (121ms)
+- Finished resetting the current domain, in  1.086 seconds
+Domain Reload Profiling: 1438ms
+	BeginReloadAssembly (132ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (26ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (21ms)
-	LoadAllAssembliesAndSetupDomain (177ms)
-		LoadAssemblies (228ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (153ms)
+		LoadAssemblies (198ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (11ms)
+		AnalyzeDomain (17ms)
 			TypeCache.Refresh (5ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (843ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1086ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (426ms)
+		SetupLoadedEditorAssemblies (750ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (626ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4430.
+Memory consumption went from 164.7 MB to 162.8 MB.
+Total: 4.175400 ms (FindLiveObjects: 0.422200 ms CreateObjectMapping: 0.141100 ms MarkObjects: 3.108800 ms  DeleteObjects: 0.502200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.352 seconds
+Refreshing native plugins compatible for Editor in 3.02 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.979 seconds
+Domain Reload Profiling: 1331ms
+	BeginReloadAssembly (132ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (37ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (167ms)
+		LoadAssemblies (214ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (980ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (635ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (74ms)
-			ProcessInitializeOnLoadAttributes (321ms)
-			ProcessInitializeOnLoadMethodAttributes (19ms)
+			ProcessInitializeOnLoadAttributes (529ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 3.03 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.62 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3132 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (369.5 KB). Loaded Objects now: 3639.
-Memory consumption went from 131.6 MB to 131.2 MB.
-Total: 2.961700 ms (FindLiveObjects: 0.335700 ms CreateObjectMapping: 0.116200 ms MarkObjects: 2.262600 ms  DeleteObjects: 0.246100 ms)
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4445.
+Memory consumption went from 164.7 MB to 162.8 MB.
+Total: 3.828700 ms (FindLiveObjects: 0.315100 ms CreateObjectMapping: 0.136200 ms MarkObjects: 2.913500 ms  DeleteObjects: 0.463200 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/fileName/ExampleFracture.cs: 4c647582e1bbfd53c4d260488dc8e8ce -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -336,67 +919,78 @@ AssetImportParameters requested are different than current active one (requested
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.357 seconds
-Refreshing native plugins compatible for Editor in 2.75 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.342 seconds
+Refreshing native plugins compatible for Editor in 2.28 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.820 seconds
-Domain Reload Profiling: 1177ms
-	BeginReloadAssembly (122ms)
+- Finished resetting the current domain, in  0.942 seconds
+Domain Reload Profiling: 1283ms
+	BeginReloadAssembly (132ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (29ms)
+		CreateAndSetChildDomain (34ms)
 	RebuildCommonClasses (25ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (28ms)
-	LoadAllAssembliesAndSetupDomain (170ms)
-		LoadAssemblies (221ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (155ms)
+		LoadAssemblies (204ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (11ms)
+		AnalyzeDomain (17ms)
 			TypeCache.Refresh (5ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (821ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (942ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (422ms)
+		SetupLoadedEditorAssemblies (619ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (3ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (77ms)
-			ProcessInitializeOnLoadAttributes (315ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (522ms)
 			ProcessInitializeOnLoadMethodAttributes (19ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Refreshing native plugins compatible for Editor in 3.11 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 2.60 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3132 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (369.6 KB). Loaded Objects now: 3642.
-Memory consumption went from 131.6 MB to 131.2 MB.
-Total: 2.670600 ms (FindLiveObjects: 0.222500 ms CreateObjectMapping: 0.075100 ms MarkObjects: 2.129800 ms  DeleteObjects: 0.242300 ms)
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4460.
+Memory consumption went from 164.7 MB to 162.8 MB.
+Total: 5.368400 ms (FindLiveObjects: 0.279600 ms CreateObjectMapping: 0.106400 ms MarkObjects: 4.218400 ms  DeleteObjects: 0.762800 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/fileName/ExampleFracture.cs: 4c647582e1bbfd53c4d260488dc8e8ce -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -404,157 +998,315 @@ AssetImportParameters requested are different than current active one (requested
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 7026.568398 seconds.
-  path: Assets/Asteroids/Textures/Cubemaps/Skyboxes/01_Blue/SS_01_back.png
-  artifactKey: Guid(1bbdbe1fb611700448ac3cd177cb8721) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Asteroids/Textures/Cubemaps/Skyboxes/01_Blue/SS_01_back.png using Guid(1bbdbe1fb611700448ac3cd177cb8721) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '4a6ca14aba6498cb4166fb9198235d5a') in 0.143272 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000059 seconds.
-  path: Assets/Asteroids/Textures/Cubemaps/Skyboxes/01_Blue/SS_01_left.png
-  artifactKey: Guid(14bf7cb58d2678549aa842950a045373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Asteroids/Textures/Cubemaps/Skyboxes/01_Blue/SS_01_left.png using Guid(14bf7cb58d2678549aa842950a045373) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'a4013ba9bad69e5478639168e7dc23d1') in 0.069646 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Asteroids/Textures/Cubemaps/Skyboxes/01_Blue/SS_01_down.png
-  artifactKey: Guid(0294fa62ad9311b4b8ea8afb5edddd07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Asteroids/Textures/Cubemaps/Skyboxes/01_Blue/SS_01_down.png using Guid(0294fa62ad9311b4b8ea8afb5edddd07) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'c4f43641e8b0737915b9affcda7f9c5d') in 0.065531 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 4.085307 seconds.
-  path: Assets/Asteroids/Textures/Cubemaps/Skyboxes/02_Bright/SS_02_left.png
-  artifactKey: Guid(3e00e83933283ca47b363c02b627cf9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Asteroids/Textures/Cubemaps/Skyboxes/02_Bright/SS_02_left.png using Guid(3e00e83933283ca47b363c02b627cf9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ed6f50ad17932d2fb3a64a253b4a0bf5') in 0.071712 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Asteroids/Textures/Cubemaps/Skyboxes/02_Bright/SS_02_right.png
-  artifactKey: Guid(b4bb3b9f1d93bf640961b22a92f049ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Asteroids/Textures/Cubemaps/Skyboxes/02_Bright/SS_02_right.png using Guid(b4bb3b9f1d93bf640961b22a92f049ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9fb4d75ab2af9768331c2eb195b33cfe') in 0.071189 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 1.297180 seconds.
-  path: Assets/Asteroids/Textures/Cubemaps/Skyboxes/03_Dark/SS_03_left.png
-  artifactKey: Guid(45a9fa59ba0b13144ab3b6f09c448c72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Asteroids/Textures/Cubemaps/Skyboxes/03_Dark/SS_03_left.png using Guid(45a9fa59ba0b13144ab3b6f09c448c72) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9418d1e36da050ea79a52bfec483cd23') in 0.078781 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Asteroids/Textures/Cubemaps/Skyboxes/03_Dark/SS_03_down.png
-  artifactKey: Guid(adae863844805784dbab6874f2f36582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Asteroids/Textures/Cubemaps/Skyboxes/03_Dark/SS_03_down.png using Guid(adae863844805784dbab6874f2f36582) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd63fd3b237c8c89d5e3639c9bd1d4865') in 0.095144 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 1.377741 seconds.
-  path: Assets/Asteroids/Textures/Cubemaps/Skyboxes/08_OrangePurple/SS_08_left.png
-  artifactKey: Guid(0d6cd54c2f5e7f34eb62a3bc1467a132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Asteroids/Textures/Cubemaps/Skyboxes/08_OrangePurple/SS_08_left.png using Guid(0d6cd54c2f5e7f34eb62a3bc1467a132) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ef404baf4615e82661ecc0989fd29d7d') in 0.076305 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Asteroids/Textures/Cubemaps/Skyboxes/08_OrangePurple/SS_08_right.png
-  artifactKey: Guid(c4759aebe7d507d4d83b84caf1e7d4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Asteroids/Textures/Cubemaps/Skyboxes/08_OrangePurple/SS_08_right.png using Guid(c4759aebe7d507d4d83b84caf1e7d4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'e15e2b73c8dfbf37c20bb72a356898de') in 0.070423 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.370 seconds
-Refreshing native plugins compatible for Editor in 2.71 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.364 seconds
+Refreshing native plugins compatible for Editor in 2.97 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.875 seconds
-Domain Reload Profiling: 1245ms
+- Finished resetting the current domain, in  0.975 seconds
+Domain Reload Profiling: 1338ms
+	BeginReloadAssembly (144ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (162ms)
+		LoadAssemblies (211ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (975ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (622ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (69ms)
+			ProcessInitializeOnLoadAttributes (522ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 2.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4475.
+Memory consumption went from 164.7 MB to 162.8 MB.
+Total: 4.037200 ms (FindLiveObjects: 0.289600 ms CreateObjectMapping: 0.113500 ms MarkObjects: 3.130100 ms  DeleteObjects: 0.502900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.348 seconds
+Refreshing native plugins compatible for Editor in 2.33 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.986 seconds
+Domain Reload Profiling: 1334ms
+	BeginReloadAssembly (127ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (165ms)
+		LoadAssemblies (210ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (987ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (643ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (546ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.92 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4490.
+Memory consumption went from 164.8 MB to 162.8 MB.
+Total: 5.057500 ms (FindLiveObjects: 0.303800 ms CreateObjectMapping: 0.111700 ms MarkObjects: 4.065900 ms  DeleteObjects: 0.574900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.348 seconds
+Refreshing native plugins compatible for Editor in 2.32 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.003 seconds
+Domain Reload Profiling: 1350ms
+	BeginReloadAssembly (133ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (159ms)
+		LoadAssemblies (206ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1003ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (649ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (546ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4505.
+Memory consumption went from 164.8 MB to 162.9 MB.
+Total: 3.692100 ms (FindLiveObjects: 0.383500 ms CreateObjectMapping: 0.138000 ms MarkObjects: 2.721800 ms  DeleteObjects: 0.447900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.354 seconds
+Refreshing native plugins compatible for Editor in 3.40 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.968 seconds
+Domain Reload Profiling: 1320ms
 	BeginReloadAssembly (132ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (33ms)
-	RebuildCommonClasses (25ms)
+		CreateAndSetChildDomain (37ms)
+	RebuildCommonClasses (26ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (21ms)
-	LoadAllAssembliesAndSetupDomain (182ms)
-		LoadAssemblies (240ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (166ms)
+		LoadAssemblies (209ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (10ms)
-			TypeCache.Refresh (4ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (5ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (876ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (968ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (466ms)
+		SetupLoadedEditorAssemblies (632ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (4ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (89ms)
-			ProcessInitializeOnLoadAttributes (348ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (535ms)
 			ProcessInitializeOnLoadMethodAttributes (19ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Refreshing native plugins compatible for Editor in 3.77 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.81 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3131 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (369.6 KB). Loaded Objects now: 3648.
-Memory consumption went from 131.4 MB to 131.0 MB.
-Total: 2.629900 ms (FindLiveObjects: 0.329400 ms CreateObjectMapping: 0.086900 ms MarkObjects: 1.974700 ms  DeleteObjects: 0.237600 ms)
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4520.
+Memory consumption went from 164.8 MB to 162.9 MB.
+Total: 4.477800 ms (FindLiveObjects: 0.452200 ms CreateObjectMapping: 0.162500 ms MarkObjects: 3.372500 ms  DeleteObjects: 0.489700 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/fileName/ExampleFracture.cs: 4c647582e1bbfd53c4d260488dc8e8ce -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -562,7 +1314,1093 @@ AssetImportParameters requested are different than current active one (requested
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1902.585955 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Vehicles/SM_Ship_Cruiser_01.prefab
+  artifactKey: Guid(f0a2f57be6f377349b94ca1047ca9d8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Vehicles/SM_Ship_Cruiser_01.prefab using Guid(f0a2f57be6f377349b94ca1047ca9d8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dff52916408bbb5a1079116408b5e296') in 0.097888 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.370 seconds
+Refreshing native plugins compatible for Editor in 2.34 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.929 seconds
+Domain Reload Profiling: 1297ms
+	BeginReloadAssembly (140ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (165ms)
+		LoadAssemblies (215ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (930ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (604ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (80ms)
+			ProcessInitializeOnLoadAttributes (496ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3756 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4543.
+Memory consumption went from 169.0 MB to 167.1 MB.
+Total: 4.037200 ms (FindLiveObjects: 0.269700 ms CreateObjectMapping: 0.103700 ms MarkObjects: 3.202100 ms  DeleteObjects: 0.460500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.339 seconds
+Refreshing native plugins compatible for Editor in 2.42 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.964 seconds
+Domain Reload Profiling: 1302ms
+	BeginReloadAssembly (123ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (153ms)
+		LoadAssemblies (195ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (965ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (639ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (537ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4558.
+Memory consumption went from 169.3 MB to 167.4 MB.
+Total: 4.068000 ms (FindLiveObjects: 0.289000 ms CreateObjectMapping: 0.111100 ms MarkObjects: 3.072300 ms  DeleteObjects: 0.594300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.348 seconds
+Refreshing native plugins compatible for Editor in 3.62 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.931 seconds
+Domain Reload Profiling: 1279ms
+	BeginReloadAssembly (137ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (157ms)
+		LoadAssemblies (204ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (932ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (596ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (70ms)
+			ProcessInitializeOnLoadAttributes (495ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4573.
+Memory consumption went from 169.3 MB to 167.4 MB.
+Total: 3.464700 ms (FindLiveObjects: 0.290200 ms CreateObjectMapping: 0.108700 ms MarkObjects: 2.644800 ms  DeleteObjects: 0.419700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.354 seconds
+Refreshing native plugins compatible for Editor in 2.28 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.990 seconds
+Domain Reload Profiling: 1344ms
+	BeginReloadAssembly (134ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (154ms)
+		LoadAssemblies (200ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (991ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (639ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (70ms)
+			ProcessInitializeOnLoadAttributes (539ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.04 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4588.
+Memory consumption went from 169.3 MB to 167.4 MB.
+Total: 3.921900 ms (FindLiveObjects: 0.537100 ms CreateObjectMapping: 0.163400 ms MarkObjects: 2.774700 ms  DeleteObjects: 0.445500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.352 seconds
+Refreshing native plugins compatible for Editor in 2.41 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.919 seconds
+Domain Reload Profiling: 1271ms
+	BeginReloadAssembly (129ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (21ms)
+	LoadAllAssembliesAndSetupDomain (166ms)
+		LoadAssemblies (210ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (920ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (587ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (67ms)
+			ProcessInitializeOnLoadAttributes (490ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.84 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4603.
+Memory consumption went from 169.3 MB to 167.4 MB.
+Total: 3.651200 ms (FindLiveObjects: 0.273600 ms CreateObjectMapping: 0.094100 ms MarkObjects: 2.796000 ms  DeleteObjects: 0.486800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.351 seconds
+Refreshing native plugins compatible for Editor in 2.24 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.967 seconds
+Domain Reload Profiling: 1317ms
+	BeginReloadAssembly (133ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (157ms)
+		LoadAssemblies (201ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (24ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (967ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (627ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (70ms)
+			ProcessInitializeOnLoadAttributes (529ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 3.11 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3757 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (1.9 MB). Loaded Objects now: 4618.
+Memory consumption went from 169.3 MB to 167.4 MB.
+Total: 4.123500 ms (FindLiveObjects: 0.409300 ms CreateObjectMapping: 0.190100 ms MarkObjects: 3.013200 ms  DeleteObjects: 0.509900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/TopDownCameraController.cs: 115819847228c04faf31de99f93a8730 -> d3ab3f9fbce0a984198a6f84c12d8742
+  custom:scripting/monoscript/fileName/PlayerShipMesh.cs: 62a6ebf2f9a92e30aa6299e7f40342cc -> 2bbcc097fd007b80e4fe882aed1d4c8d
+  custom:scripting/monoscript/fileName/BasicAsteroidController.cs: 22df75de55ef848d6489c08c528b205d -> f958f6c1243288e432a75298914581b6
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/DebrisClusterTestController.cs: fd867ab252ce9213aa9f56a8c6d0a7c3 -> bdaa2496a42a1d0177428a967a49383d
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/PlayerInteraction.cs: d0c0a0ea95a91040b7dd94adc2941be4 -> 9a4c446a8ff47cb9e05e946b721d1f28
+  custom:scripting/monoscript/fileName/PlayerController.cs: 754303bb4338ad3f2e00dbc52181c56f -> b0bcfe94202a5a6b1490d93e7261483f
+  custom:scripting/monoscript/fileName/InputManager.cs: 7b7e1225e8975c742a5529db57f3bba2 -> d93f6a1b1c0c117f420779e72340a718
+  custom:scripting/monoscript/fileName/DestinationSphereContainer.cs: e5f0fd11fc032c5aec33caef1e3e5955 -> cf47e4af39af5d09e4ae91b9a1fbc879
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LaserPool.cs: c867350c832267a735c521d4ef65edef -> ccbbd99dde76bab562be25559aeb5e29
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/AsteroidInRangeController.cs: 772d063bd6190b0cd77c8a83ea8e25fb -> e411e02686eb62f7a90a555d0cf2243c
+  custom:scripting/monoscript/fileName/InitialSphereController.cs: 4a2d7d444ee8e6e6dcddbbdda7dd298b -> 272453b433bdb831a38b45387ab54d45
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 5c1499cfc43e291157e191fb54bb34f9 -> 42480eed24e61f9d7e7e895933644f96
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1450.215518 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_07 (2).prefab
+  artifactKey: Guid(b73aca4d26c5cc0489af0b99224feeff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_07 (2).prefab using Guid(b73aca4d26c5cc0489af0b99224feeff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a681781a4a04a19b4a91ed39b45b00c0') in 0.078638 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Landing_Platform_01.prefab
+  artifactKey: Guid(5f4d36e3835901b469e6d0bfdae06ccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Landing_Platform_01.prefab using Guid(5f4d36e3835901b469e6d0bfdae06ccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '87e602039114f39840cb7005958d726d') in 0.009181 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Hand_Rail_01 (2).prefab
+  artifactKey: Guid(d007a011af1aeb94cbee5f116da296e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Hand_Rail_01 (2).prefab using Guid(d007a011af1aeb94cbee5f116da296e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6c618f83508542e0ecf2457732a2a256') in 0.012589 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Walkway_02 (2).prefab
+  artifactKey: Guid(d8aa247d09755f24eaa19c7c2a863a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Walkway_02 (2).prefab using Guid(d8aa247d09755f24eaa19c7c2a863a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b53b0833125b90e47dae491c76e4c2fa') in 0.011980 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Hand_Rail_01.prefab
+  artifactKey: Guid(99dba67b55d9a8946973f115cb170411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Hand_Rail_01.prefab using Guid(99dba67b55d9a8946973f115cb170411) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3f853dbf9beda106b9f5fe7d915f5441') in 0.011678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Walkway_02 (3).prefab
+  artifactKey: Guid(dd6a33ab6557b5a49b64ccd19b5b5049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Walkway_02 (3).prefab using Guid(dd6a33ab6557b5a49b64ccd19b5b5049) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bb672f062130a0a4696d903c7ce3ebdb') in 0.009567 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Walkway_Endcap_01.prefab
+  artifactKey: Guid(48921f2cfc4049c46b8d43b07924d189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Walkway_Endcap_01.prefab using Guid(48921f2cfc4049c46b8d43b07924d189) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c15c6b5bd8c50f60a69ef1cd0091d605') in 0.010082 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Hand_Rail_01 (5).prefab
+  artifactKey: Guid(95f8079321d0c0542a68b848cec36d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Scenes/SM_Bld_Floor_Small_Hand_Rail_01 (5).prefab using Guid(95f8079321d0c0542a68b848cec36d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5155f289e319ee32cea9cd9176856251') in 0.010943 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 8.632675 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Bld_Floor_Small_Hand_Rail_End_01.fbx
+  artifactKey: Guid(596ebd76d7b78734a9abaf17204dcc04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Bld_Floor_Small_Hand_Rail_End_01.fbx using Guid(596ebd76d7b78734a9abaf17204dcc04) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '16c8043261b46b614ca79dad238559b5') in 0.023684 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.052111 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Bld_Hydroponics_BaseFloor_01.fbx
+  artifactKey: Guid(1a5775d94c0e7c741b3f1d7b803f2ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Bld_Hydroponics_BaseFloor_01.fbx using Guid(1a5775d94c0e7c741b3f1d7b803f2ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b6fa5bcd849e6adcb32479813a4015c4') in 0.030888 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Bld_Lift_Wall_01.fbx
+  artifactKey: Guid(0c71ba21b3ffebb4188d15c7b1d33f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Bld_Lift_Wall_01.fbx using Guid(0c71ba21b3ffebb4188d15c7b1d33f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ecc4d00e5280955188dd61bcce1a8152') in 0.025640 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 12.264202 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Chr_Attach_Junker_Headset_01.fbx
+  artifactKey: Guid(08234a6ba9efc514fb79f4f6b1c2d089) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Chr_Attach_Junker_Headset_01.fbx using Guid(08234a6ba9efc514fb79f4f6b1c2d089) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3b3a8a32fde1cacb0ab2857882523c87') in 0.008901 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.017409 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Chr_Attach_Male_Hair_03.fbx
+  artifactKey: Guid(9344934e29266bf4a992c425dc72f581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Chr_Attach_Male_Hair_03.fbx using Guid(9344934e29266bf4a992c425dc72f581) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '14c5f7e5977a8182ce9ab6cb5a818a87') in 0.010696 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.004486 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Chr_Attach_Male_Hair_07.fbx
+  artifactKey: Guid(22c4c23afe0524646a59de897d17307a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Chr_Attach_Male_Hair_07.fbx using Guid(22c4c23afe0524646a59de897d17307a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '42e203eb734fad0f51fbbe31119cded8') in 0.014682 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.007622 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Asteroid_03.fbx
+  artifactKey: Guid(8d85220cb8fe685489255581912a9894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Asteroid_03.fbx using Guid(8d85220cb8fe685489255581912a9894) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7a92a06ad25b19b64ed431ef0e5af523') in 0.009586 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.005137 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Asteroid_06.fbx
+  artifactKey: Guid(8c75832eccc5fb24b836a1fb4d4d98fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Asteroid_06.fbx using Guid(8c75832eccc5fb24b836a1fb4d4d98fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0b2727e4fced46f7c562bce9df7c8eb5') in 0.010368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.009991 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Astroid_03.fbx
+  artifactKey: Guid(3ef4f27cefae9714999be8b86a844e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Astroid_03.fbx using Guid(3ef4f27cefae9714999be8b86a844e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7afb926d2d8b18ef7a2b3b2ba0b64807') in 0.010264 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.018169 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Astroid_Field_LowDetail_01.fbx
+  artifactKey: Guid(bbda17a76562bea45a39799ed4db99d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Astroid_Field_LowDetail_01.fbx using Guid(bbda17a76562bea45a39799ed4db99d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f9e4e56cf86d0c720653b6a536eaf4a9') in 0.013949 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.011350 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Astroid_Holes_04.fbx
+  artifactKey: Guid(b49983a0f7ad7074faad9e7f88640f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Models/SM_Env_Astroid_Holes_04.fbx using Guid(b49983a0f7ad7074faad9e7f88640f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9848c70b5c46416943cb05e68200fbea') in 0.008792 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 48.321119 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Asteroid_Field_LowDetail_01.prefab
+  artifactKey: Guid(3ebdd63f50c27da4bb83b5ec7207339c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Asteroid_Field_LowDetail_01.prefab using Guid(3ebdd63f50c27da4bb83b5ec7207339c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f9b012ecc397d4164f0b4b4023ce555b') in 0.008850 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.006056 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Asteroid_Holes_02.prefab
+  artifactKey: Guid(f63608ae9c0289f43a6dc73a03c5570a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Asteroid_Holes_02.prefab using Guid(f63608ae9c0289f43a6dc73a03c5570a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ba0105025f8ac590d8f750af965c1b03') in 0.008902 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.003727 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Asteroid_Holes_05.prefab
+  artifactKey: Guid(5e616c2418668fc40a838b6fbec12b54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Asteroid_Holes_05.prefab using Guid(5e616c2418668fc40a838b6fbec12b54) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7f78e1b0ef09ce5fd9260d9369ecaac3') in 0.008521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.010096 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Asteroid_Large_Holes_02.prefab
+  artifactKey: Guid(893f294d0a2acc944b297985b573f5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Asteroid_Large_Holes_02.prefab using Guid(893f294d0a2acc944b297985b573f5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '25b36a50c2d06a981e30c69a02da6f15') in 0.009189 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.020991 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Debris_Pipe_01.prefab
+  artifactKey: Guid(91f739cfcee797a4cbaabbb8316c23f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Debris_Pipe_01.prefab using Guid(91f739cfcee797a4cbaabbb8316c23f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ff0eb01845d9067e201690508f9b7d0c') in 0.009924 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.005109 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Debris_Shell_03.prefab
+  artifactKey: Guid(838127bc699769f468c9980c3e69a2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Debris_Shell_03.prefab using Guid(838127bc699769f468c9980c3e69a2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '19dfe87ee1d03da00efc979fcecaa558') in 0.009991 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.003317 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Debris_Shell_06.prefab
+  artifactKey: Guid(f72f6408e96652144941f2a39e441e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Debris_Shell_06.prefab using Guid(f72f6408e96652144941f2a39e441e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c87ac10f366130cfa072992fe076ba8a') in 0.009334 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.003884 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Debris_Structure_01.prefab
+  artifactKey: Guid(969d7c72258abd749959a5e293c5db6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Debris_Structure_01.prefab using Guid(969d7c72258abd749959a5e293c5db6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '58b4df57c0ac1b9e72ff43e9e8df5911') in 0.009510 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 1.300774 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Rubble_Pile_01.prefab
+  artifactKey: Guid(6236ec84190c0814ab0ac43a78f9e145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Environment/SM_Env_Rubble_Pile_01.prefab using Guid(6236ec84190c0814ab0ac43a78f9e145) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd5ade59a260e03980bc7075077b2231c') in 0.009362 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 2.063131 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_BR_BigAlien_02.prefab
+  artifactKey: Guid(feefc8bdbd5cd3340a37ddc39f079c5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_BR_BigAlien_02.prefab using Guid(feefc8bdbd5cd3340a37ddc39f079c5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b8c32f12e792f54379a0b0ad4e69aaeb') in 0.063303 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 127
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_CrewCaptain_Female_01.prefab
+  artifactKey: Guid(662555cadd719884f98658c7a34f622c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_CrewCaptain_Female_01.prefab using Guid(662555cadd719884f98658c7a34f622c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fd2058384dc9c7ebad8464c88ce95cf4') in 0.034312 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_Medic_Male_01.prefab
+  artifactKey: Guid(a006a78f05a757143a77e4e5a3da064d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_Medic_Male_01.prefab using Guid(a006a78f05a757143a77e4e5a3da064d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'adc7cb13fc1b82dfdcdadcd3a1d93eed') in 0.029780 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_Psionic_01.prefab
+  artifactKey: Guid(152d802e7e68dc849af7a6f4afb2cbf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_Psionic_01.prefab using Guid(152d802e7e68dc849af7a6f4afb2cbf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cdc1ea1b55e1204cc442c59c570e27b3') in 0.028882 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_Cryo_Female_01.prefab
+  artifactKey: Guid(435b76befe3e2e941ad4553bb70dd50d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_Cryo_Female_01.prefab using Guid(435b76befe3e2e941ad4553bb70dd50d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1cad18991e9ff1de7140ac90891f9495') in 0.037036 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_Crew_Female_01.prefab
+  artifactKey: Guid(d81fdbb76a102404db98fb593e690c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Characters/SM_Chr_Crew_Female_01.prefab using Guid(d81fdbb76a102404db98fb593e690c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b70c466e93c447863d1328c665bf2dce') in 0.024482 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
+========================================================================
+Received Import Request.
+  Time since last request: 1.453362 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Bridge_Chair_Captain_01.prefab
+  artifactKey: Guid(d8b3fd841d886024dbb23b69fa362205) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Bridge_Chair_Captain_01.prefab using Guid(d8b3fd841d886024dbb23b69fa362205) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a1323a8b6f38849d35cfd204ca29bb1b') in 0.011900 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.003806 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Bridge_Console_Corner_01.prefab
+  artifactKey: Guid(5e06e8d956b2b874d9c390b0cd7bfc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Bridge_Console_Corner_01.prefab using Guid(5e06e8d956b2b874d9c390b0cd7bfc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cd073cff690ac2d209608dfcc7eb609c') in 0.012213 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.003281 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Bridge_Platform_01.prefab
+  artifactKey: Guid(c5208b607a400f742a27abe4adea3be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Bridge_Platform_01.prefab using Guid(c5208b607a400f742a27abe4adea3be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '951f3daeffc28391edbb6dd8a576af52') in 0.010952 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.002842 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Bridge_Walls_01.prefab
+  artifactKey: Guid(e00922d618cf8364a8e698bdb3ef8ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Bridge_Walls_01.prefab using Guid(e00922d618cf8364a8e698bdb3ef8ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4323e7ebe428641f2847e5e79600ee9e') in 0.016151 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.033655 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Corridor_Double_Arch_01.prefab
+  artifactKey: Guid(fa006b9318d03cd42b7fa5eea7a5a855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Corridor_Double_Arch_01.prefab using Guid(fa006b9318d03cd42b7fa5eea7a5a855) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fc3fb7d99fbe9f1e9eefc64e8b65abc5') in 0.009232 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.028304 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Crew_Blank_02.prefab
+  artifactKey: Guid(e3afa03551d092b47ab5f28000490399) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Crew_Blank_02.prefab using Guid(e3afa03551d092b47ab5f28000490399) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3703112ea43e23eea46bc84a3c3b6eb4') in 0.009762 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.022029 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Floor_02.prefab
+  artifactKey: Guid(104e63ea9c8da8e44afdf8a0dc868399) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Floor_02.prefab using Guid(104e63ea9c8da8e44afdf8a0dc868399) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1febc847a465a40acf2ba9af669a3d71') in 0.008672 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.005222 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Floor_05.prefab
+  artifactKey: Guid(3ecb939ff436ba84295af759ce0365a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Floor_05.prefab using Guid(3ecb939ff436ba84295af759ce0365a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c2d2715e30620e339531f286de74064c') in 0.008676 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 1.105513 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Floor_Small_07.prefab
+  artifactKey: Guid(6bd51e4648fa5a74d8b953a640743df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Floor_Small_07.prefab using Guid(6bd51e4648fa5a74d8b953a640743df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a25559662c5369dff644d5acf463cb75') in 0.008523 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.017455 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Floor_Small_Walkway_02.prefab
+  artifactKey: Guid(1c2d8414643d80545a54404b6ddde85b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Floor_Small_Walkway_02.prefab using Guid(1c2d8414643d80545a54404b6ddde85b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7592fc77f17a0cedd19110505158f942') in 0.010284 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.010967 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_HangarExteriorShip_02.prefab
+  artifactKey: Guid(d82642589da7be44ba1a0eea017d9fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_HangarExteriorShip_02.prefab using Guid(d82642589da7be44ba1a0eea017d9fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8f536a322e1ce1028a08e2b9e9f0feb7') in 0.021882 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 0.384485 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Hydroponics_UpperFloor_01.prefab
+  artifactKey: Guid(e62b811258b447c40abef3a58829cbaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Hydroponics_UpperFloor_01.prefab using Guid(e62b811258b447c40abef3a58829cbaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4fbe766978a01e9afbe221dbc3ae5f58') in 0.011260 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 32
+========================================================================
+Received Import Request.
+  Time since last request: 0.020505 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Roof_Exterior_03.prefab
+  artifactKey: Guid(98022ae5e1ecb0046b27fc127b3fe256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Roof_Exterior_03.prefab using Guid(98022ae5e1ecb0046b27fc127b3fe256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b21cfa42c220c9f282f2476471c93b80') in 0.010373 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.030459 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_03.prefab
+  artifactKey: Guid(9a0b50ddb0002a047a3c8cefb24da0c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_03.prefab using Guid(9a0b50ddb0002a047a3c8cefb24da0c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e8d355de833607a56649677eea241271') in 0.011945 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.003970 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_05.prefab
+  artifactKey: Guid(df662df82e46b874b9d59f720516dd43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_05.prefab using Guid(df662df82e46b874b9d59f720516dd43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '038adb412d6be9b025b6e74fffe21aa6') in 0.011310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.012211 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Corner_Pillar_03.prefab
+  artifactKey: Guid(0d6e6a9e581971743976c8857bad4a6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Corner_Pillar_03.prefab using Guid(0d6e6a9e581971743976c8857bad4a6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2af9bc7c11569b7822c23a0ea1f2f27e') in 0.011071 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.003707 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Corner_Pillar_Wide_01.prefab
+  artifactKey: Guid(a7149a0b682266446856c01a68e36dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Corner_Pillar_Wide_01.prefab using Guid(a7149a0b682266446856c01a68e36dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd6606dd8f53cf6ae75be1324429ce2c0') in 0.011007 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.056120 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Doorframe_01.prefab
+  artifactKey: Guid(228d48af1edab9043b87d3048b297ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Doorframe_01.prefab using Guid(228d48af1edab9043b87d3048b297ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a3da9e01b9803ce9d0043d82f9638400') in 0.009948 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.005802 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Doorframe_04.prefab
+  artifactKey: Guid(efe15252b0ea3824b939145bdd9eef41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Doorframe_04.prefab using Guid(efe15252b0ea3824b939145bdd9eef41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '08baaa1972a6310961ed075fdc66e403') in 0.010973 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.616811 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Exterior_02.prefab
+  artifactKey: Guid(7acef89e04ba7124b98285c52054fcfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Exterior_02.prefab using Guid(7acef89e04ba7124b98285c52054fcfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '755f3200fe5619a8c8b2f0b3c1c4a396') in 0.010703 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.002995 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Exterior_Pillar_01.prefab
+  artifactKey: Guid(75f22e7109463c241a98407bfa7e4a20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Exterior_Pillar_01.prefab using Guid(75f22e7109463c241a98407bfa7e4a20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fd0b81bda897b9b6d01e9d33c0be29b2') in 0.010370 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.003243 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Mechanical_01.prefab
+  artifactKey: Guid(fdc5679d271780745a81bcd824802cec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Mechanical_01.prefab using Guid(fdc5679d271780745a81bcd824802cec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1a3b9a6ad58af328bd4dbe1478c56c61') in 0.011599 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.045358 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Pillar_04.prefab
+  artifactKey: Guid(39715cfdfd957a7469ecffc588368d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Pillar_04.prefab using Guid(39715cfdfd957a7469ecffc588368d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6827bb1a262e5548e08be0d7594fe1a4') in 0.010929 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.004023 seconds.
+  path: Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Pillar_07.prefab
+  artifactKey: Guid(cddbb4df8d24f09499b8c3e79059abbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/External Assets/PolygonSciFiSpace/Prefabs/Buildings/SM_Bld_Wall_Pillar_07.prefab using Guid(cddbb4df8d24f09499b8c3e79059abbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1334ab5793a1c24598b4c99efa7e134c') in 0.010163 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
 AssetImportWorker is now disconnected from the server

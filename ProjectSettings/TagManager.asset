@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - RogueShip
-  - Thruster
-  - Powerup
-  - CapitalShip
+  - Ground
   - Flame
+  - CapitalShip
   - Debris
+  - PlayerThrustFlame
+  - CapitalShipPart
+  - Asteroid
   layers:
   - Default
   - TransparentFX
@@ -17,18 +18,18 @@ TagManager:
   - 
   - Water
   - UI
-  - Environment
-  - GameObjects
   - 
   - 
+  - UIManagedFOV
+  - UINoFOV
+  - Character
+  - Shield
+  - Interior
+  - Exterior
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - NonWalkable
+  - Background
+  - Map
   - 
   - 
   - 
@@ -44,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Distortion
+    uniqueID: 4179220155
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
