@@ -11,6 +11,9 @@
 /.vs/
 /.vscode/
 
+/Assets/ExternalAssets/Environment/Asteroids/Textures/Asteroids/*.tga
+/Library/ArtifactDB
+
 # Custom folders
 /Assets/ExternalAssets/*
 !/Assets/ExternalAssets/.gitkeep
