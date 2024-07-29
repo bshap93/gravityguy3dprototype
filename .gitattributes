@@ -1,0 +1,1 @@
+Assets/External[[:space:]]Assets/Environment/Asteroids/Textures/Asteroids/*.tga filter=lfs diff=lfs merge=lfs -text
