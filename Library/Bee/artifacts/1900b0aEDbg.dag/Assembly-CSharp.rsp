@@ -443,7 +443,7 @@
 "Assets/_Entities/Player/Scripts/PlayerShipMesh.cs"
 "Assets/_Entities/Player/Scripts/TopDown/TopDownCameraController.cs"
 "Assets/_Entities/Tutorial/TutorialController.cs"
-"Assets/_Entities/Vehicles/Scripts/SMStation01Controller.cs"
+"Assets/_Entities/Vehicles/Scripts/HeadQuartersStationController.cs"
 -langversion:9.0
 /deterministic
 /optimize-

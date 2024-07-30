@@ -56,8 +56,8 @@
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\CapitalShips\OtherShips\RogueShipController.cs" />
     <Compile Include="Assets\Scripts\GameManager\DebrisClusterSpawnManager.cs" />
+    <Compile Include="Assets\_Entities\Vehicles\Scripts\HeadQuartersStationController.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\_Entities\Vehicles\Scripts\SMStation01Controller.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
