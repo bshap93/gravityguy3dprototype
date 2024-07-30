@@ -443,6 +443,10 @@
 "Assets/_Entities/Player/Scripts/PlayerShipMesh.cs"
 "Assets/_Entities/Player/Scripts/TopDown/TopDownCameraController.cs"
 "Assets/_Entities/Tutorial/TutorialController.cs"
+"Assets/_Entities/UI/Scripts/FullMapController.cs"
+"Assets/_Entities/UI/Scripts/GridTextureGenerator.cs"
+"Assets/_Entities/UI/Scripts/MainMapCameraScript.cs"
+"Assets/_Entities/UI/Scripts/PlayerMapIndicator.cs"
 "Assets/_Entities/Vehicles/Scripts/HeadQuartersStationController.cs"
 -langversion:9.0
 /deterministic

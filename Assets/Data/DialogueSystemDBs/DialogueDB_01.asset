@@ -142,7 +142,17 @@ MonoBehaviour:
       value: '[var=Asteroids.NumDestroyed]/5 Destroyed'
       type: 0
       typeString: CustomFieldType_Text
-  locations: []
+  locations:
+  - id: 1
+    fields:
+    - title: Name
+      value: Flagship Emigrant
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   variables:
   - id: 1
     fields:

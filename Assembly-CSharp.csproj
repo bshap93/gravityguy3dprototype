@@ -62,6 +62,7 @@
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\_Entities\Player\Scripts\PlayerShipMesh.cs" />
+    <Compile Include="Assets\_Entities\UI\Scripts\PlayerMapIndicator.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\_Entities\Player\Scripts\Core Player Scripts\PlayerController.cs" />
     <Compile Include="Assets\_Entities\Tutorial\TutorialController.cs" />
@@ -105,6 +106,8 @@
     <Compile Include="Assets\ExternalAssets\Player\Astronauts\Characters\_CommonFiles\_DemoStuff\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Environment\Doors\PieDoorController.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\_Entities\UI\Scripts\MainMapCameraScript.cs" />
+    <Compile Include="Assets\_Entities\UI\Scripts\FullMapController.cs" />
     <Compile Include="Assets\ExternalAssets\Player\Mini First Person Controller\Scripts\FirstPersonMovement.cs" />
     <Compile Include="Assets\Scripts\Camera\RotateCamera.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\_Entities\DebrisCluster\Scripts\AsteroidEnvironment\DebrisClusterTestController.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\_Entities\UI\Scripts\GridTextureGenerator.cs" />
     <Compile Include="Assets\Scripts\CameraController\DockingBayCameraController.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\_Entities\Input\InputManager.cs" />
