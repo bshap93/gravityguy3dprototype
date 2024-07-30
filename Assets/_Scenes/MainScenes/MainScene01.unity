@@ -5848,7 +5848,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1555261363}
   - {fileID: 1865638651}
   - {fileID: 1626760867}
   m_Father: {fileID: 0}
@@ -6277,12 +6276,6 @@ Transform:
   - {fileID: 1159682149}
   m_Father: {fileID: 1966631485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &829455598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4732611957758980779, guid: 52596c5258079ea4f8ee991bb3a39bf3,
-    type: 3}
-  m_PrefabInstance: {fileID: 8543328184464535681}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &838494315
 GameObject:
   m_ObjectHideFlags: 3
@@ -12303,30 +12296,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8543328184464535681}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829455598}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b73a43fd9f12fd48b01a0a51f0749c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1343143923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829455598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7203074dfbd78bc4fa51314c98bf4720, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_requiredTag: Player
-  m_destinationSceneName: MainScene02
-  m_spawnpointNameInDestinationScene: Spawnpoint from MainScene01
-  m_onUsePortal:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &1419925035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4960684348361488, guid: aebb9225dfb036f47b370cb23f684ff3,
@@ -12658,7 +12633,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 529599328}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 125852, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_Name
@@ -12666,15 +12641,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 425660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.515625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 425660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4305663
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 425660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.0519075
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 425660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12742,12 +12717,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1638419455}
   m_SourcePrefab: {fileID: 100100000, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
---- !u!4 &1555261363 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 425660, guid: 58ac37417e60e534f91138088a3e6f70,
-    type: 3}
-  m_PrefabInstance: {fileID: 1555261362}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1564506444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4101803588298436, guid: c08fd2b41d30472429ef06b9f12f5c50,
@@ -15456,9 +15425,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_overrideName: 
-  m_overrideUseMessage: 
-  maxUseDistance: 30
+  m_overrideName: Small Asteroid
+  m_overrideUseMessage: Press X When in Range to Laser the Asteroid
+  maxUseDistance: 100
   events:
     onSelect:
       m_PersistentCalls:
@@ -21440,9 +21409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_overrideName: 
-  m_overrideUseMessage: 
-  maxUseDistance: 30
+  m_overrideName: Small Asteroid
+  m_overrideUseMessage: Press X When in Range to Laser the Asteroid
+  maxUseDistance: 100
   events:
     onSelect:
       m_PersistentCalls:
@@ -21784,9 +21753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_overrideName: 
-  m_overrideUseMessage: 
-  maxUseDistance: 30
+  m_overrideName: Tiny Asteroid
+  m_overrideUseMessage: Press X When in Range to Laser the Asteroid
+  maxUseDistance: 100
   events:
     onSelect:
       m_PersistentCalls:
@@ -22077,9 +22046,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_overrideName: 
-  m_overrideUseMessage: 
-  maxUseDistance: 30
+  m_overrideName: Small Asteroid
+  m_overrideUseMessage: Press X When in Range to Laser the Asteroid
+  maxUseDistance: 100
   events:
     onSelect:
       m_PersistentCalls:
@@ -32839,7 +32808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6662202280871832491}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14.85, y: 0, z: 3.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32862,6 +32831,7 @@ GameObject:
   - component: {fileID: 6671637741419425642}
   - component: {fileID: 6671637741419425641}
   - component: {fileID: 6671637741419425643}
+  - component: {fileID: 6671637741419425644}
   m_Layer: 0
   m_Name: SM_Env_Asteroid_Holes_02
   m_TagString: Asteroid
@@ -32969,6 +32939,31 @@ MonoBehaviour:
   m_mode: 1
   m_destroyMode: 0
   m_destroyedVersionPrefab: {fileID: 0}
+--- !u!114 &6671637741419425644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662202280871832491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_overrideName: Small Asteroid
+  m_overrideUseMessage: Press X When in Range to Laser the Asteroid
+  maxUseDistance: 100
+  events:
+    onSelect:
+      m_PersistentCalls:
+        m_Calls: []
+    onDeselect:
+      m_PersistentCalls:
+        m_Calls: []
+    onUse:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1001 &7020336211900639335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38925,11 +38920,7 @@ PrefabInstance:
     - {fileID: 2877198332222340769, guid: 52596c5258079ea4f8ee991bb3a39bf3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4732611957758980779, guid: 52596c5258079ea4f8ee991bb3a39bf3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1343143923}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52596c5258079ea4f8ee991bb3a39bf3, type: 3}
 --- !u!4 &8588271907503839517
 Transform:
@@ -39178,3 +39169,4 @@ SceneRoots:
   - {fileID: 1585339871}
   - {fileID: 232958196}
   - {fileID: 529599328}
+  - {fileID: 1555261362}
