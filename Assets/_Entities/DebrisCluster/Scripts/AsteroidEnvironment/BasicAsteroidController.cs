@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using PixelCrushers.DialogueSystem;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -35,7 +36,28 @@ public class BasicAsteroidController : MonoBehaviour
         if (hitPoints <= 0)
         {
             Destroy(gameObject);
+            IncrementQuestVariable("Asteroids.NumDestroyed", 1);
         }
+    }
+
+    void IncrementQuestVariable(string variableName, int incrementAmount)
+    {
+        // Get the current value of the variable
+        int currentValue = DialogueLua.GetVariable(variableName).asInt;
+        Debug.Log($"Current value of {variableName}: {currentValue}");
+
+        // Increment the value
+        int newValue = currentValue + incrementAmount;
+
+        // Set the new value
+        DialogueLua.SetVariable(variableName, newValue);
+
+        // Verify the new value
+        int verifyValue = DialogueLua.GetVariable(variableName).asInt;
+        Debug.Log($"New value of {variableName}: {verifyValue}");
+
+        // Force update
+        DialogueManager.Instance.SendUpdateTracker();
     }
 
     private void CreateSphereCollider()

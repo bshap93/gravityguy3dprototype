@@ -186,6 +186,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 4
+    fields:
+    - title: Name
+      value: 
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: false
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -331,6 +345,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -351,7 +369,7 @@ MonoBehaviour:
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
-      conditionsString: 'CurrentQuestState("Asteroids.01") == "unassigned" and '
+      conditionsString: CurrentQuestState("Asteroids.01") == "unassigned"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -407,12 +425,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: CurrentQuestState("Asteroids.01") == "unassigned"
-      userScript: 'SetQuestState("Destroy the Asteroids", "active");
+      userScript: 'SetQuestState("Asteroids.01", "active");
 
-        Variable["StartedAsteroidQuest"]
-        = true;
-
-        ShowAlert("New Quest: Destroy the Rocks impeding the ship")'
+        ShowAlert("Destroy
+        the asteroids impeding the ship''s movement")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -522,8 +538,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 80
-        y: 302
+        x: 48.19574
+        y: 400.47095
         width: 160
         height: 30
     - id: 5
@@ -847,8 +863,14 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 10
+        destinationConversationID: 1
+        destinationDialogueID: 14
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["Asteroids.NumDestroyed"] >= 5
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -946,7 +968,7 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
-      conditionsString: 
+      conditionsString: CurrentQuestState("Asteroids.01") == "success"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1012,9 +1034,58 @@ MonoBehaviour:
         y: 638
         width: 160
         height: 30
+    - id: 14
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Thanks bud.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: SetQuestState("Asteroids.01", "success")
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 492.19043
+        y: 322.2857
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 0, y: 170.19604}
+    canvasZoom: 0.85000014
   - id: 2
     fields:
     - title: Title
