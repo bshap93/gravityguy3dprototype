@@ -793,6 +793,9 @@
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>C:\Users\bshap\Prototype_4\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>C:\Users\bshap\Prototype_4\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:\Users\bshap\Prototype_4\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
