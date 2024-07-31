@@ -16,10 +16,11 @@
 # Custom folders
 !/Assets/ExternalAssets/.gitkeep
 !/Assets/ExternalAssets/*.meta
-Assets/ExternalAssets/*
+/Assets/ExternalAssets/*
 
 /Assets/Plugins/*
 !/Assets/Plugins/*.meta
+/Packages/*
 
 # Unity package files and build outputs
 *.unitypackage
