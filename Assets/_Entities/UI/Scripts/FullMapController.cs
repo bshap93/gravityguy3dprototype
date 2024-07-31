@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,12 @@ public class FullMapController : MonoBehaviour
 
     private bool isMapVisible = false;
 
+    void Start()
+    {
+        isMapVisible = false;
+        mapImage.gameObject.SetActive(false);
+        gridImage.gameObject.SetActive(false);
+    }
 
     void Update()
     {
