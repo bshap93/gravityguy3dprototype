@@ -65,6 +65,7 @@
     <Compile Include="Assets\_Entities\Player\Scripts\PlayerShipMesh.cs" />
     <Compile Include="Assets\_Entities\UI\Scripts\PlayerMapIndicator.cs" />
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\_Entities\UI\Scripts\UITextMeshProTypeWriter.cs" />
     <Compile Include="Assets\_Entities\Player\Scripts\Core Player Scripts\PlayerController.cs" />
     <Compile Include="Assets\_Entities\Tutorial\TutorialController.cs" />
     <Compile Include="Assets\ExternalAssets\Player\Mini First Person Controller\Scripts\Components\Zoom.cs" />

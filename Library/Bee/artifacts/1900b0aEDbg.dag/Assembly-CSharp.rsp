@@ -449,6 +449,7 @@
 "Assets/_Entities/UI/Scripts/MapLocationManager.cs"
 "Assets/_Entities/UI/Scripts/MapSetup.cs"
 "Assets/_Entities/UI/Scripts/PlayerMapIndicator.cs"
+"Assets/_Entities/UI/Scripts/UITextMeshProTypeWriter.cs"
 "Assets/_Entities/Vehicles/Scripts/HeadQuartersStationController.cs"
 -langversion:9.0
 /deterministic
