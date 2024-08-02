@@ -23,6 +23,10 @@ public class BasicAsteroidController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.AddTorque(initialRotationForceVector * RotationIntensity, ForceMode.Impulse);
         _audioSource = GetComponent<AudioSource>();
+        if (_audioSource == null)
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+        }
 
         CreateSphereCollider();
     }
@@ -44,10 +48,12 @@ public class BasicAsteroidController : MonoBehaviour
         {
             GameObject dustCloudInstance = Instantiate(dustCloudPrefab, transform.position, Quaternion.identity);
 
-            // Play sound
-            if (_audioSource != null && dustCloudBurstSound != null)
+            // Play sound on the dust cloud instance
+            if (dustCloudBurstSound != null)
             {
-                _audioSource.PlayOneShot(dustCloudBurstSound, 1f);
+                AudioSource explosionAudio = dustCloudInstance.AddComponent<AudioSource>();
+                explosionAudio.clip = dustCloudBurstSound;
+                explosionAudio.Play();
             }
 
             // Add explosion force to the dust particles
@@ -60,7 +66,7 @@ public class BasicAsteroidController : MonoBehaviour
             }
 
             // Destroy the dust cloud after the lifetime
-            Destroy(dustCloudInstance, dustCloudLifetime);
+            Destroy(dustCloudInstance, Mathf.Max(dustCloudLifetime, dustCloudBurstSound.length));
         }
     }
 
