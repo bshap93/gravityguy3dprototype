@@ -16,7 +16,7 @@
 # Custom folders
 !/Assets/ExternalAssets/.gitkeep
 !/Assets/ExternalAssets/*.meta
-/Assets/ExternalAssets/*
+/Assets/ExternalAssets/
 
 /Assets/Plugins/*
 !/Assets/Plugins/*.meta

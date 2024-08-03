@@ -1,4 +1,4 @@
 repository "gravityguy3D@bshap93@cloud"
   path "/"
-    br "/main"
-    co "/main"
+    smartbranch "/main/task001"  
+     
