@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
+using UnityEngine.UI;
 
 public class BasicAsteroidController : MonoBehaviour
 {
@@ -8,14 +9,20 @@ public class BasicAsteroidController : MonoBehaviour
     public float RotationIntensity = 100;
     public GameObject dustCloudPrefab;
     public AudioClip dustCloudBurstSound;
-    public float hitPoints = 100f;
+    public AudioClip hitSound;
+    public float maxHitPoints = 100f;
     public SphereCollider sphereColliderObject;
     public float dustCloudLifetime = 5f;
     public float explosionForce = 10f;
     public float explosionRadius = 5f;
+    public GameObject healthBarPrefab;
+    public GameObject hitEffectPrefab;
 
     private AudioSource _audioSource;
     private Rigidbody _rigidbody;
+    private float currentHitPoints;
+    private Slider healthBar;
+    private GameObject healthBarInstance;
 
     void Start()
     {
@@ -29,66 +36,86 @@ public class BasicAsteroidController : MonoBehaviour
         }
 
         CreateSphereCollider();
+        InitializeHealthBar();
+        currentHitPoints = maxHitPoints;
+    }
+
+    void Update()
+    {
+        if (healthBarInstance != null)
+        {
+            healthBarInstance.transform.LookAt(Camera.main.transform);
+        }
     }
 
     public void ReduceHitPoints(float damage)
     {
-        hitPoints -= damage;
-        if (hitPoints <= 0)
+        currentHitPoints -= damage;
+        UpdateHealthBar();
+        ShowHitEffect();
+        PlayHitSound();
+
+        if (currentHitPoints <= 0)
         {
             CreateDustCloudExplosion();
             IncrementQuestVariable("Asteroids.NumDestroyed", 1);
+            Destroy(healthBarInstance);
             Destroy(gameObject);
         }
     }
 
     void CreateDustCloudExplosion()
     {
-        if (dustCloudPrefab != null)
-        {
-            GameObject dustCloudInstance = Instantiate(dustCloudPrefab, transform.position, Quaternion.identity);
-
-            // Play sound on the dust cloud instance
-            if (dustCloudBurstSound != null)
-            {
-                AudioSource explosionAudio = dustCloudInstance.AddComponent<AudioSource>();
-                explosionAudio.clip = dustCloudBurstSound;
-                explosionAudio.Play();
-            }
-
-            // Add explosion force to the dust particles
-            ParticleSystem particleSystem = dustCloudInstance.GetComponent<ParticleSystem>();
-            if (particleSystem != null)
-            {
-                ParticleSystem.MainModule main = particleSystem.main;
-                main.startSpeed = explosionForce;
-                main.startLifetime = dustCloudLifetime;
-            }
-
-            // Destroy the dust cloud after the lifetime
-            Destroy(dustCloudInstance, Mathf.Max(dustCloudLifetime, dustCloudBurstSound.length));
-        }
+        // ... (keep your existing CreateDustCloudExplosion code)
     }
 
     void IncrementQuestVariable(string variableName, int incrementAmount)
     {
-        int currentValue = DialogueLua.GetVariable(variableName).asInt;
-        Debug.Log($"Current value of {variableName}: {currentValue}");
-
-        int newValue = currentValue + incrementAmount;
-        DialogueLua.SetVariable(variableName, newValue);
-
-        int verifyValue = DialogueLua.GetVariable(variableName).asInt;
-        Debug.Log($"New value of {variableName}: {verifyValue}");
-
-        DialogueManager.Instance.SendUpdateTracker();
+        // ... (keep your existing IncrementQuestVariable code)
     }
 
     private void CreateSphereCollider()
     {
-        sphereColliderObject = gameObject.AddComponent<SphereCollider>();
-        sphereColliderObject.radius = 100f;
-        sphereColliderObject.isTrigger = true;
-        sphereColliderObject.center = Vector3.zero;
+        // ... (keep your existing CreateSphereCollider code)
+    }
+
+    private void InitializeHealthBar()
+    {
+        if (healthBarPrefab != null)
+        {
+            healthBarInstance = Instantiate(healthBarPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
+            healthBarInstance.transform.SetParent(transform);
+            healthBar = healthBarInstance.GetComponentInChildren<Slider>();
+            if (healthBar != null)
+            {
+                healthBar.maxValue = maxHitPoints;
+                healthBar.value = maxHitPoints;
+            }
+        }
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthBar != null)
+        {
+            healthBar.value = currentHitPoints;
+        }
+    }
+
+    private void ShowHitEffect()
+    {
+        if (hitEffectPrefab != null)
+        {
+            GameObject hitEffect = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(hitEffect, 1f); // Destroy the effect after 1 second
+        }
+    }
+
+    private void PlayHitSound()
+    {
+        if (_audioSource != null && hitSound != null)
+        {
+            _audioSource.PlayOneShot(hitSound);
+        }
     }
 }
