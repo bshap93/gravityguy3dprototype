@@ -3,7 +3,7 @@ using UnityEngine;
 using PixelCrushers.DialogueSystem;
 using UnityEngine.UI;
 
-public class BasicAsteroidController : MonoBehaviour
+public class ImprovedAsteroidController : MonoBehaviour
 {
     public Vector3 initialRotationForceVector;
     public float RotationIntensity = 100;
@@ -21,7 +21,7 @@ public class BasicAsteroidController : MonoBehaviour
     private AudioSource _audioSource;
     private Rigidbody _rigidbody;
     private float currentHitPoints;
-    private Slider healthBar;
+    private Slider healthBarSlider;
     private GameObject healthBarInstance;
 
     void Start()
@@ -44,7 +44,7 @@ public class BasicAsteroidController : MonoBehaviour
     {
         if (healthBarInstance != null)
         {
-            healthBarInstance.transform.LookAt(Camera.main.transform);
+            healthBarInstance.transform.rotation = Camera.main.transform.rotation;
         }
     }
 
@@ -66,17 +66,51 @@ public class BasicAsteroidController : MonoBehaviour
 
     void CreateDustCloudExplosion()
     {
-        // ... (keep your existing CreateDustCloudExplosion code)
-    }
+        if (dustCloudPrefab != null)
+        {
+            GameObject dustCloudInstance = Instantiate(dustCloudPrefab, transform.position, Quaternion.identity);
 
+            // Play sound on the dust cloud instance
+            if (dustCloudBurstSound != null)
+            {
+                AudioSource explosionAudio = dustCloudInstance.AddComponent<AudioSource>();
+                explosionAudio.clip = dustCloudBurstSound;
+                explosionAudio.Play();
+            }
+
+            // Add explosion force to the dust particles
+            ParticleSystem particleSystem = dustCloudInstance.GetComponent<ParticleSystem>();
+            if (particleSystem != null)
+            {
+                ParticleSystem.MainModule main = particleSystem.main;
+                main.startSpeed = explosionForce;
+                main.startLifetime = dustCloudLifetime;
+            }
+
+            // Destroy the dust cloud after the lifetime
+            Destroy(dustCloudInstance, Mathf.Max(dustCloudLifetime, dustCloudBurstSound.length));
+        }
+    }
     void IncrementQuestVariable(string variableName, int incrementAmount)
     {
-        // ... (keep your existing IncrementQuestVariable code)
+        int currentValue = DialogueLua.GetVariable(variableName).asInt;
+        Debug.Log($"Current value of {variableName}: {currentValue}");
+
+        int newValue = currentValue + incrementAmount;
+        DialogueLua.SetVariable(variableName, newValue);
+
+        int verifyValue = DialogueLua.GetVariable(variableName).asInt;
+        Debug.Log($"New value of {variableName}: {verifyValue}");
+
+        DialogueManager.Instance.SendUpdateTracker();
     }
 
     private void CreateSphereCollider()
     {
-        // ... (keep your existing CreateSphereCollider code)
+        sphereColliderObject = gameObject.AddComponent<SphereCollider>();
+        sphereColliderObject.radius = 100f;
+        sphereColliderObject.isTrigger = true;
+        sphereColliderObject.center = Vector3.zero;
     }
 
     private void InitializeHealthBar()
@@ -85,20 +119,20 @@ public class BasicAsteroidController : MonoBehaviour
         {
             healthBarInstance = Instantiate(healthBarPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
             healthBarInstance.transform.SetParent(transform);
-            healthBar = healthBarInstance.GetComponentInChildren<Slider>();
-            if (healthBar != null)
+            healthBarSlider = healthBarInstance.GetComponentInChildren<Slider>();
+            if (healthBarSlider != null)
             {
-                healthBar.maxValue = maxHitPoints;
-                healthBar.value = maxHitPoints;
+                healthBarSlider.maxValue = maxHitPoints;
+                healthBarSlider.value = maxHitPoints;
             }
         }
     }
 
     private void UpdateHealthBar()
     {
-        if (healthBar != null)
+        if (healthBarSlider != null)
         {
-            healthBar.value = currentHitPoints;
+            healthBarSlider.value = currentHitPoints;
         }
     }
 

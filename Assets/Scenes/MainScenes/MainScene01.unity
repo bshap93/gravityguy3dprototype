@@ -7616,7 +7616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1213472387
 Transform:
   m_ObjectHideFlags: 0
@@ -9561,14 +9561,11 @@ MonoBehaviour:
   dustCloudPrefab: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8,
     type: 3}
   dustCloudBurstSound: {fileID: 8300000, guid: 950197e62e8d5db40aea4e274db5ed04, type: 3}
-  hitSound: {fileID: 0}
-  maxHitPoints: 100
+  hitPoints: 100
   sphereColliderObject: {fileID: 0}
   dustCloudLifetime: 5
   explosionForce: 10
   explosionRadius: 5
-  healthBarPrefab: {fileID: 0}
-  hitEffectPrefab: {fileID: 0}
 --- !u!114 &781678788377669050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15425,6 +15422,9 @@ GameObject:
   - component: {fileID: 2531526136469360684}
   - component: {fileID: 2523340059334191422}
   - component: {fileID: 2572565378184577778}
+  - component: {fileID: 2572565378184577780}
+  - component: {fileID: 2572565378184577781}
+  - component: {fileID: 2572565378184577779}
   m_Layer: 0
   m_Name: AttachableMiningLaser
   m_TagString: Untagged
@@ -15545,6 +15545,222 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43043793431104772, guid: b9b845662f4ccba49b124cad8d2bbd99, type: 2}
+--- !u!114 &2572565378184577779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546204809864186846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e4b002d4463a4044a55f1e2d8d9d4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserStrength: 0.2
+  laserRange: 30
+  laserTurretBarrel: {fileID: 2545106240736592502}
+  laserTurretGun: {fileID: 2546180998610986012}
+--- !u!120 &2572565378184577780
+LineRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546204809864186846}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MaskInteraction: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+  m_ApplyActiveColorSpace: 1
+--- !u!82 &2572565378184577781
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546204809864186846}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8152cce8fc8b5634d96328ad822b4503, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!33 &2583126305406122568
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15806,14 +16022,11 @@ MonoBehaviour:
   dustCloudPrefab: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8,
     type: 3}
   dustCloudBurstSound: {fileID: 8300000, guid: 950197e62e8d5db40aea4e274db5ed04, type: 3}
-  hitSound: {fileID: 0}
-  maxHitPoints: 100
+  hitPoints: 100
   sphereColliderObject: {fileID: 0}
   dustCloudLifetime: 5
   explosionForce: 10
   explosionRadius: 5
-  healthBarPrefab: {fileID: 0}
-  hitEffectPrefab: {fileID: 0}
 --- !u!114 &2997559937047625234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16060,6 +16273,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteroidStation
       objectReference: {fileID: 0}
+    - target: {fileID: 5045338314849307903, guid: 56b7e2fb873105149aa375a4e7313cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dd6fc07952d74c2428d6b6df6eecd258, type: 2}
     - target: {fileID: 6776705379862514788, guid: 56b7e2fb873105149aa375a4e7313cc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16068,7 +16286,7 @@ PrefabInstance:
     - target: {fileID: 6776705379862514788, guid: 56b7e2fb873105149aa375a4e7313cc7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4801247
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6776705379862514788, guid: 56b7e2fb873105149aa375a4e7313cc7,
         type: 3}
@@ -16109,6 +16327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540236592398971902, guid: 56b7e2fb873105149aa375a4e7313cc7,
+        type: 3}
+      propertyPath: m_Name
+      value: DockingPad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16444,14 +16667,11 @@ MonoBehaviour:
   dustCloudPrefab: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8,
     type: 3}
   dustCloudBurstSound: {fileID: 8300000, guid: 950197e62e8d5db40aea4e274db5ed04, type: 3}
-  hitSound: {fileID: 0}
-  maxHitPoints: 100
+  hitPoints: 100
   sphereColliderObject: {fileID: 0}
   dustCloudLifetime: 5
   explosionForce: 10
   explosionRadius: 5
-  healthBarPrefab: {fileID: 0}
-  hitEffectPrefab: {fileID: 0}
 --- !u!114 &3519390068737190510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16842,14 +17062,11 @@ MonoBehaviour:
   dustCloudPrefab: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8,
     type: 3}
   dustCloudBurstSound: {fileID: 8300000, guid: 950197e62e8d5db40aea4e274db5ed04, type: 3}
-  hitSound: {fileID: 0}
-  maxHitPoints: 100
+  hitPoints: 100
   sphereColliderObject: {fileID: 0}
   dustCloudLifetime: 5
   explosionForce: 10
   explosionRadius: 5
-  healthBarPrefab: {fileID: 0}
-  hitEffectPrefab: {fileID: 0}
 --- !u!114 &3569757889751837333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27767,15 +27984,11 @@ MonoBehaviour:
   dustCloudPrefab: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8,
     type: 3}
   dustCloudBurstSound: {fileID: 8300000, guid: 950197e62e8d5db40aea4e274db5ed04, type: 3}
-  hitSound: {fileID: 0}
-  maxHitPoints: 100
+  hitPoints: 100
   sphereColliderObject: {fileID: 0}
   dustCloudLifetime: 5
   explosionForce: 10
   explosionRadius: 5
-  healthBarPrefab: {fileID: 592279811299199450, guid: 27d7552c41b77cb41ae19324b4254e95,
-    type: 3}
-  hitEffectPrefab: {fileID: 0}
 --- !u!114 &6671637741419425642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33505,7 +33718,8 @@ MonoBehaviour:
   accelerationFactor: 3.04
   rotationSpeed: 2
   projectileRecoil: 20
-  laserStrength: 1
+  laserStrength: 0.2
+  laserRange: 30
   laserTurretBarrel: {fileID: 2545106240736592502}
   laserTurretGun: {fileID: 2546180998610986012}
   guidingLine: {fileID: 3780145717533189698}
@@ -33690,13 +33904,13 @@ GameObject:
   - component: {fileID: 7270240910251921207}
   - component: {fileID: 7111504405534872569}
   - component: {fileID: 2845473407165197998}
-  - component: {fileID: 8453264346957534103}
   - component: {fileID: 6022606097978919209}
   - component: {fileID: 5498372326856932407}
   - component: {fileID: 7166498639332652081}
   - component: {fileID: 8833897152969559381}
   - component: {fileID: 8833897152969559380}
   - component: {fileID: 8833897152969559382}
+  - component: {fileID: 8453264346957534103}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player

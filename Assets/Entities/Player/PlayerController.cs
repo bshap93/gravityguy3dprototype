@@ -15,7 +15,8 @@ namespace Player
         [SerializeField] private float accelerationFactor = 0.3f;
         [SerializeField] private float rotationSpeed = 0.1f;
         [SerializeField] private float projectileRecoil = 20f;
-        [SerializeField] private float laserStrength = 1f;
+        [SerializeField] private float laserStrength;
+        [SerializeField] private float laserRange;
 
         public GameObject laserTurretBarrel;
         public GameObject laserTurretGun;
@@ -156,7 +157,6 @@ namespace Player
                 Debug.Log("Docking with capital ship");
                 identificationTextObject.SetActive(false);
                 _playerRb.velocity = Vector3.zero;
-                SceneManager.LoadScene("IndoorScene01", LoadSceneMode.Single);
             }
 
 
