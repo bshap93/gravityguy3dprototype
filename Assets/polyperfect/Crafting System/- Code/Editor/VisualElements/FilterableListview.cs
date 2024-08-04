@@ -39,7 +39,7 @@ namespace Polyperfect.Crafting.Edit
         {
             filteredItems.Clear();
             filteredItems.AddRange(originalItems.Where(i => selector(i)));
-            Refresh();
+            Rebuild();
         }
 
         /// <summary>
