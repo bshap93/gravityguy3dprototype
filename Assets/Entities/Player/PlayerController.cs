@@ -15,11 +15,13 @@ namespace Player
         [SerializeField] private float accelerationFactor = 0.3f;
         [SerializeField] private float rotationSpeed = 0.1f;
         [SerializeField] private float projectileRecoil = 20f;
-        [SerializeField] private float laserStrength;
-        [SerializeField] private float laserRange;
-
-        public GameObject laserTurretBarrel;
-        public GameObject laserTurretGun;
+        // [SerializeField] private float laserStrength;
+        // [SerializeField] private float laserRange;
+        //
+        // public GameObject laserTurretBarrel;
+        // public GameObject laserTurretGun;
+        public GameObject miningLaser;
+        private LaserController _laserController;
 
 
         public GameObject guidingLine;
@@ -45,7 +47,6 @@ namespace Player
 
         Rigidbody _playerRb;
         AudioSource _rotateAudioSource;
-        AudioSource _laserAudioSource;
 
         AudioSource _thrustAudioSource;
         float _verticalInput;
@@ -75,6 +76,8 @@ namespace Player
 
             _originalFreeLookXMaxSpeed = playerFreeLookCamera.m_XAxis.m_MaxSpeed;
             _originalFreeLookYMaxSpeed = playerFreeLookCamera.m_YAxis.m_MaxSpeed;
+
+            _laserController = miningLaser.GetComponent<LaserController>();
         }
         // Update is called once per frame
         void Update()
@@ -89,7 +92,6 @@ namespace Player
         {
             _thrustAudioSource = GetComponents<AudioSource>()[0];
             _rotateAudioSource = GetComponents<AudioSource>()[1];
-            _laserAudioSource = GetComponents<AudioSource>()[2];
         }
         void ListenForTargetInRangeStatusChanges(GameObject[] asteroids)
         {
@@ -171,7 +173,7 @@ namespace Player
         {
             if (targetsInRange.Count > 0)
             {
-                Vector3 laserTurretHardPoint = laserTurretBarrel.transform.position;
+                Vector3 laserTurretHardPoint = _laserController.laserTurretBarrel.transform.position;
                 var targetsInViewAndInRange = GetTargetsInView(targetsInRange);
                 // var asteroidToTarget = GetTargetMostCentrallyInView();
                 if (targetsInViewAndInRange.Count == 0)
@@ -196,7 +198,7 @@ namespace Player
 
             SpawnLaserBetweenPlayerAndTarget(playerPosition, asteroidPosition);
 
-            target.GetComponent<BasicAsteroidController>().ReduceHitPoints(laserStrength);
+            target.GetComponent<BasicAsteroidController>().ReduceHitPoints(_laserController.laserStrength);
         }
 
         List<GameObject> GetTargetsInView(List<GameObject> targets)
@@ -219,10 +221,10 @@ namespace Player
         {
             if (debrisObjectsInRange > 0 && Input.GetKeyDown(KeyCode.X))
             {
-                _laserAudioSource.Play();
-                StartCoroutine(SoundActionDuration(_laserAudioSource, 1));
+                _laserController.laserAudioSource.Play();
+                StartCoroutine(SoundActionDuration(_laserController.laserAudioSource, 1));
 
-                laserTurretGun.transform.LookAt(asteroidPosition);
+                _laserController.laserTurretGun.transform.LookAt(asteroidPosition);
             }
 
             GameObject laser = LaserPool.Instance.GetLaser();

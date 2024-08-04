@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Serialization;
 
 public class LaserController : MonoBehaviour
 {
@@ -8,16 +10,17 @@ public class LaserController : MonoBehaviour
     public GameObject laserTurretBarrel;
     public GameObject laserTurretGun;
 
-    private AudioSource _laserAudioSource;
+    [FormerlySerializedAs("_laserAudioSource")]
+    public AudioSource laserAudioSource;
     private LineRenderer _lineRenderer;
 
     void Start()
     {
-        _laserAudioSource = GetComponent<AudioSource>();
-        if (_laserAudioSource == null)
+        laserAudioSource = GetComponent<AudioSource>();
+        if (laserAudioSource == null)
         {
             Debug.LogWarning("AudioSource component is missing. Adding one.");
-            _laserAudioSource = gameObject.AddComponent<AudioSource>();
+            laserAudioSource = gameObject.AddComponent<AudioSource>();
             // You might want to set up some default audio clip and settings here
         }
 
@@ -62,9 +65,9 @@ public class LaserController : MonoBehaviour
         _lineRenderer.SetPosition(0, laserTurretHardPoint);
         _lineRenderer.SetPosition(1, targetPosition);
 
-        if (_laserAudioSource != null && _laserAudioSource.clip != null)
+        if (laserAudioSource != null && laserAudioSource.clip != null)
         {
-            _laserAudioSource.Play();
+            laserAudioSource.Play();
         }
         else
         {
