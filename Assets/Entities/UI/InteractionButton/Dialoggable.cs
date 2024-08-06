@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InteractableObject : MonoBehaviour
+public class Dialoggable : MonoBehaviour
 {
     public string objectName;
     public string conversationName;
