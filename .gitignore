@@ -18,7 +18,6 @@
 !/Assets/ExternalAssets/*.meta
 /Assets/ExternalAssets/
 /Assets/SpaceCombatKit/
-!/Assets/SpaceCombatKit/.gitkeep
 !/Assets/SpaceCombatKit/*.meta
 /Assets/polyperfect/
 !/Assets/polyperfect/*.meta
