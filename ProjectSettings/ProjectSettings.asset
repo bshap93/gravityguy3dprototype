@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 0efb1b2f5eb274c41bf546af47f2a04b
+  productGUID: 00000000000000000000000000000000
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -163,7 +163,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.Prototype-4
+    Standalone: com.VSXGames.Mech-Combat-Kit
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -734,23 +734,6 @@ PlayerSettings:
     32: UNITY_POST_PROCESSING_STACK_V2
     33: UNITY_POST_PROCESSING_STACK_V2
     7: UNITY_POST_PROCESSING_STACK_V2
-    Android: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    GameCoreScarlett: DOTWEEN
-    GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    LinuxHeadlessSimulation: DOTWEEN
-    Nintendo Switch: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    PS4: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    PS5: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    QNX: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    Stadia: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    Standalone: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN;TMP_PRESENT
-    VisionOS: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    WebGL: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN;TMP_PRESENT
-    Windows Store Apps: DOTWEEN
-    XboxOne: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    iPhone: DOTWEEN
-    tvOS: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -863,7 +846,7 @@ PlayerSettings:
   cloudProjectId: e45bfd54-3455-48e6-acbc-3b1988800a57
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Prototype_4
+  projectName: 
   organizationId: bshap93
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
