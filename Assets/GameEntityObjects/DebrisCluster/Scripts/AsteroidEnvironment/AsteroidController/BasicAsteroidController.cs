@@ -4,6 +4,8 @@ using PixelCrushers.DialogueSystem;
 
 public class BasicAsteroidController : MonoBehaviour
 {
+    public float miningResistance = 1f; // New variable to control how hard the asteroid is to mine
+
     public Vector3 initialRotationForceVector;
     public float RotationIntensity = 100;
     public GameObject dustCloudPrefab;
@@ -31,9 +33,16 @@ public class BasicAsteroidController : MonoBehaviour
         CreateSphereCollider();
     }
 
+    public void Mine(float miningPower)
+    {
+        float damage = miningPower / miningResistance;
+        ReduceHitPoints(damage);
+    }
+
     public void ReduceHitPoints(float damage)
     {
         hitPoints -= damage;
+        GameLogger.LogAction($"Asteroid mined for {damage}. Remaining health: {hitPoints}");
         if (hitPoints <= 0)
         {
             CreateDustCloudExplosion();

@@ -12,20 +12,15 @@ namespace Player
     {
         public static PlayerController Instance { get; private set; }
 
+        public Transform attachmentPoint;
+
         [SerializeField] private float accelerationFactor = 0.3f;
         [SerializeField] private float rotationSpeed = 0.1f;
         [SerializeField] private float projectileRecoil = 20f;
-        // [SerializeField] private float laserStrength;
-        // [SerializeField] private float laserRange;
-        //
-        // public GameObject laserTurretBarrel;
-        // public GameObject laserTurretGun;
-        public GameObject miningLaser;
-        private LaserController _laserController;
+
+        public Attachment currentAttachment;
 
 
-        public GameObject guidingLine;
-        public GameObject projectileThruster;
         public GameObject identificationTextObject;
         public CinemachineFreeLook playerFreeLookCamera;
 
@@ -50,7 +45,8 @@ namespace Player
 
         AudioSource _thrustAudioSource;
         float _verticalInput;
-        bool _canDock = false;
+        [FormerlySerializedAs("_canDock")] [SerializeField]
+        bool canDock = false;
         public int debrisObjectsInRange = 0;
 
         float _originalFreeLookXMaxSpeed;
@@ -71,13 +67,14 @@ namespace Player
             GameObject.FindWithTag("PlayerThrustFlame");
 
             eventManager.CommenceShipDocking.AddListener(AskPlayerToDock);
-            var asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
-            ListenForTargetInRangeStatusChanges(asteroids);
 
             _originalFreeLookXMaxSpeed = playerFreeLookCamera.m_XAxis.m_MaxSpeed;
             _originalFreeLookYMaxSpeed = playerFreeLookCamera.m_YAxis.m_MaxSpeed;
 
-            _laserController = miningLaser.GetComponent<LaserController>();
+            ConsoleManager consoleManager = FindObjectOfType<ConsoleManager>();
+            GameLogger.Initialize(consoleManager);
+            GameLogger.LogAction("System Initialized");
+
         }
         // Update is called once per frame
         void Update()
@@ -85,7 +82,6 @@ namespace Player
             ApplyThrust();
             ApplyRotationalThrust();
             ApplyBraking();
-            InteractWithObject();
             LockCameraRotation();
         }
         void AssignAudioSources()
@@ -93,18 +89,38 @@ namespace Player
             _thrustAudioSource = GetComponents<AudioSource>()[0];
             _rotateAudioSource = GetComponents<AudioSource>()[1];
         }
-        void ListenForTargetInRangeStatusChanges(GameObject[] asteroids)
+
+        public void AttachUpgrade(Attachment attachmentPrefab)
         {
-            foreach (GameObject asteroid in asteroids)
+            if (currentAttachment != null)
             {
-                asteroid.GetComponent<AsteroidInRangeController>().TargetInRange
-                    .AddListener(AlertPlayerOfAsteroidInRange);
+                Destroy(currentAttachment.gameObject);
             }
 
-            foreach (GameObject asteroid in asteroids)
+            currentAttachment = Instantiate(
+                attachmentPrefab, attachmentPoint.position, attachmentPoint.rotation, attachmentPoint);
+
+            Debug.Log($"{currentAttachment.attachmentName} attached to the ship. {currentAttachment.description}");
+        }
+
+        public void UseAttachment()
+        {
+            if (currentAttachment != null)
             {
-                asteroid.GetComponent<AsteroidInRangeController>().TargetOutOfRange
-                    .AddListener(AlertPlayerLeavingAsteroidRange);
+                currentAttachment.Activate();
+            }
+            else
+            {
+                Debug.Log("No attachment equipped!");
+            }
+        }
+
+
+        public void StopUsingAttachment()
+        {
+            if (currentAttachment != null)
+            {
+                currentAttachment.Deactivate();
             }
         }
 
@@ -131,7 +147,7 @@ namespace Player
 
             var typeWriter = identificationTextObject.GetComponent<UITextTypeWriter>();
 
-            _canDock = true;
+            canDock = true;
         }
 
         void AlertPlayerLeavingAsteroidRange(GameObject asteroid)
@@ -149,102 +165,6 @@ namespace Player
             // typeWriter.ChangeText("Asteroid in range");
             debrisObjectsInRange++;
             targetsInRange.Add(asteroid);
-        }
-
-        // ReSharper disable Unity.PerformanceAnalysis
-        void InteractWithObject()
-        {
-            if (_canDock && Input.GetKeyDown(KeyCode.X))
-            {
-                Debug.Log("Docking with capital ship");
-                identificationTextObject.SetActive(false);
-                _playerRb.velocity = Vector3.zero;
-            }
-
-
-            if (debrisObjectsInRange > 0 && Input.GetKey(KeyCode.X))
-            {
-                identificationTextObject.SetActive(false);
-                ApplyLaserToDebrisObject();
-            }
-        }
-
-        void ApplyLaserToDebrisObject()
-        {
-            if (targetsInRange.Count > 0)
-            {
-                Vector3 laserTurretHardPoint = _laserController.laserTurretBarrel.transform.position;
-                var targetsInViewAndInRange = GetTargetsInView(targetsInRange);
-                // var asteroidToTarget = GetTargetMostCentrallyInView();
-                if (targetsInViewAndInRange.Count == 0)
-                {
-                    var asteroid = targetsInRange.First();
-                    HitTargetWithLaser(laserTurretHardPoint, asteroid);
-                }
-                else
-                {
-                    var asteroid = targetsInViewAndInRange.First();
-                    HitTargetWithLaser(laserTurretHardPoint, asteroid);
-                }
-
-                ;
-            }
-        }
-
-        void HitTargetWithLaser(Vector3 playerPosition, GameObject target)
-        {
-            if (target == null) return;
-            Vector3 asteroidPosition = target.transform.position;
-
-            SpawnLaserBetweenPlayerAndTarget(playerPosition, asteroidPosition);
-
-            target.GetComponent<BasicAsteroidController>().ReduceHitPoints(_laserController.laserStrength);
-        }
-
-        List<GameObject> GetTargetsInView(List<GameObject> targets)
-        {
-            var targetsInView = new List<GameObject>();
-            foreach (var target in targets)
-            {
-                if (target == null) continue;
-                var targetInView = target.GetComponent<AsteroidInRangeController>().isInView;
-                if (targetInView)
-                {
-                    targetsInView.Add(target);
-                }
-            }
-
-            return targetsInView;
-        }
-
-        void SpawnLaserBetweenPlayerAndTarget(Vector3 playerPosition, Vector3 asteroidPosition)
-        {
-            if (debrisObjectsInRange > 0 && Input.GetKeyDown(KeyCode.X))
-            {
-                _laserController.laserAudioSource.Play();
-                StartCoroutine(SoundActionDuration(_laserController.laserAudioSource, 1));
-
-                _laserController.laserTurretGun.transform.LookAt(asteroidPosition);
-            }
-
-            GameObject laser = LaserPool.Instance.GetLaser();
-            LineRenderer lineRenderer = laser.GetComponent<LineRenderer>();
-
-            lineRenderer.startColor = Color.red;
-            lineRenderer.endColor = Color.yellow;
-            lineRenderer.startWidth = 0.1f;
-            lineRenderer.endWidth = 0.1f;
-            lineRenderer.positionCount = 2;
-            lineRenderer.SetPosition(0, playerPosition);
-            lineRenderer.SetPosition(1, asteroidPosition);
-
-            StartCoroutine(ReturnLaserToPool(laser, 0.2f));
-        }
-
-        IEnumerator ReturnLaserToPool(GameObject laser, float delay)
-        {
-            yield return new WaitForSeconds(delay);
-            LaserPool.Instance.ReturnLaser(laser);
         }
 
 
