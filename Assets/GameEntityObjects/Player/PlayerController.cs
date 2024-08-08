@@ -335,10 +335,6 @@ namespace Player
             }
         }
 
-        void ApplyAttitudeAdjustmentToCamera()
-        {
-        }
-
 
         // Poll for input and apply rotational thrust to the player
         void ApplyRotationalThrust()
@@ -356,38 +352,6 @@ namespace Player
             {
                 NoisePeterOff(_rotateAudioSource, 1, 0.9f);
             }
-        }
-
-        void LineUpShot()
-        {
-            if (Input.GetKey(KeyCode.Q))
-                guidingLine.gameObject.SetActive(true);
-            else
-                guidingLine.gameObject.SetActive(false);
-        }
-
-        void LaunchProjectile()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                projectileThruster.gameObject.GetComponent<ThrusterController>().LaunchProjectile();
-                _playerRb.AddRelativeForce(Vector3.back * projectileRecoil, ForceMode.Impulse);
-            }
-        }
-
-        void RecallProjectile()
-        {
-            if (Input.GetKey(KeyCode.R))
-            {
-                projectileThruster.gameObject.GetComponent<ThrusterController>().RecallProjectile();
-                _focalPoint.GetComponent<FocalPointController>().SetFocalPoint(gameObject);
-            }
-        }
-
-        public void DockWithSurface(Vector3 dockingPosition)
-        {
-            // move from current position to docking position over about 1 second
-            transform.position = Vector3.MoveTowards(transform.position, dockingPosition, 1 * Time.deltaTime);
         }
     }
 }

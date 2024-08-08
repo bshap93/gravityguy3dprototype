@@ -3,14 +3,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using PixelCrushers.DialogueSystem;
+using Player;
+using UnityEngine.Serialization;
 
 public class RevisedInteractiveMenu : MonoBehaviour
 {
     public GameObject menuPanel;
     public Text objectNameText;
     public Button infoButton;
-    public Button actionButton;
+    [FormerlySerializedAs("exchangeItems")] [FormerlySerializedAs("actionButton")]
+    public Button exchangeItemsButton;
     public Button dialogueButton;
+    public float interactableDistance = 30f;
+    public GameObject player;
 
     private Camera mainCamera;
     private PhysicsRaycaster physicsRaycaster;
@@ -29,7 +34,7 @@ public class RevisedInteractiveMenu : MonoBehaviour
         menuPanel.SetActive(false);
 
         infoButton.onClick.AddListener(ShowInfo);
-        actionButton.onClick.AddListener(PerformAction);
+        exchangeItemsButton.onClick.AddListener(ExchangeItems);
         dialogueButton.onClick.AddListener(StartDialogue);
     }
 
@@ -96,9 +101,19 @@ public class RevisedInteractiveMenu : MonoBehaviour
 
     public void SelectObject(Dialoggable obj)
     {
-        selectedObject = obj;
-        menuPanel.SetActive(true);
-        objectNameText.text = obj.objectName;
+        // if distance is less than interactable distance
+        var distance = Vector3.Distance(obj.transform.position, player.transform.position);
+        if (distance > interactableDistance)
+        {
+            Debug.Log("Object is too far away");
+            return;
+        }
+        else
+        {
+            selectedObject = obj;
+            menuPanel.SetActive(true);
+            objectNameText.text = obj.objectName;
+        }
     }
 
     public void DeselectObject()
@@ -128,12 +143,12 @@ public class RevisedInteractiveMenu : MonoBehaviour
         }
     }
 
-    void PerformAction()
+    void ExchangeItems()
     {
         if (selectedObject != null)
         {
-            Debug.Log($"Performing action on {selectedObject.objectName}");
-            // Implement action logic here
+            // If the object is close enough to the player, perform the action
+            float distance = Vector3.Distance(selectedObject.transform.position, mainCamera.transform.position);
         }
     }
 
