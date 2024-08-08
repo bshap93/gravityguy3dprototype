@@ -10373,7 +10373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accelerationFactor: 3.04
   rotationSpeed: 2
-  projectileRecoil: 20
+  projectileRecoil: 2
   miningLaser: {fileID: 8277692912841810557}
   guidingLine: {fileID: 5742316010442362057}
   projectileThruster: {fileID: 0}

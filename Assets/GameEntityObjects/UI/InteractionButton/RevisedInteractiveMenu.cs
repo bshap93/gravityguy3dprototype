@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using PixelCrushers.DialogueSystem;
 using Player;
+using Polyperfect.Crafting.Demo;
 using UnityEngine.Serialization;
 
 public class RevisedInteractiveMenu : MonoBehaviour
@@ -17,10 +18,13 @@ public class RevisedInteractiveMenu : MonoBehaviour
     public float interactableDistance = 30f;
     public GameObject player;
 
+    public BaseInteractable interactable;
+
     private Camera mainCamera;
     private PhysicsRaycaster physicsRaycaster;
     private Dialoggable selectedObject;
     private Dialoggable hoveredObject;
+
 
     void Start()
     {
@@ -120,6 +124,7 @@ public class RevisedInteractiveMenu : MonoBehaviour
     {
         selectedObject = null;
         menuPanel.SetActive(false);
+        interactable.EndInteract(gameObject);
     }
 
     public void ToggleSelectedObject(Dialoggable obj)
@@ -147,8 +152,7 @@ public class RevisedInteractiveMenu : MonoBehaviour
     {
         if (selectedObject != null)
         {
-            // If the object is close enough to the player, perform the action
-            float distance = Vector3.Distance(selectedObject.transform.position, mainCamera.transform.position);
+            interactable.BeginInteract(gameObject);
         }
     }
 
