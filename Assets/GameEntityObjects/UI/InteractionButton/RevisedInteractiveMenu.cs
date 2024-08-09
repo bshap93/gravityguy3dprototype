@@ -109,7 +109,7 @@ public class RevisedInteractiveMenu : MonoBehaviour
         var distance = Vector3.Distance(obj.transform.position, player.transform.position);
         if (distance > interactableDistance)
         {
-            Debug.Log("Object is too far away");
+            GameLogger.LogEnvironmental("Object is too far away");
             return;
         }
         else
