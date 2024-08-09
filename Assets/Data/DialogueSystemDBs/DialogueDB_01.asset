@@ -99,11 +99,11 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Proceed to the debris field impeding Commander James' ship.
+      value: Proceed to the Freehold for gear.
       type: 0
       typeString: CustomFieldType_Text
     - title: Success Description
-      value: Woohoo! Take that rocks.
+      value: 
       type: 0
       typeString: CustomFieldType_Text
     - title: Failure Description
@@ -131,17 +131,9 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Entry Count
-      value: 1
+      value: 0
       type: 1
       typeString: CustomFieldType_Number
-    - title: Entry 1 State
-      value: active
-      type: 0
-      typeString: CustomFieldType_QuestState
-    - title: Entry 1
-      value: '[var=Asteroids.NumDestroyed]/5 Destroyed'
-      type: 0
-      typeString: CustomFieldType_Text
   locations:
   - id: 1
     fields:
@@ -315,11 +307,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -331,20 +323,21 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Hiya Emir. We have a little problem, no? Take those rock out for me
-          quick so I can move. Use your mining laser, no?
+        value: Hiya Emir. We have a little problem. The Freehold is running low on
+          Nitrogen for their crops. I want you to first visit the Freehold and speak
+          with Councilman Eckhart. He has your gear.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Response Menu Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1080,8 +1073,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 151.85242}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 0, y: 82.59603}
+    canvasZoom: 0.8200002
   - id: 2
     fields:
     - title: Title

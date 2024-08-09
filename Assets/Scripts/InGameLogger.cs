@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class GameLogger
 {
-    private static ConsoleManager consoleManager;
+    public static ConsoleManager consoleManager;
 
     public static void Initialize(ConsoleManager manager)
     {

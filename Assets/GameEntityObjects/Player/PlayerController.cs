@@ -16,7 +16,6 @@ namespace Player
 
         [SerializeField] private float accelerationFactor = 0.3f;
         [SerializeField] private float rotationSpeed = 0.1f;
-        [SerializeField] private float projectileRecoil = 20f;
 
         public Attachment currentAttachment;
 
@@ -68,13 +67,13 @@ namespace Player
 
             eventManager.CommenceShipDocking.AddListener(AskPlayerToDock);
 
+
             _originalFreeLookXMaxSpeed = playerFreeLookCamera.m_XAxis.m_MaxSpeed;
             _originalFreeLookYMaxSpeed = playerFreeLookCamera.m_YAxis.m_MaxSpeed;
 
             ConsoleManager consoleManager = FindObjectOfType<ConsoleManager>();
             GameLogger.Initialize(consoleManager);
             GameLogger.LogAction("System Initialized");
-
         }
         // Update is called once per frame
         void Update()

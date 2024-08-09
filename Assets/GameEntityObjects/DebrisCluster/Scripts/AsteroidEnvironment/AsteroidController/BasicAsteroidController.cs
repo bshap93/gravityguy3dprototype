@@ -15,7 +15,6 @@ public class BasicAsteroidController : MonoBehaviour
     public float dustCloudLifetime = 5f;
     public float explosionForce = 10f;
     public float explosionRadius = 5f;
-
     private AudioSource _audioSource;
     private Rigidbody _rigidbody;
 

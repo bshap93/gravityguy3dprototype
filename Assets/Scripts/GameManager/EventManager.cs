@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class StringEvent : UnityEvent<string>
 {
@@ -15,26 +15,14 @@ public class GameObjectEvent : UnityEvent<GameObject>
 
 public class EventManager : MonoBehaviour
 {
+    // Instance
+    public static EventManager Instance { get; private set; }
+
     [CanBeNull] public CapitalShipDockingBayCollider01 capitalShipDockingBayCollider01;
-    public List<SphereCollider> debrisColldiers;
     public readonly StringEvent CommenceShipDocking = new StringEvent();
-    public readonly GameObjectEvent AsteroidInRange = new GameObjectEvent();
     void Start()
     {
         capitalShipDockingBayCollider01.onPlayerShipInDockingRange.AddListener(CommenceDocking);
-
-        var asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
-
-        foreach (GameObject asteroid in asteroids)
-        {
-            asteroid.GetComponent<AsteroidInRangeController>().TargetInRange
-                .AddListener(SignalToShipThatAsteroidIsInRange);
-
-            asteroid.GetComponent<AsteroidInRangeController>().TargetOutOfRange
-                .AddListener(SignalToShipThatAsteroidIsInRange);
-
-            debrisColldiers.Add(asteroid.GetComponent<SphereCollider>());
-        }
     }
 
     void CommenceDocking()
@@ -42,9 +30,15 @@ public class EventManager : MonoBehaviour
         CommenceShipDocking.Invoke("Press 'X' to dock");
     }
 
-    void SignalToShipThatAsteroidIsInRange(GameObject asteroid)
+
+    public void StartFadeToBlack()
     {
-        Debug.Log("Asteroid is in range");
-        AsteroidInRange.Invoke(asteroid);
+        SceneManager.LoadScene("GameOverScene");
+        // after 1 second, change to game over scene 
+    }
+    IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("GameOverScene");
     }
 }
