@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,7 +15,7 @@ public class GameObjectEvent : UnityEvent<GameObject>
 
 public class EventManager : MonoBehaviour
 {
-    public CapitalShipDockingBayCollider01 capitalShipDockingBayCollider01;
+    [CanBeNull] public CapitalShipDockingBayCollider01 capitalShipDockingBayCollider01;
     public List<SphereCollider> debrisColldiers;
     public readonly StringEvent CommenceShipDocking = new StringEvent();
     public readonly GameObjectEvent AsteroidInRange = new GameObjectEvent();

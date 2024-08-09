@@ -7,11 +7,10 @@ public class WeakMiningLaser : Attachment
     {
         // Create a new instance of the laser beam
         laserBeam.Play();
-        
-
     }
     public override void Deactivate()
     {
-        throw new System.NotImplementedException();
+        // Stop the laser beam
+        laserBeam.Stop();
     }
 }
