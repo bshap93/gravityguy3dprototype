@@ -17,19 +17,35 @@ MonoBehaviour:
   description: 
   globalUserScript: 
   emphasisSettings:
-  - color: {r: 1, g: 0, b: 0.8734236, a: 1}
+  - color:
+      r: 1
+      g: 0
+      b: 0.8734236
+      a: 1
     bold: 0
     italic: 0
     underline: 0
-  - color: {r: 1, g: 0, b: 0, a: 1}
+  - color:
+      r: 1
+      g: 0
+      b: 0
+      a: 1
     bold: 0
     italic: 0
     underline: 0
-  - color: {r: 0, g: 1, b: 0, a: 1}
+  - color:
+      r: 0
+      g: 1
+      b: 0
+      a: 1
     bold: 0
     italic: 0
     underline: 0
-  - color: {r: 0, g: 0, b: 1, a: 1}
+  - color:
+      r: 0
+      g: 0
+      b: 1
+      a: 1
     bold: 0
     italic: 0
     underline: 0
@@ -91,7 +107,7 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: Asteroids.01
+      value: Freehold Bound
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -145,6 +161,17 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
+  - id: 2
+    fields:
+    - title: Name
+      value: Freehold Asteroid Base
+      type: 0
+      typeString: 
+    - title: Description
+      value: Built on a asteroid orbiting Jovian X1A, those industrious mining focused
+        settlers delved into the rock and made a home within.
+      type: 0
+      typeString: 
   variables:
   - id: 1
     fields:
@@ -296,8 +323,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 496
         y: 50
         width: 160
@@ -325,9 +352,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Hiya Emir. We have a little problem. The Freehold is running low on
-          Nitrogen for their crops. I want you to first visit the Freehold and speak
-          with Councilman Eckhart. He has your gear.
+        value: Good Afternoon [PlayerName]. I just got off the comms with the quartermaster
+          over at freehold. They are running low on Nitrogen for their crops and
+          printers capable of soil fabrication. We have everything here. Please bring
+          it to them.
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -363,8 +391,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 184
         y: 134
         width: 160
@@ -421,9 +449,9 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
-        x: 80
+        x: 79.29079
         y: 218
         width: 160
         height: 30
@@ -450,7 +478,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'd rather not...
+        value: Why can't you get a drone to do it?
         type: 0
         typeString: 
       - title: Sequence
@@ -476,8 +504,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 288
         y: 218
         width: 160
@@ -505,7 +533,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Best get to it...
+        value: Thank you... Best get to it...
         type: 0
         typeString: 
       - title: Sequence
@@ -525,8 +553,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 48.19574
         y: 400.47095
         width: 160
@@ -554,8 +582,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Well, friend, we've all had those days. But as your Flight Commander,
-          I must insist.
+        value: All our drones are malfunctioning right now. Something to do with
+          unusual EM patterns the past few days. You know this...
         type: 0
         typeString: 
       - title: Sequence
@@ -573,173 +601,6 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 5
         destinationConversationID: 1
-        destinationDialogueID: 6
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 288
-        y: 302
-        width: 160
-        height: 30
-    - id: 6
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: Well, I guess I have no choice. I just miss Earth so much sometimes,
-          it all feels a bit pointless.
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 6
-        destinationConversationID: 1
-        destinationDialogueID: 7
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 288
-        y: 386
-        width: 160
-        height: 30
-    - id: 7
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: When was your last Psych eval, Emir. Disobeying my orders, that's
-          not like you.
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 7
-        destinationConversationID: 1
-        destinationDialogueID: 8
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 288
-        y: 470
-        width: 160
-        height: 30
-    - id: 8
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: Hmm... I can't remember
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 8
-        destinationConversationID: 1
         destinationDialogueID: 13
         isConnector: 0
         priority: 2
@@ -748,10 +609,10 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 288
-        y: 554
+        y: 302
         width: 160
         height: 30
     - id: 9
@@ -777,7 +638,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Any luck destroying those rocks?
+        value: You run those supplies over yet?
         type: 0
         typeString: 
       - title: Sequence
@@ -809,8 +670,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 600
         y: 134
         width: 160
@@ -864,8 +725,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 496
         y: 218
         width: 160
@@ -907,14 +768,20 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 11
+        destinationConversationID: 1
+        destinationDialogueID: 15
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 704
         y: 218
         width: 160
@@ -962,8 +829,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 912
         y: 134
         width: 160
@@ -1017,8 +884,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 288
         y: 638
         width: 160
@@ -1046,7 +913,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Thanks bud.
+        value: Thanks [[PlayerName]].
         type: 0
         typeString: 
       - title: Sequence
@@ -1066,15 +933,64 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
-        x: 492.19043
-        y: 322.2857
+        x: 491.48126
+        y: 321.57645
+        width: 160
+        height: 30
+    - id: 15
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You should get to it then...
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+        m_CallsDirty: 1
+      canvasRect:
+        x: 710.383
+        y: 313.39005
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 82.59603}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.2500002
   - id: 2
     fields:
     - title: Title
@@ -1164,8 +1080,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 160
         y: 30
         width: 160
@@ -1280,8 +1196,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 288
         y: 50
         width: 160
@@ -1329,8 +1245,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 80
         y: 134
         width: 160
@@ -1378,8 +1294,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 288
         y: 134
         width: 160
@@ -1427,8 +1343,8 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
       canvasRect:
-        serializedVersion: 2
         x: 496
         y: 134
         width: 160

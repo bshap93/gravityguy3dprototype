@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Cinemachine;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-namespace Player
+namespace GameEntityObjects.Player.Scripts
 {
     public class PlayerController : MonoBehaviour
     {
@@ -44,8 +42,6 @@ namespace Player
 
         AudioSource _thrustAudioSource;
         float _verticalInput;
-        [FormerlySerializedAs("_canDock")] [SerializeField]
-        bool canDock = false;
         public int debrisObjectsInRange = 0;
 
         float _originalFreeLookXMaxSpeed;
@@ -65,15 +61,9 @@ namespace Player
 
             GameObject.FindWithTag("PlayerThrustFlame");
 
-            eventManager.CommenceShipDocking.AddListener(AskPlayerToDock);
-
 
             _originalFreeLookXMaxSpeed = playerFreeLookCamera.m_XAxis.m_MaxSpeed;
             _originalFreeLookYMaxSpeed = playerFreeLookCamera.m_YAxis.m_MaxSpeed;
-
-            ConsoleManager consoleManager = FindObjectOfType<ConsoleManager>();
-            GameLogger.Initialize(consoleManager);
-            GameLogger.LogAction("System Initialized");
         }
         // Update is called once per frame
         void Update()
@@ -138,16 +128,6 @@ namespace Player
             }
         }
 
-
-        void AskPlayerToDock(string message)
-        {
-            Debug.Log(message);
-            identificationTextObject.SetActive(true);
-
-            var typeWriter = identificationTextObject.GetComponent<UITextTypeWriter>();
-
-            canDock = true;
-        }
 
         void AlertPlayerLeavingAsteroidRange(GameObject asteroid)
         {

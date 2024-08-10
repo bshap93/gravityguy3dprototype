@@ -1,6 +1,7 @@
 using System.Collections;
+using Dialogue;
 using UnityEngine;
-using PixelCrushers.DialogueSystem;
+using Quests;
 using UnityEngine.UI;
 
 public class ImprovedAsteroidController : MonoBehaviour
@@ -20,7 +21,7 @@ public class ImprovedAsteroidController : MonoBehaviour
 
     private AudioSource _audioSource;
     private Rigidbody _rigidbody;
-    private float currentHitPoints;
+    private float _currentHitPoints;
     private Slider healthBarSlider;
     private GameObject healthBarInstance;
 
@@ -37,7 +38,7 @@ public class ImprovedAsteroidController : MonoBehaviour
 
         CreateSphereCollider();
         InitializeHealthBar();
-        currentHitPoints = maxHitPoints;
+        _currentHitPoints = maxHitPoints;
     }
 
     void Update()
@@ -50,15 +51,14 @@ public class ImprovedAsteroidController : MonoBehaviour
 
     public void ReduceHitPoints(float damage)
     {
-        currentHitPoints -= damage;
+        _currentHitPoints -= damage;
         UpdateHealthBar();
         ShowHitEffect();
         PlayHitSound();
 
-        if (currentHitPoints <= 0)
+        if (_currentHitPoints <= 0)
         {
             CreateDustCloudExplosion();
-            IncrementQuestVariable("Asteroids.NumDestroyed", 1);
             Destroy(healthBarInstance);
             Destroy(gameObject);
         }
@@ -91,19 +91,7 @@ public class ImprovedAsteroidController : MonoBehaviour
             Destroy(dustCloudInstance, Mathf.Max(dustCloudLifetime, dustCloudBurstSound.length));
         }
     }
-    void IncrementQuestVariable(string variableName, int incrementAmount)
-    {
-        int currentValue = DialogueLua.GetVariable(variableName).asInt;
-        Debug.Log($"Current value of {variableName}: {currentValue}");
 
-        int newValue = currentValue + incrementAmount;
-        DialogueLua.SetVariable(variableName, newValue);
-
-        int verifyValue = DialogueLua.GetVariable(variableName).asInt;
-        Debug.Log($"New value of {variableName}: {verifyValue}");
-
-        DialogueManager.Instance.SendUpdateTracker();
-    }
 
     private void CreateSphereCollider()
     {
@@ -132,7 +120,7 @@ public class ImprovedAsteroidController : MonoBehaviour
     {
         if (healthBarSlider != null)
         {
-            healthBarSlider.value = currentHitPoints;
+            healthBarSlider.value = _currentHitPoints;
         }
     }
 

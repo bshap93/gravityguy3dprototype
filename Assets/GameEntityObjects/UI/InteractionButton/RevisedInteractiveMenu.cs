@@ -1,9 +1,8 @@
 using System.Collections.Generic;
+using Dialogue;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using PixelCrushers.DialogueSystem;
-using Player;
 using Polyperfect.Crafting.Demo;
 using UnityEngine.Serialization;
 
@@ -109,7 +108,7 @@ public class RevisedInteractiveMenu : MonoBehaviour
         var distance = Vector3.Distance(obj.transform.position, player.transform.position);
         if (distance > interactableDistance)
         {
-            GameLogger.LogEnvironmental("Object is too far away");
+            Debug.Log("Object is too far away!");
             return;
         }
         else

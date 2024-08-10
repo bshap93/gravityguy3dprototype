@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Player;
+using GameEntityObjects.Player.Scripts;
 using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour

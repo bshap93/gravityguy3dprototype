@@ -91,29 +91,29 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: Asteroids.01
+      value: Freehold!
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Proceed to the debris field impeding Commander James' ship.
+      value: Proceed to the Freehold for gear.
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Success Description
-      value: Woohoo! Take that rocks.
+      value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Failure Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Is Item
       value: False
       type: 2
@@ -121,7 +121,7 @@ MonoBehaviour:
     - title: Display Name
       value: Destroy the Asteroids
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Trackable
       value: True
       type: 2
@@ -131,18 +131,31 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Entry Count
-      value: 1
+      value: 0
       type: 1
       typeString: CustomFieldType_Number
-    - title: Entry 1 State
-      value: active
+  locations:
+  - id: 1
+    fields:
+    - title: Name
+      value: Flagship Emigrant
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 2
+    fields:
+    - title: Name
+      value: Freehold Asteroid Base
       type: 0
       typeString: 
-    - title: Entry 1
-      value: '[var=Crates.NumDestroyed]/5 Destroyed'
+    - title: Description
+      value: Built on a asteroid orbiting Jovian X1A, those industrious mining focused
+        settlers delved into the rock and made a home within.
       type: 0
       typeString: 
-  locations: []
   variables:
   - id: 1
     fields:
@@ -182,20 +195,6 @@ MonoBehaviour:
       value: 0
       type: 1
       typeString: CustomFieldType_Number
-    - title: Description
-      value: 
-      type: 0
-      typeString: 
-  - id: 4
-    fields:
-    - title: Name
-      value: 
-      type: 0
-      typeString: 
-    - title: Initial Value
-      value: false
-      type: 2
-      typeString: CustomFieldType_Boolean
     - title: Description
       value: 
       type: 0
@@ -319,11 +318,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -335,20 +334,22 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Hiya Emir. We have a little problem, no? Take those rock out for me
-          quick so I can move. Use your mining laser, no?
+        value: Good Afternoon [PlayerName]. I just got off the comms with the quartermaster
+          over at freehold. They are running low on Nitrogen for their crops and
+          printers capable of soil fabrication. We have everything here. Please bring
+          it to them.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Response Menu Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -434,7 +435,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 80
+        x: 79.29079
         y: 218
         width: 160
         height: 30
@@ -461,7 +462,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'd rather not...
+        value: Why can't you get a drone to do it?
         type: 0
         typeString: 
       - title: Sequence
@@ -516,7 +517,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Best get to it...
+        value: Thank you... Best get to it...
         type: 0
         typeString: 
       - title: Sequence
@@ -565,8 +566,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Well, friend, we've all had those days. But as your Flight Commander,
-          I must insist.
+        value: All our drones are malfunctioning right now. Something to do with
+          unusual EM patterns the past few days. You know this...
         type: 0
         typeString: 
       - title: Sequence
@@ -580,13 +581,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 5
-        destinationConversationID: 1
-        destinationDialogueID: 6
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -596,62 +591,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 288
         y: 302
-        width: 160
-        height: 30
-    - id: 6
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: Well, I guess I have no choice. I just miss Earth so much sometimes,
-          it all feels a bit pointless.
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 6
-        destinationConversationID: 1
-        destinationDialogueID: 7
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 288
-        y: 386
         width: 160
         height: 30
     - id: 7
@@ -1084,8 +1023,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 170.19604}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 0, y: 51.854824}
+    canvasZoom: 0.9400001
   - id: 2
     fields:
     - title: Title

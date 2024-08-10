@@ -1,7 +1,7 @@
+using Dialogue;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using PixelCrushers.DialogueSystem;
 
 public class InteractiveMenu : MonoBehaviour
 {
