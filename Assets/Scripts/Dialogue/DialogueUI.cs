@@ -10,6 +10,13 @@ public class DialogueUI : MonoBehaviour
     public GameObject optionButtonPrefab;
     public RectTransform optionButtonContainer;
 
+    // New audio-related variables
+    [Header("Audio")] public AudioSource audioSource;
+    public AudioClip startConversationSound;
+    public AudioClip displayTextSound;
+    public AudioClip selectOptionSound;
+    public AudioClip endConversationSound;
+
     private DialogueNode currentNode;
     private List<GameObject> currentButtons = new List<GameObject>();
 
@@ -18,6 +25,8 @@ public class DialogueUI : MonoBehaviour
         currentNode = DialogueManager.Instance.GetDialogueNode(startNodeId);
         if (currentNode != null)
         {
+            gameObject.SetActive(true);
+            PlaySound(startConversationSound);
             DisplayNode(currentNode);
         }
         else
@@ -29,6 +38,7 @@ public class DialogueUI : MonoBehaviour
     private void DisplayNode(DialogueNode node)
     {
         dialogueText.text = node.text;
+        PlaySound(displayTextSound);
 
         ClearOptionButtons();
 
@@ -47,7 +57,6 @@ public class DialogueUI : MonoBehaviour
             currentButtons.Add(buttonObj);
         }
 
-        // Force the layout group to update immediately
         LayoutRebuilder.ForceRebuildLayoutImmediate(optionButtonContainer);
 
         if (node.choices.Count == 0)
@@ -58,6 +67,8 @@ public class DialogueUI : MonoBehaviour
 
     private void MakeChoice(int choiceIndex)
     {
+        PlaySound(selectOptionSound);
+
         if (choiceIndex < currentNode.nextNodeIds.Count)
         {
             string nextNodeId = currentNode.nextNodeIds[choiceIndex];
@@ -92,7 +103,16 @@ public class DialogueUI : MonoBehaviour
     private void EndConversation()
     {
         Debug.Log("Conversation ended.");
+        PlaySound(endConversationSound);
         ClearOptionButtons();
         gameObject.SetActive(false);
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }

@@ -5,8 +5,26 @@ namespace Quests
 {
     public class QuestManager : MonoBehaviour
     {
+        public static QuestManager Instance { get; private set; }
+
+        public DialogueUI dialogueUi;
+
         public List<Quest> activeQuests = new List<Quest>();
         public List<Quest> completedQuests = new List<Quest>();
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
 
         public void AddQuest(Quest quest)
         {

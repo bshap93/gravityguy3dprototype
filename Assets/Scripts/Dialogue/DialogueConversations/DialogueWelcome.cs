@@ -2,23 +2,13 @@
 using Dialogue;
 using System.Collections.Generic;
 
-public class DialogueTest : MonoBehaviour
+public class DialogueWelcome : MonoBehaviour
 {
     public DialogueUI dialogueUI;
 
     void Start()
     {
         SetupTestDialogue();
-    }
-
-    void Update()
-    {
-        // Start the conversation when the player presses the Space key
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            dialogueUI.gameObject.SetActive(true);
-            dialogueUI.StartConversation("start");
-        }
     }
 
     void SetupTestDialogue()

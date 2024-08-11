@@ -7,6 +7,8 @@ namespace Dialogue
     {
         public static DialogueManager Instance { get; private set; }
 
+        public DialogueUI dialogueUi;
+
         Dictionary<string, DialogueNode> _dialogueNodes = new Dictionary<string, DialogueNode>();
 
         private void Awake()
@@ -20,6 +22,11 @@ namespace Dialogue
             {
                 Destroy(gameObject);
             }
+        }
+
+        public void ClearDialogueNodes()
+        {
+            _dialogueNodes.Clear();
         }
 
         public void AddDialogueNode(DialogueNode dialogueNode)
@@ -44,6 +51,7 @@ namespace Dialogue
 
             if (Instance._dialogueNodes.TryGetValue(dialogueNodeId, out DialogueNode node))
             {
+                node.EnterNode();
                 node.StartDialogue();
             }
             else

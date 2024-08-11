@@ -157,6 +157,6 @@ public class InteractiveMenu : MonoBehaviour
 
     void StartDialogue()
     {
-        DialogueManager.StartDialog(selectedObject.dialogueNodeId);
+        DialogueManager.Instance.dialogueUi.StartConversation(selectedObject.dialogueNodeId);
     }
 }
