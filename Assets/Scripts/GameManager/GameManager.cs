@@ -1,43 +1,65 @@
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using Dialogue;
+using Quests;
 using UnityEngine;
-using System.Collections.Generic;
-using GameEntityObjects.Player.Scripts;
-using UnityEngine.Serialization;
 
-public class GameManager : MonoBehaviour
+namespace GameManager
 {
-    [FormerlySerializedAs("playerShip")] public PlayerController playerController;
-    [FormerlySerializedAs("AvailableAttachments")]
-    public static List<Attachment> availableAttachments;
-    private int _currentAttachmentIndex = -1;
-
-    private void Update()
+    public class GameManager : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        public static GameManager Instance;
+
+        public QuestManager questManager;
+        public DialogueManager dialogueManager;
+
+        private void Awake()
         {
-            playerController.UseAttachment();
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            questManager = GetComponent<QuestManager>();
+            dialogueManager = GetComponent<DialogueManager>();
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        [System.Serializable]
+        public class SaveData
         {
-            playerController.StopUsingAttachment();
+            public List<Quest> activeQuests;
+            public List<Quest> completedQuests;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        public void SaveGame()
         {
-            CycleAndAttachUpgrade();
-        }
-    }
+            SaveData data = new SaveData
+            {
+                activeQuests = questManager.activeQuests,
+                completedQuests = questManager.completedQuests
+            };
 
-    private void CycleAndAttachUpgrade()
-    {
-        if (availableAttachments.Count > 0)
-        {
-            _currentAttachmentIndex = (_currentAttachmentIndex + 1) % availableAttachments.Count;
-            playerController.AttachUpgrade(availableAttachments[_currentAttachmentIndex]);
+            var formatter = new BinaryFormatter();
+
+            var path = Application.persistentDataPath + "/save.dat";
+            using (FileStream stream = new FileStream(path, FileMode.Create))
+            {
+                formatter.Serialize(stream, data);
+            }
         }
-        else
+
+        public void LoadGame()
         {
-            Debug.LogWarning("No attachments available to equip.");
+            var path = Application.persistentDataPath + "/save.dat";
+            if (!File.Exists(path)) return;
+            var formatter = new BinaryFormatter();
+            using var stream = new FileStream(path, FileMode.Open);
+            if (formatter.Deserialize(stream) is SaveData data) questManager.activeQuests = data.activeQuests;
         }
     }
 }
