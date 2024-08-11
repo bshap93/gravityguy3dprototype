@@ -7,6 +7,9 @@ namespace Dialogue
     {
         public static DialogueManager Instance { get; private set; }
 
+        public string playerName;
+        public string starshipName;
+
         public DialogueUI dialogueUi;
 
         Dictionary<string, DialogueNode> _dialogueNodes = new Dictionary<string, DialogueNode>();

@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 22156424}
   - component: {fileID: 22156423}
   m_Layer: 0
-  m_Name: DialogueTest
+  m_Name: StartDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,6 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1530a59596ef43a6b434bf3c09c9bc20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: Ben
+  starshipName: 
   dialogueUi: {fileID: 1867847925}
 --- !u!4 &174056341
 Transform:
@@ -939,7 +941,6 @@ GameObject:
   m_Component:
   - component: {fileID: 637317925}
   - component: {fileID: 637317924}
-  - component: {fileID: 637317923}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -947,21 +948,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &637317923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637317921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9fbf0881ae74fc68280392a7a1fa32a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueUi: {fileID: 0}
-  activeQuests: []
-  completedQuests: []
 --- !u!114 &637317924
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ namespace GameManager
         {
             public List<Quest> activeQuests;
             public List<Quest> completedQuests;
+            public string playerName;
         }
 
         public void SaveGame()
@@ -41,7 +42,8 @@ namespace GameManager
             SaveData data = new SaveData
             {
                 activeQuests = QuestManager.activeQuests,
-                completedQuests = QuestManager.completedQuests
+                completedQuests = QuestManager.completedQuests,
+                playerName = DialogueManager.playerName
             };
 
             var formatter = new BinaryFormatter();
@@ -59,7 +61,12 @@ namespace GameManager
             if (!File.Exists(path)) return;
             var formatter = new BinaryFormatter();
             using var stream = new FileStream(path, FileMode.Open);
-            if (formatter.Deserialize(stream) is SaveData data) QuestManager.activeQuests = data.activeQuests;
+            if (formatter.Deserialize(stream) is SaveData data)
+            {
+                QuestManager.activeQuests = data.activeQuests;
+                QuestManager.completedQuests = data.completedQuests;
+                DialogueManager.playerName = data.playerName;
+            }
         }
     }
 }

@@ -13,32 +13,43 @@ public class DialogueWelcome : MonoBehaviour
 
     void SetupTestDialogue()
     {
+        var name = DialogueManager.Instance.playerName;
+        var starshipName = DialogueManager.Instance.starshipName;
         // Create test dialogue nodes
         CreateAndAddNode(
             "start",
-            "Welcome to the Starship Horizon, Officer. This is your first day aboard. What would you like to know?",
+            $"Good day, {name}. I need you to collect this load of Nitrogen pellets and the soil printer and head over to the Freehold.",
             new List<string>
             {
                 "Tell me about the ship", "What are our mission objectives?", "Who's in charge here?",
+                "Why can't the AI skiff do it?",
                 "I'm ready for duty"
             },
-            new List<string> { "ship_info", "mission_objectives", "command_structure", "end_conversation" });
+            new List<string>
+                { "ship_info", "mission_objectives", "command_structure", "ai_issue", "end_conversation" });
 
         CreateAndAddNode(
             "ship_info",
-            "The Starship Horizon is a state-of-the-art generation ship, designed for our long journey to Tau Ceti. It's equipped with advanced life support systems, hydroponic farms, and a fusion reactor.",
-            new List<string> { "How long is our journey?", "Tell me more about the systems", "Go back" },
+            $"The {starshipName} is a state-of-the-art generation ship, designed for our long journey to Tau Ceti. It's equipped with advanced life support systems, hydroponic farms, and a fusion reactor.",
+            new List<string> { "How long was our journey?", "Tell me more about the systems", "Go back" },
             new List<string> { "journey_length", "ship_systems", "start" });
 
         CreateAndAddNode(
+            "ai_issue",
+            "The AI skiff is currently undergoing maintenance. It's a routine checkup, but we need someone to deliver the supplies to the Freehold right away.",
+            new List<string> { "I understand", "Go back" },
+            new List<string> { "end_conversation", "start" }
+        );
+
+        CreateAndAddNode(
             "journey_length",
-            "Our journey to Tau Ceti is expected to take approximately 200 years. We're traveling at 0.1c, or 10% of the speed of light.",
+            "Our journey to Tau Ceti took approximately 200 years, traveling at 0.1c, or 10% of the speed of light.",
             new List<string> { "That's a long time!", "Go back" },
             new List<string> { "long_journey", "ship_info" });
 
         CreateAndAddNode(
             "long_journey",
-            "Indeed it is. That's why we're a generation ship. Many generations will live and die before we reach our destination.",
+            "Indeed it is. That's why we're a generation ship. Many generations lived and died before we got here?",
             new List<string> { "I understand", "Go back to main topics" },
             new List<string> { "ship_info", "start" });
 
