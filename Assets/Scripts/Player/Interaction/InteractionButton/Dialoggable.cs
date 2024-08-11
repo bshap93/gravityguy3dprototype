@@ -1,9 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Dialoggable : MonoBehaviour
 {
     public string objectName;
-    public string conversationName;
+    [FormerlySerializedAs("conversationName")]
+    public string dialogueNodeId;
 
     public Material outlineMaterial;
     private Renderer objectRenderer;

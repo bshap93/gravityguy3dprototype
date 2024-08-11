@@ -5,24 +5,62 @@ namespace Dialogue
 {
     public class DialogueManager : MonoBehaviour
     {
-        public static object Instance { get; set; }
+        public static DialogueManager Instance { get; private set; }
 
-        Dictionary<string, DialogueNode> _dialogueNodes = new();
+        Dictionary<string, DialogueNode> _dialogueNodes = new Dictionary<string, DialogueNode>();
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
 
         public void AddDialogueNode(DialogueNode dialogueNode)
         {
-            _dialogueNodes.Add(dialogueNode.id, dialogueNode);
+            if (!_dialogueNodes.ContainsKey(dialogueNode.id))
+            {
+                _dialogueNodes.Add(dialogueNode.id, dialogueNode);
+            }
+            else
+            {
+                Debug.LogWarning($"Dialogue node with id {dialogueNode.id} already exists. Skipping addition.");
+            }
         }
 
-        public DialogueNode GetDialogueNode(string id)
+        public static void StartDialog(string dialogueNodeId)
         {
-            return _dialogueNodes.GetValueOrDefault(id);
+            if (Instance == null)
+            {
+                Debug.LogError("DialogueManager instance is null. Ensure it's created in the scene.");
+                return;
+            }
+
+            if (Instance._dialogueNodes.TryGetValue(dialogueNodeId, out DialogueNode node))
+            {
+                node.StartDialogue();
+            }
+            else
+            {
+                Debug.LogError($"No dialogue node found with id: {dialogueNodeId}");
+            }
         }
 
-
-        public static void StartConversation(string selectedObjectConversationName)
+        public DialogueNode GetDialogueNode(string startNodeId)
         {
-            throw new System.NotImplementedException();
+            if (_dialogueNodes.TryGetValue(startNodeId, out DialogueNode node))
+            {
+                return node;
+            }
+
+            Debug.LogError($"No dialogue node found with id: {startNodeId}");
+            return null;
         }
     }
 }

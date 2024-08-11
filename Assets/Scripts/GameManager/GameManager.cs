@@ -9,10 +9,10 @@ namespace GameManager
 {
     public class GameManager : MonoBehaviour
     {
-        public static GameManager Instance;
+        public static GameManager Instance { get; private set; }
 
-        public QuestManager questManager;
-        public DialogueManager dialogueManager;
+        public static QuestManager QuestManager;
+        public static DialogueManager DialogueManager;
 
         private void Awake()
         {
@@ -25,8 +25,8 @@ namespace GameManager
                 Destroy(gameObject);
             }
 
-            questManager = GetComponent<QuestManager>();
-            dialogueManager = GetComponent<DialogueManager>();
+            QuestManager = GetComponent<QuestManager>();
+            DialogueManager = GetComponent<DialogueManager>();
         }
 
         [System.Serializable]
@@ -40,8 +40,8 @@ namespace GameManager
         {
             SaveData data = new SaveData
             {
-                activeQuests = questManager.activeQuests,
-                completedQuests = questManager.completedQuests
+                activeQuests = QuestManager.activeQuests,
+                completedQuests = QuestManager.completedQuests
             };
 
             var formatter = new BinaryFormatter();
@@ -59,7 +59,7 @@ namespace GameManager
             if (!File.Exists(path)) return;
             var formatter = new BinaryFormatter();
             using var stream = new FileStream(path, FileMode.Open);
-            if (formatter.Deserialize(stream) is SaveData data) questManager.activeQuests = data.activeQuests;
+            if (formatter.Deserialize(stream) is SaveData data) QuestManager.activeQuests = data.activeQuests;
         }
     }
 }
