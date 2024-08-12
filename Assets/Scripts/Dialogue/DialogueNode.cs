@@ -11,7 +11,7 @@ namespace Dialogue
         public Speaker speaker;
         public List<string> choices;
         public List<string> nextNodeIds;
-        public Action OnNodeEnter; // New field for the action to be performed when entering the node
+        public Action<DialogueNode> OnNodeEnter; // New field for the action to be performed when entering the node
 
         public DialogueNode(string id, string text, Speaker speaker, List<string> choices, List<string> nextNodeIds)
         {
@@ -20,6 +20,7 @@ namespace Dialogue
             this.speaker = speaker;
             this.choices = choices;
             this.nextNodeIds = nextNodeIds;
+            this.OnNodeEnter = null; // Initialize the action to null
         }
 
         public DialogueNode()
@@ -34,7 +35,7 @@ namespace Dialogue
         // New method to invoke the OnNodeEnter action
         public void EnterNode()
         {
-            OnNodeEnter?.Invoke();
+            OnNodeEnter?.Invoke(this);
         }
     }
 }

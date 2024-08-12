@@ -12,16 +12,16 @@ namespace GameManager.Levels
 
         void InitializeQuestsAndDialogue()
         {
-            Quest quest1 = new Quest(
+            Quest debutQuest = new Quest(
                 "1",
                 "Freehold Bound",
                 "Travel to Freehold to give them the Nitrogen and Printer parts",
-                new System.Collections.Generic.List<string>
+                new System.Collections.Generic.List<Objective>
                 {
-                    "Obtain Nitrogen and Printer Parts",
-                    "Travel to Freehold",
-                    "Give Nitrogen to Freehold",
-                    "Give Printer Parts to Freehold"
+                    new Objective("1_1", "Obtain Nitrogen and Printer Parts"),
+                    new Objective("1_2", "Travel to Freehold"),
+                    new Objective("1_3", "Give Nitrogen to Freehold"),
+                    new Objective("1_4", "Give Printer Parts to Freehold"),
                 }
             );
         }

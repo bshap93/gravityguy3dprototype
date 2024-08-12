@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = System.Object;
 
 namespace Quests
 {
@@ -11,28 +12,31 @@ namespace Quests
         public string title;
         public string description;
         public bool isCompleted;
-        public List<string> objectives;
-        public List<string> completedObjectives;
+        public List<Objective> objectives;
+        public List<Objective> completedObjectives;
 
-        public Quest(string id, string title, string description, List<string> objectives)
+        public Quest(string id, string title, string description, List<Objective> objectives)
         {
             this.id = id;
             this.title = title;
             this.description = description;
             this.objectives = objectives;
             this.isCompleted = false;
-            this.completedObjectives = new List<string>();
+            this.completedObjectives = new List<Objective>();
         }
 
-        public void AddObjective(string objective)
+        public void AddObjective(Objective objective)
         {
             objectives.Add(objective);
         }
 
 
-        public void CompleteObjective(string objective)
+        public void CompleteObjective(string objectiveId)
         {
-            if (objectives.Contains(objective) && !completedObjectives.Contains(objective))
+            var objective = objectives.Find(o => o.id == objectiveId);
+            if (objective == null) return;
+            objective.CompleteObjective();
+            if (!completedObjectives.Contains(objective))
             {
                 completedObjectives.Add(objective);
                 if (completedObjectives.Count == objectives.Count)

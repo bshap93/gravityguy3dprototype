@@ -105,7 +105,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ASEOutlineWidth: 0.01
+    - _ASEOutlineWidth: 0.005
     - _BumpScale: 1
     - _Cloud_Contrast: 1.2
     - _Cloud_Falloff: 4.24

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Quests;
 using UnityEngine;
 
 namespace Dialogue
@@ -6,6 +8,7 @@ namespace Dialogue
     public class DialogueManager : MonoBehaviour
     {
         public static DialogueManager Instance { get; private set; }
+        private QuestManager _questManager;
 
         public string playerName;
         public string starshipName;
@@ -13,6 +16,11 @@ namespace Dialogue
         public DialogueUI dialogueUi;
 
         Dictionary<string, DialogueNode> _dialogueNodes = new Dictionary<string, DialogueNode>();
+
+        private void Start()
+        {
+            _questManager = QuestManager.Instance;
+        }
 
         private void Awake()
         {
@@ -27,16 +35,27 @@ namespace Dialogue
             }
         }
 
+        public void AddQuestFromDialogue(string questId)
+        {
+            var quest = _questManager.GetQuest(questId);
+            _questManager.AddQuest(questId);
+        }
+
+
         public void ClearDialogueNodes()
         {
             _dialogueNodes.Clear();
         }
 
-        public void AddDialogueNode(DialogueNode dialogueNode)
+        public void AddDialogueNode(DialogueNode dialogueNode, Action<DialogueNode> onEnterAction = null)
         {
             if (!_dialogueNodes.ContainsKey(dialogueNode.id))
             {
                 _dialogueNodes.Add(dialogueNode.id, dialogueNode);
+                if (onEnterAction != null)
+                {
+                    dialogueNode.OnNodeEnter += onEnterAction;
+                }
             }
             else
             {
@@ -67,11 +86,21 @@ namespace Dialogue
         {
             if (_dialogueNodes.TryGetValue(startNodeId, out DialogueNode node))
             {
+                node.OnNodeEnter?.Invoke(node);
                 return node;
             }
 
             Debug.LogError($"No dialogue node found with id: {startNodeId}");
             return null;
+        }
+
+
+        private void OnDestroy()
+        {
+            foreach (var node in _dialogueNodes.Values)
+            {
+                node.OnNodeEnter = null;
+            }
         }
     }
 }

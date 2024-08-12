@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Quests
 {
@@ -7,11 +9,20 @@ namespace Quests
     {
         public static QuestManager Instance { get; private set; }
 
+
         public DialogueUI dialogueUi;
 
         public List<Quest> activeQuests = new List<Quest>();
         public List<Quest> completedQuests = new List<Quest>();
+        List<Quest> _allQuests;
 
+        [FormerlySerializedAs("QuestDBTable")] [SerializeField]
+        QuestDatabase questDBTable;
+
+        void Start()
+        {
+            _allQuests = questDBTable.GetAllQuests();
+        }
         private void Awake()
         {
             if (Instance == null)
@@ -26,12 +37,17 @@ namespace Quests
         }
 
 
-        public void AddQuest(Quest quest)
+        public void AddQuest(string questId)
         {
-            activeQuests.Add(quest);
+            var quest = questDBTable.GetQuest(questId);
+            if (quest != null && !activeQuests.Contains(quest))
+            {
+                activeQuests.Add(quest);
+                Debug.Log("Added quest: " + quest.title);
+            }
         }
 
-        public void CompleteQuest(string questId)
+        void CompleteQuest(string questId)
         {
             var quest = activeQuests.Find(q => q.id == questId);
             if (quest == null) return;
@@ -40,11 +56,11 @@ namespace Quests
             completedQuests.Add(quest);
         }
 
-        public void CompleteObjective(string questId, string objective)
+        public void CompleteObjective(string questId, string objectiveId)
         {
             var quest = activeQuests.Find(q => q.id == questId);
             if (quest == null) return;
-            quest.CompleteObjective(objective);
+            quest.CompleteObjective(objectiveId);
             if (quest.isCompleted)
             {
                 CompleteQuest(questId);
@@ -58,6 +74,15 @@ namespace Quests
         public static void SetVariable(string variableName, int newValue)
         {
             throw new System.NotImplementedException();
+        }
+        public Quest GetQuest(string questId)
+        {
+            return questDBTable.GetQuest(questId);
+        }
+
+        public List<Quest> GetAllQuests()
+        {
+            return questDBTable.GetAllQuests();
         }
     }
 }

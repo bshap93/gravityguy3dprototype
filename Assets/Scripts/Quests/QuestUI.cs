@@ -64,7 +64,7 @@ public class QuestUI : MonoBehaviour
         string text = "Objectives:\n";
         for (int i = 0; i < quest.objectives.Count; i++)
         {
-            string objective = quest.objectives[i];
+            Objective objective = quest.objectives[i];
             string status = quest.completedObjectives.Contains(objective) ? "✓" : "○";
             text += $"{status} {objective}\n";
         }
@@ -79,8 +79,8 @@ public class QuestUI : MonoBehaviour
             Quest currentQuest = quests[currentQuestIndex];
             if (currentObjectiveIndex < currentQuest.objectives.Count)
             {
-                string objective = currentQuest.objectives[currentObjectiveIndex];
-                QuestManager.Instance.CompleteObjective(currentQuest.id, objective);
+                Objective objective = currentQuest.objectives[currentObjectiveIndex];
+                QuestManager.Instance.CompleteObjective(currentQuest.id, objective.id);
                 currentObjectiveIndex++;
                 UpdateObjectivesText(currentQuest);
 
