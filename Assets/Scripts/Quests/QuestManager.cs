@@ -84,5 +84,17 @@ namespace Quests
         {
             return questDBTable.GetAllQuests();
         }
+
+        void Cleanup()
+        {
+            activeQuests.Clear();
+            completedQuests.Clear();
+            Instance = null;
+        }
+
+        private void OnDestroy()
+        {
+            Cleanup();
+        }
     }
 }

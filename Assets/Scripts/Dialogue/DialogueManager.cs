@@ -94,9 +94,22 @@ namespace Dialogue
             return null;
         }
 
+        public void Cleanup()
+        {
+            foreach (var node in _dialogueNodes.Values)
+            {
+                node.OnNodeEnter = null;
+                // Unsubscribe from any other events that DialogueNode might have
+            }
+
+            _dialogueNodes.Clear();
+            Instance = null;
+        }
+
 
         private void OnDestroy()
         {
+            Cleanup();
             foreach (var node in _dialogueNodes.Values)
             {
                 node.OnNodeEnter = null;

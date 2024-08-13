@@ -31,5 +31,11 @@ namespace GameManager
                 Debug.LogWarning("No attachments available to equip.");
             }
         }
+
+        private void OnDestroy()
+        {
+            playerController = null;
+            availableAttachments.Clear();
+        }
     }
 }
