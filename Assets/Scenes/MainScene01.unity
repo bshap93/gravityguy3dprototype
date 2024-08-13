@@ -1014,105 +1014,13 @@ Transform:
   m_GameObject: {fileID: 174056339}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.292755, y: 295.96985, z: -11.850586}
+  m_LocalPosition: {x: -399.03577, y: 136.96487, z: 384.52682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 22156424}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 637317925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &198611943
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 198611944}
-  - component: {fileID: 198611945}
-  - component: {fileID: 198611946}
-  - component: {fileID: 198611947}
-  - component: {fileID: 198611948}
-  m_Layer: 0
-  m_Name: Garrison Commander James
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &198611944
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198611943}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -55.987, y: 0.124, z: 14.46}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 232958196}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &198611945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198611943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &198611946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198611943}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &198611947
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198611943}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 11.578461, y: 7.935017, z: 19.633162}
-  m_Center: {x: -0.5057297, y: -0.07863498, z: -9.316579}
---- !u!114 &198611948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198611943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &199709177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,38 +1095,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &232958195
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 232958196}
-  m_Layer: 0
-  m_Name: NPCs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &232958196
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232958195}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 198611944}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254573506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,6 +2192,7 @@ Transform:
   - {fileID: 5944004266093499599}
   - {fileID: 912993280}
   - {fileID: 558631880}
+  - {fileID: 174056341}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &651616622 stripped
@@ -9469,9 +9346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc3477dc21fd324d8298f82477f7aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Reactor MK2
-  dialogueNodeId: FirstConversation
-  outlineMaterial: {fileID: 2100000, guid: 83080c64c9ee63346b04baac206382be, type: 2}
 --- !u!1 &398312566468291948
 GameObject:
   m_ObjectHideFlags: 0
@@ -24806,12 +24680,12 @@ PrefabInstance:
     - target: {fileID: 6885138994593372899, guid: 0c568744faa781445b19bdd92bfae910,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9828494
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6885138994593372899, guid: 0c568744faa781445b19bdd92bfae910,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18441005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6885138994593372899, guid: 0c568744faa781445b19bdd92bfae910,
         type: 3}
@@ -31693,7 +31567,7 @@ Transform:
   m_GameObject: {fileID: 4134843832125802193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.77, y: 2.14, z: 21.24}
+  m_LocalPosition: {x: 0.08, y: 2.14, z: 21.24}
   m_LocalScale: {x: 1.8599, y: 1.8599, z: 1.8599}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34989,6 +34863,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3803057168668853573}
+  - {fileID: 7493477203569389524}
   - {fileID: 1171812402492307141}
   m_Father: {fileID: 1585339871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35185,9 +35060,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc3477dc21fd324d8298f82477f7aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Lab Ring and Crew Quarters
-  dialogueNodeId: FirstConversation
-  outlineMaterial: {fileID: 2100000, guid: 83080c64c9ee63346b04baac206382be, type: 2}
 --- !u!114 &4936232707302066171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36046,9 +35918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc3477dc21fd324d8298f82477f7aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Solar Array
-  dialogueNodeId: FirstConversation
-  outlineMaterial: {fileID: 2100000, guid: 83080c64c9ee63346b04baac206382be, type: 2}
 --- !u!114 &5325094288258842512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42440,10 +42309,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4854152473886219041}
-  - component: {fileID: 7295994132157231099}
   - component: {fileID: 3145738174682288011}
   - component: {fileID: 8853633745964204498}
   - component: {fileID: 5396650205945354811}
+  - component: {fileID: 8853633745964204499}
+  - component: {fileID: 8853633745964204500}
   m_Layer: 0
   m_Name: ScienceSkiffInteractiveObject
   m_TagString: ScienceShip
@@ -43393,9 +43263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc3477dc21fd324d8298f82477f7aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Storage Wing 01
-  dialogueNodeId: FirstConversation
-  outlineMaterial: {fileID: 2100000, guid: 83080c64c9ee63346b04baac206382be, type: 2}
 --- !u!114 &6130364104954255460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43678,9 +43545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc3477dc21fd324d8298f82477f7aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Science Storage
-  dialogueNodeId: FirstConversation
-  outlineMaterial: {fileID: 2100000, guid: 83080c64c9ee63346b04baac206382be, type: 2}
 --- !u!114 &6266395065826705066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47126,9 +46990,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc3477dc21fd324d8298f82477f7aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Storage Wing 01
-  dialogueNodeId: FirstConversation
-  outlineMaterial: {fileID: 2100000, guid: 83080c64c9ee63346b04baac206382be, type: 2}
 --- !u!114 &7207548875698043900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47317,27 +47178,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!135 &7295994132157231099
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5901646108828937481}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 20.31, y: 0, z: 21.29}
 --- !u!4 &7298665362380853027
 Transform:
   m_ObjectHideFlags: 0
@@ -47725,16 +47565,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2337081845236494212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -406.28}
+  m_LocalPosition: {x: 0, y: 0, z: 19.619995}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1259736032285349665}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4854152473886219041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 18.31, y: 2.43}
+  m_AnchoredPosition: {x: 96.61, y: 3.63}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!223 &7495231980494370060
@@ -53660,9 +53500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc3477dc21fd324d8298f82477f7aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Comms Tower
-  dialogueNodeId: FirstConversation
-  outlineMaterial: {fileID: 2100000, guid: 83080c64c9ee63346b04baac206382be, type: 2}
 --- !u!1 &7872122920528957636
 GameObject:
   m_ObjectHideFlags: 0
@@ -60905,6 +60742,44 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &8853633745964204499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5901646108828937481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6cd96db2bf47458f4fa631be0fda5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableName: Science Skiff Manao
+  baseInteractable: {fileID: 0}
+  defaultDialogueNodeId: start
+  currentNextDialogueNodeId: start
+  boxCollider: {fileID: 8853633745964204500}
+--- !u!65 &8853633745964204500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5901646108828937481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 13.98, y: 15.49, z: 16.72}
+  m_Center: {x: -0.22, y: 0, z: 22.41}
 --- !u!222 &8854617950872815796
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -62120,8 +61995,5 @@ SceneRoots:
   - {fileID: 3897168803092838356}
   - {fileID: 6068873173909473349}
   - {fileID: 1585339871}
-  - {fileID: 232958196}
   - {fileID: 760019815}
   - {fileID: 637317925}
-  - {fileID: 174056341}
-  - {fileID: 7493477203569389524}

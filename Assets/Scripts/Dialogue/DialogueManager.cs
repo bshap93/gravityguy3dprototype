@@ -101,6 +101,9 @@ namespace Dialogue
             {
                 node.OnNodeEnter = null;
             }
+
+            _dialogueNodes.Clear();
+            Instance = null; // Ensure the static instance is also cleared
         }
     }
 }

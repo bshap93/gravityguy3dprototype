@@ -1,7 +1,4 @@
-﻿using System;
-using Dialogue;
-using JetBrains.Annotations;
-using Polyperfect.Crafting.Demo;
+﻿using Polyperfect.Crafting.Demo;
 using UnityEngine;
 
 namespace Player.Interaction
@@ -10,64 +7,63 @@ namespace Player.Interaction
     public class MyInteractable : MonoBehaviour, IInteractable
     {
         [SerializeField] public string interactableName;
-        [CanBeNull] BaseInteractable _baseInteractable;
+        public BaseInteractable baseInteractable;
+        [SerializeField] public string defaultDialogueNodeId;
+        [SerializeField] public string currentNextDialogueNodeId;
+        [SerializeField] public BoxCollider boxCollider;
 
-        [SerializeField] DialogueNode defaultDialogueNode;
+        private InteractiveMenu _interactiveMenu;
 
-        [SerializeField] public DialogueNode currentNextDialogueNode;
-
-        [SerializeField] public Transform anchor;
-
-
-        void Start()
+        void Awake()
         {
-            _baseInteractable = GetComponent<BaseInteractable>();
-            currentNextDialogueNode = defaultDialogueNode;
+            baseInteractable = GetComponent<BaseInteractable>();
+            currentNextDialogueNodeId = defaultDialogueNodeId;
+            _interactiveMenu = FindObjectOfType<InteractiveMenu>();
         }
 
-        public string GetName()
+        public string GetName() => interactableName;
+
+        public Vector3 GetPosition() => boxCollider ? boxCollider.transform.position : transform.position;
+
+        public void OnMouseDown()
         {
-            throw new System.NotImplementedException();
+            if (_interactiveMenu != null)
+                _interactiveMenu.SelectObject(this);
         }
-        public Vector3 GetPosition()
-        {
-            throw new System.NotImplementedException();
-        }
+
         public void OnHoverEnter()
         {
-            throw new System.NotImplementedException();
+            /* Implement if needed */
         }
         public void OnHoverExit()
         {
-            throw new System.NotImplementedException();
+            /* Implement if needed */
         }
         public void OnInteractionEnd()
         {
-            throw new System.NotImplementedException();
+            /* Implement if needed */
         }
-        public bool HasInfo()
-        {
-            throw new System.NotImplementedException();
-        }
-        public bool CanInteract()
-        {
-            throw new System.NotImplementedException();
-        }
-        public bool HasDialogue()
-        {
-            throw new System.NotImplementedException();
-        }
+        public bool HasInfo() => true; // Implement actual logic
+        public bool CanInteract() => baseInteractable != null;
+        public bool HasDialogue() => !string.IsNullOrEmpty(currentNextDialogueNodeId);
         public void ShowInfo()
         {
-            throw new System.NotImplementedException();
+            /* Implement if needed */
         }
         public void Interact()
         {
-            throw new System.NotImplementedException();
+            /* Implement if needed */
         }
         public void StartDialogue()
         {
-            throw new System.NotImplementedException();
+            /* Implement if needed */
+        }
+
+        private void OnDestroy()
+        {
+            // Clean up any resources if needed
+            baseInteractable = null;
+            _interactiveMenu = null;
         }
     }
 }
