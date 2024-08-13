@@ -2733,9 +2733,9 @@ Transform:
   m_GameObject: {fileID: 763633636}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 440.59, y: -0.26, z: 369.63}
-  m_LocalScale: {x: 1.8599, y: 1.8599, z: 1.8599}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -45.23, y: 0.9, z: -43.08}
+  m_LocalScale: {x: 6.81, y: 6.81, z: 6.81}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1334236115}
   m_Father: {fileID: 1730390241}
@@ -7110,6 +7110,7 @@ GameObject:
   - component: {fileID: 1730390244}
   - component: {fileID: 1730390243}
   - component: {fileID: 1730390246}
+  - component: {fileID: 1730390247}
   m_Layer: 0
   m_Name: AsteroidStationInteractableObject
   m_TagString: Untagged
@@ -7126,7 +7127,7 @@ Transform:
   m_GameObject: {fileID: 1730390240}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -94.98001, y: -0.7997487, z: -445.63998}
+  m_LocalPosition: {x: 911, y: -0.7997487, z: -445.63998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7250,8 +7251,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!135 &1730390246
-SphereCollider:
+--- !u!114 &1730390246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730390240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6cd96db2bf47458f4fa631be0fda5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableName: Freehold Station
+  baseInteractable: {fileID: 0}
+  defaultDialogueNodeId: start
+  currentNextDialogueNodeId: start
+  boxCollider: {fileID: 1730390247}
+  interactableDistance: 100
+--- !u!65 &1730390247
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7265,12 +7284,12 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4.99
-  m_Center: {x: 443.7, y: 0, z: 367.1}
+  m_Size: {x: 31.90448, y: 44.925552, z: 42.417816}
+  m_Center: {x: -32.362885, y: 2.2843857, z: -32.944595}
 --- !u!1 &1753141792
 GameObject:
   m_ObjectHideFlags: 0
@@ -24421,7 +24440,7 @@ Transform:
   m_GameObject: {fileID: 8971229984877059971}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 476.97095, y: -1.3201265, z: 403.01953}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3569971, y: 0.3569971, z: 0.3569971}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24680,12 +24699,12 @@ PrefabInstance:
     - target: {fileID: 6885138994593372899, guid: 0c568744faa781445b19bdd92bfae910,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9828494
       objectReference: {fileID: 0}
     - target: {fileID: 6885138994593372899, guid: 0c568744faa781445b19bdd92bfae910,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.18441005
       objectReference: {fileID: 0}
     - target: {fileID: 6885138994593372899, guid: 0c568744faa781445b19bdd92bfae910,
         type: 3}
@@ -60759,6 +60778,7 @@ MonoBehaviour:
   defaultDialogueNodeId: start
   currentNextDialogueNodeId: start
   boxCollider: {fileID: 8853633745964204500}
+  interactableDistance: 30
 --- !u!65 &8853633745964204500
 BoxCollider:
   m_ObjectHideFlags: 0

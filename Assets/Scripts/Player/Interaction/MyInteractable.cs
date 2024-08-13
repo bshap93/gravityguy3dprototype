@@ -11,6 +11,7 @@ namespace Player.Interaction
         [SerializeField] public string defaultDialogueNodeId;
         [SerializeField] public string currentNextDialogueNodeId;
         [SerializeField] public BoxCollider boxCollider;
+        [SerializeField] public float interactableDistance = 30f;
 
         private InteractiveMenu _interactiveMenu;
 

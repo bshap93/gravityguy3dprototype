@@ -11,7 +11,6 @@ namespace Player.Interaction
         public Button infoButton;
         public Button exchangeItemsButton;
         public Button dialogueButton;
-        public float interactableDistance = 30f;
         public GameObject player;
 
         private Camera _mainCamera;
@@ -47,8 +46,9 @@ namespace Player.Interaction
 
         public void SelectObject(MyInteractable interactable)
         {
-            float distance = Vector3.Distance(interactable.GetPosition(), player.transform.position);
-            if (distance <= interactableDistance)
+            var interactablePosition = interactable.boxCollider.transform.position;
+            float distance = Vector3.Distance(interactablePosition, player.transform.position);
+            if (distance <= interactable.interactableDistance)
             {
                 _selectedObject = interactable;
                 menuPanel.SetActive(true);
@@ -59,12 +59,15 @@ namespace Player.Interaction
                 dialogueButton.gameObject.SetActive(interactable.HasDialogue());
             }
             else
-                Debug.Log("Object is too far away!");
+                Debug.Log("Object is " + distance + " away, too far to interact.");
         }
 
         public void DeselectObject()
         {
             _selectedObject?.OnInteractionEnd();
+            if (_selectedObject?.baseInteractable != null)
+                _selectedObject.baseInteractable.EndInteract(gameObject);
+
             _selectedObject = null;
             menuPanel.SetActive(false);
         }
