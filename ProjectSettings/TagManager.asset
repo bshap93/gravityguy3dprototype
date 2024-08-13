@@ -5,13 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - CapitalShip
-  - CapitalShipPart
-  - Tutorial
-  - Flame
-  - PlayerThrustFlame
-  - Environment0
-  - ScienceShip
   layers:
   - Default
   - TransparentFX

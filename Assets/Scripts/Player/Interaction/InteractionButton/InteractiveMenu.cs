@@ -1,162 +1,151 @@
 using System.Collections.Generic;
-using Dialogue;
+using Player.Interaction.InteractionButton;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using Polyperfect.Crafting.Demo;
-using UnityEngine.Serialization;
 
 public class InteractiveMenu : MonoBehaviour
 {
-    public GameObject menuPanel;
-    public Text objectNameText;
-    public Button infoButton;
-    [FormerlySerializedAs("exchangeItems")] [FormerlySerializedAs("actionButton")]
-    public Button exchangeItemsButton;
-    public Button dialogueButton;
-    public float interactableDistance = 30f;
-    public GameObject player;
+    [Header("UI Elements")] [SerializeField]
+    private GameObject menuPanel;
+    [SerializeField] private Text objectNameText;
+    [SerializeField] private Button infoButton;
+    [SerializeField] private Button interactButton;
+    [SerializeField] private Button dialogueButton;
 
-    public BaseInteractable interactable;
+    [Header("Interaction Settings")] [SerializeField]
+    private float interactableDistance = 5f;
+    [SerializeField] private LayerMask interactableLayer;
+
+    [Header("References")] [SerializeField]
+    private GameObject player;
 
     private Camera mainCamera;
-    private PhysicsRaycaster physicsRaycaster;
-    private Dialoggable selectedObject;
-    private Dialoggable hoveredObject;
+    private IInteractable currentInteractable;
 
-
-    void Start()
+    private void Start()
     {
         mainCamera = Camera.main;
-        physicsRaycaster = mainCamera.GetComponent<PhysicsRaycaster>();
-        if (physicsRaycaster == null)
-        {
-            Debug.LogError("PhysicsRaycaster not found on the main camera!");
-        }
-
         menuPanel.SetActive(false);
 
         infoButton.onClick.AddListener(ShowInfo);
-        exchangeItemsButton.onClick.AddListener(ExchangeItems);
+        interactButton.onClick.AddListener(Interact);
         dialogueButton.onClick.AddListener(StartDialogue);
     }
 
-
-    void Update()
+    private void Update()
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            UnhighlightObject();
             return;
         }
 
-        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
-        pointerEventData.position = Input.mousePosition;
+        HandleInteractableDetection();
+        HandleInteraction();
+    }
 
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(pointerEventData, results);
+    private void HandleInteractableDetection()
+    {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        Dialoggable interactable = null;
-        foreach (RaycastResult result in results)
+        if (Physics.Raycast(ray, out hit, interactableDistance, interactableLayer))
         {
-            interactable = result.gameObject.GetComponent<Dialoggable>();
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
             if (interactable != null)
-                break;
-        }
-
-        if (interactable != null)
-        {
-            if (hoveredObject != interactable)
             {
-                UnhighlightObject();
-                HighlightObject(interactable);
+                if (interactable != currentInteractable)
+                {
+                    if (currentInteractable != null)
+                    {
+                        currentInteractable.OnHoverExit();
+                    }
+
+                    currentInteractable = interactable;
+                    currentInteractable.OnHoverEnter();
+                }
             }
-
-            if (Input.GetMouseButtonDown(0)) // Left mouse button
+            else
             {
-                SelectObject(interactable);
+                ClearCurrentInteractable();
             }
         }
         else
         {
-            UnhighlightObject();
-            if (Input.GetMouseButtonDown(0)) // Left mouse button
+            ClearCurrentInteractable();
+        }
+    }
+
+    private void ClearCurrentInteractable()
+    {
+        if (currentInteractable != null)
+        {
+            currentInteractable.OnHoverExit();
+            currentInteractable = null;
+        }
+    }
+
+    private void HandleInteraction()
+    {
+        if (Input.GetMouseButtonDown(0) && currentInteractable != null)
+        {
+            float distance = Vector3.Distance(currentInteractable.GetPosition(), player.transform.position);
+            if (distance <= interactableDistance)
             {
-                DeselectObject();
+                ShowMenu(currentInteractable);
+            }
+            else
+            {
+                Debug.Log($"Object is too far away. Distance: {distance}");
             }
         }
-    }
-
-    void HighlightObject(Dialoggable obj)
-    {
-        hoveredObject = obj;
-        obj.Highlight();
-    }
-
-    void UnhighlightObject()
-    {
-        if (hoveredObject != null)
+        else if (Input.GetMouseButtonDown(0) && menuPanel.activeSelf)
         {
-            hoveredObject.Unhighlight();
-            hoveredObject = null;
+            HideMenu();
         }
     }
 
-    public void SelectObject(Dialoggable obj)
+    private void ShowMenu(IInteractable interactable)
     {
-        // if distance is less than interactable distance
-        var distance = Vector3.Distance(obj.transform.position, player.transform.position);
-        if (distance > interactableDistance)
-        {
-            Debug.Log("Object is too far away!");
-            return;
-        }
-        else
-        {
-            selectedObject = obj;
-            menuPanel.SetActive(true);
-            objectNameText.text = obj.objectName;
-        }
+        menuPanel.SetActive(true);
+        objectNameText.text = interactable.GetName();
+
+        // Enable/disable buttons based on interactable capabilities
+        infoButton.gameObject.SetActive(interactable.HasInfo());
+        interactButton.gameObject.SetActive(interactable.CanInteract());
+        dialogueButton.gameObject.SetActive(interactable.HasDialogue());
     }
 
-    public void DeselectObject()
+    private void HideMenu()
     {
-        selectedObject = null;
         menuPanel.SetActive(false);
-        interactable.EndInteract(gameObject);
-    }
-
-    public void ToggleSelectedObject(Dialoggable obj)
-    {
-        if (selectedObject != null)
+        if (currentInteractable != null)
         {
-            DeselectObject();
-        }
-        else
-        {
-            SelectObject(obj);
+            currentInteractable.OnInteractionEnd();
         }
     }
 
-    void ShowInfo()
+    private void ShowInfo()
     {
-        if (selectedObject != null)
+        if (currentInteractable != null)
         {
-            Debug.Log($"Showing info for {selectedObject.objectName}");
-            // Implement info display logic here
+            currentInteractable.ShowInfo();
         }
     }
 
-    void ExchangeItems()
+    private void Interact()
     {
-        if (selectedObject != null)
+        if (currentInteractable != null)
         {
-            interactable.BeginInteract(gameObject);
+            currentInteractable.Interact();
         }
     }
 
-    void StartDialogue()
+    private void StartDialogue()
     {
-        DialogueManager.Instance.dialogueUi.StartConversation(selectedObject.dialogueNodeId);
+        if (currentInteractable != null)
+        {
+            currentInteractable.StartDialogue();
+        }
     }
 }

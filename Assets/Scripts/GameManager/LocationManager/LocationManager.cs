@@ -5,7 +5,6 @@ namespace GameManager.LocationManager
 {
     public class LocationManager : MonoBehaviour
     {
-        public ArrowController ArrowController;
         public Transform target;
         void Start()
         {
