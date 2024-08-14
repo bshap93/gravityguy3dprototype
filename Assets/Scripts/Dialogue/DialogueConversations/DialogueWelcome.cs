@@ -19,7 +19,7 @@ namespace Dialogue.DialogueConversations
             // Create test dialogue nodes
             CreateAndAddNode(
                 "start",
-                $"Good day, {playerName}. I need you to collect this load of Nitrogen pellets and the soil printer and head over to the Freehold.",
+                $"Good to see you, {playerName}. I need you to collect this load of Nitrogen pellets and the soil printer and head over to the Freehold.",
                 new List<string>
                 {
                     "What are our mission objectives?",
@@ -27,14 +27,14 @@ namespace Dialogue.DialogueConversations
                     "Will do, sir."
                 },
                 new List<string>
-                    { "mission_objectives", "ai_issue", "end_conversation" });
+                    { "mission_objectives", "ai_issue", "sendoff" });
 
 
             CreateAndAddNode(
                 "ai_issue",
                 "The AI skiff is currently undergoing maintenance. It's a routine checkup, but we need someone to deliver the supplies to the Freehold right away.",
                 new List<string> { "I understand", "Go back", "Tell me more about the AI" },
-                new List<string> { "end_conversation", "start", "ship_ai" }
+                new List<string> { "sendoff", "start", "ship_ai" }
             );
 
 
@@ -59,12 +59,23 @@ namespace Dialogue.DialogueConversations
                 new List<string> { "command_structure", "start" });
 
             CreateAndAddNode(
-                "end_conversation",
+                "sendoff",
                 "Excellent, Officer. Pick up those supplies and head over right away. And stay safe out there.",
-                new List<string>(),
-                new List<string>(),
+                new List<string> { "Ok, sir" },
+                new List<string> { "end_conversation" },
                 (node) => { DialogueManager.Instance.AddQuestFromDialogue("1"); });
+
+            CreateAndAddNode(
+                "end_conversation",
+                "End of conversation",
+                new List<string>(),
+                new List<string>());
         }
+
+        void SetupFreeholdQuartermasterDialogue()
+        {
+        }
+
 
         void CreateAndAddNode(string id, string text, List<string> choices, List<string> nextNodeIds,
             System.Action<DialogueNode> onNodeEnter = null)

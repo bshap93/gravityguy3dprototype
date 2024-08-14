@@ -11,6 +11,7 @@ namespace Quests
 
 
         public DialogueUI dialogueUi;
+        public QuestUI questUi;
 
         public List<Quest> activeQuests = new List<Quest>();
         public List<Quest> completedQuests = new List<Quest>();
@@ -45,6 +46,8 @@ namespace Quests
                 activeQuests.Add(quest);
                 Debug.Log("Added quest: " + quest.title);
             }
+
+            questUi.StartQuest(questId);
         }
 
         void CompleteQuest(string questId)

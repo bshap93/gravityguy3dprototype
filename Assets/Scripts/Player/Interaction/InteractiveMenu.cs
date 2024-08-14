@@ -42,6 +42,11 @@ namespace Player.Interaction
                 else
                     DeselectObject();
             }
+
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                DeselectObject();
+            }
         }
 
         public void SelectObject(MyInteractable interactable)
