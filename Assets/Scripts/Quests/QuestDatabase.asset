@@ -19,15 +19,18 @@ MonoBehaviour:
     isCompleted: 0
     objectives:
     - id: 1_1
-      description: Obtain Nitrogen and Printer Parts
+      description: Obtain Nitrogen Pellets
       isCompleted: 0
     - id: 1_2
-      description: Travel to Freehold
+      description: Obtain Soil Printer
       isCompleted: 0
     - id: 1_3
-      description: Give Nitrogen to Freehold
+      description: Travel to Freehold
       isCompleted: 0
     - id: 1_4
+      description: Give Nitrogen to Freehold
+      isCompleted: 0
+    - id: 1_5
       description: Give Printer Parts to Freehold
       isCompleted: 0
     completedObjectives: []

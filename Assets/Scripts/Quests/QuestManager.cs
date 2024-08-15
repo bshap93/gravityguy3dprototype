@@ -47,6 +47,7 @@ namespace Quests
                 Debug.Log("Added quest: " + quest.title);
             }
 
+            questUi.SetQuests(activeQuests);
             questUi.StartQuest(questId);
         }
 
