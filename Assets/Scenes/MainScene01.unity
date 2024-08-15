@@ -2951,7 +2951,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f787d8c31940d645a78700059bc3e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: {fileID: 4436078145145665909}
+  trackedInventories:
+  - {fileID: 4436078145145665909}
+  - {fileID: 798130375}
   activeItemObjectives:
   - objective:
       id: 1_1
@@ -2968,6 +2970,14 @@ MonoBehaviour:
     targetItemID:
       val: 3464810275771887701
     requiredAmount: 1
+    currentAmount: 0
+  - objective:
+      id: 1_4
+      description: Obtain Soil Printer
+      isCompleted: 0
+    targetItemID:
+      val: 3464810275771887701
+    requiredAmount: 0
     currentAmount: 0
   onObjectiveCompleted:
     m_PersistentCalls:
@@ -8863,8 +8873,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableName: Freehold Station
   baseInteractable: {fileID: 0}
-  defaultDialogueNodeId: start
-  currentNextDialogueNodeId: start
+  defaultDialogueNodeId: start_2
+  currentNextDialogueNodeId: start_2
   boxCollider: {fileID: 1730390247}
   interactableDistance: 100
 --- !u!65 &1730390247
