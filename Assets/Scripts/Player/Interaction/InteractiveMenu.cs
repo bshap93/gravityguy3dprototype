@@ -51,9 +51,8 @@ namespace Player.Interaction
 
         public void SelectObject(MyInteractable interactable)
         {
-            var interactablePosition = interactable.boxCollider.transform.position;
-            float distance = Vector3.Distance(interactablePosition, player.transform.position);
-            if (distance <= interactable.interactableDistance)
+            if (DistanceUtility.IsWithinInteractionDistance(
+                    player.transform, interactable.boxCollider.transform, interactable.interactableDistance))
             {
                 _selectedObject = interactable;
                 menuPanel.SetActive(true);
@@ -64,7 +63,12 @@ namespace Player.Interaction
                 dialogueButton.gameObject.SetActive(interactable.HasDialogue());
             }
             else
-                Debug.Log("Object is " + distance + " away, too far to interact.");
+            {
+                float distance = DistanceUtility.CalculateDistance(
+                    player.transform, interactable.boxCollider.transform);
+
+                Debug.Log($"Object is {distance} units away, too far to interact.");
+            }
         }
 
         public void DeselectObject()
