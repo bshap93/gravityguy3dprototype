@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,53 +6,64 @@ namespace Player.Resources
 {
     public class FuelSystem : MonoBehaviour
     {
-        [SerializeField] private float maxFuel = 100f;
-        [SerializeField] private float currentFuel;
-        [SerializeField] private float fuelConsumptionRate = 1f; // Fuel consumed per second
+        [SerializeField] private float maxFuelInGrams = 1000f; // 1 kg of fuel
+        [SerializeField] private float currentFuelInGrams;
+        [SerializeField] private float fuelConsumptionRateInGramsPerSecond = 0.1f; // 0.1 grams per second
 
         [SerializeField] private Image fuelRemainingImage;
-        [SerializeField] private Image fuelCapacityImage;
+        [SerializeField] private TMP_Text fuelTextDisplay;
+
+        // Energy density of D-T fusion is about 3.38e14 J/kg
+        private const float EnergyDensityJoulesPerKg = 3.38e14f;
+        // Let's assume 40% efficiency in converting fusion energy to thrust
+        private const float EfficiencyFactor = 0.40f;
 
         private void Start()
         {
+            currentFuelInGrams = maxFuelInGrams;
             UpdateFuelUI();
         }
 
         private void Update()
         {
-            ConsumeFuel(fuelConsumptionRate * Time.deltaTime);
             UpdateFuelUI();
         }
 
-        public void ConsumeFuel(float amount)
+        public void ConsumeFuel(float amountInGrams)
         {
-            currentFuel = Mathf.Max(0, currentFuel - amount);
+            currentFuelInGrams = Mathf.Max(0, currentFuelInGrams - amountInGrams);
         }
 
-        public void RefuelShip(float amount)
+        public void RefuelShip(float amountInGrams)
         {
-            currentFuel = Mathf.Min(maxFuel, currentFuel + amount);
+            currentFuelInGrams = Mathf.Min(maxFuelInGrams, currentFuelInGrams + amountInGrams);
         }
 
         private void UpdateFuelUI()
         {
-            float fuelPercentage = currentFuel / maxFuel;
+            float fuelPercentage = currentFuelInGrams / maxFuelInGrams;
             fuelRemainingImage.fillAmount = fuelPercentage;
+            fuelTextDisplay.text = $"Fuel: {currentFuelInGrams:F2} g ";
         }
 
         public bool HasFuel()
         {
-            return currentFuel > 0;
+            return currentFuelInGrams > 0;
         }
 
-        public float GetCurrentFuel()
+        public float GetAvailableEnergyInJoules()
         {
-            return currentFuel;
+            return currentFuelInGrams / 1000f * EnergyDensityJoulesPerKg * EfficiencyFactor;
         }
 
-        public float GetMaxFuel()
+        public float GetCurrentFuelInGrams()
         {
-            return maxFuel;
+            return currentFuelInGrams;
+        }
+
+        public float GetMaxFuelInGrams()
+        {
+            return maxFuelInGrams;
         }
     }
 }

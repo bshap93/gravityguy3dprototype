@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Player.Resources;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace GameEntityObjects.Player.Scripts
+namespace Player.PlayerController
 {
     public class PlayerController : MonoBehaviour
     {
@@ -42,13 +43,17 @@ namespace GameEntityObjects.Player.Scripts
 
         AudioSource _thrustAudioSource;
         float _verticalInput;
-        public int debrisObjectsInRange = 0;
 
         float _originalFreeLookXMaxSpeed;
         float _originalFreeLookYMaxSpeed;
 
         [FormerlySerializedAs("firstAstroidInRange")]
         public List<GameObject> targetsInRange = new List<GameObject>();
+
+        [SerializeField] private FuelSystem fuelSystem;
+        [SerializeField] private float thrustPowerInNewtons = 1000f; // 1 kN of thrust
+        [SerializeField] private float specificImpulseInSeconds = 1000000f; // Very high for fusion propulsion
+        static readonly int IsThrusting = Animator.StringToHash("isThrusting");
 
 
         void Start()
@@ -64,6 +69,16 @@ namespace GameEntityObjects.Player.Scripts
 
             _originalFreeLookXMaxSpeed = playerFreeLookCamera.m_XAxis.m_MaxSpeed;
             _originalFreeLookYMaxSpeed = playerFreeLookCamera.m_YAxis.m_MaxSpeed;
+
+            if (fuelSystem == null)
+            {
+                fuelSystem = GetComponent<FuelSystem>();
+            }
+
+            if (fuelSystem == null)
+            {
+                Debug.LogError("FuelSystem not found on the player ship!");
+            }
         }
         // Update is called once per frame
         void Update()
@@ -129,66 +144,55 @@ namespace GameEntityObjects.Player.Scripts
         }
 
 
-        void AlertPlayerLeavingAsteroidRange(GameObject asteroid)
-        {
-            Debug.Log("Asteroid is out of range");
-            debrisObjectsInRange--;
-            targetsInRange.Remove(asteroid);
-        }
-
-        void AlertPlayerOfAsteroidInRange(GameObject asteroid)
-        {
-            Debug.Log("Asteroid is in range");
-            identificationTextObject.SetActive(true);
-            var typeWriter = identificationTextObject.GetComponent<UITextTypeWriter>();
-            // typeWriter.ChangeText("Asteroid in range");
-            debrisObjectsInRange++;
-            targetsInRange.Add(asteroid);
-        }
-
-
         // Poll for input and apply thrust to the player
         void ApplyThrust()
         {
             _verticalInput = Input.GetAxis("Vertical");
-            // flames.gameObject.SetActive(_verticalInput > 0);
 
 
-            // Apply relative force to the player 
-            if (_verticalInput > 0)
+            if (_verticalInput > 0 && fuelSystem.HasFuel())
             {
-                if (thrusterAnimator[0].GetBool("isThrusting") == false)
-                {
-                    Debug.Log("Thrusting up");
-                    for (var i = 0; i < thrusterAnimator.Length; i++) thrusterAnimator[i].SetBool("isThrusting", true);
-                }
-
-                PlaySoundAtVolume(_thrustAudioSource, _originalPlayerThrusterVolume);
-
-                _playerRb.AddRelativeForce(Vector3.forward * accelerationFactor, ForceMode.Impulse);
+                ApplyForwardThrust();
             }
-            else if (_verticalInput < 0)
-            {
-                _playerRb.AddRelativeForce(Vector3.back * accelerationFactor, ForceMode.Impulse);
-                if (thrusterAnimator[0].GetBool("isThrusting"))
-                {
-                    Debug.Log("Thrusting down");
-                    for (var i = 0; i < thrusterAnimator.Length; i++) thrusterAnimator[i].SetBool("isThrusting", false);
-                }
 
-                NoisePeterOff(_thrustAudioSource, 1, 0.9f);
-            }
             else
             {
-                if (thrusterAnimator[0].GetBool("isThrusting"))
+                if (thrusterAnimator[0].GetBool(IsThrusting))
                 {
-                    for (var i = 0; i < thrusterAnimator.Length; i++) thrusterAnimator[i].SetBool("isThrusting", false);
+                    foreach (var t in thrusterAnimator)
+                        t.SetBool(IsThrusting, false);
                 }
 
                 NoisePeterOff(_thrustAudioSource, 1, 0.9f);
             }
 
             Quaternion.Euler(0.0f, cameraTransform.eulerAngles.y, 0.0f);
+        }
+        void ApplyForwardThrust(bool reversed = false)
+        {
+            float availableEnergyInJoules = fuelSystem.GetAvailableEnergyInJoules();
+            float maxThrustDuration = availableEnergyInJoules / (thrustPowerInNewtons * specificImpulseInSeconds);
+            float thrustDuration = Mathf.Min(Time.deltaTime, maxThrustDuration);
+
+            if (thrustDuration > 0)
+            {
+                if (!reversed)
+                    if (thrusterAnimator[0].GetBool(IsThrusting) == false)
+                    {
+                        for (var i = 0; i < thrusterAnimator.Length; i++)
+                            thrusterAnimator[i].SetBool(IsThrusting, true);
+                    }
+
+                PlaySoundAtVolume(_thrustAudioSource, _originalPlayerThrusterVolume);
+
+                Vector3 thrustForce = transform.forward * (thrustPowerInNewtons * thrustDuration);
+                _playerRb.AddForce(thrustForce, ForceMode.Impulse);
+
+                float fuelConsumedInGrams = (thrustPowerInNewtons * thrustDuration) /
+                    (specificImpulseInSeconds * 9.81f) * 1000f;
+
+                fuelSystem.ConsumeFuel(fuelConsumedInGrams);
+            }
         }
         void PlaySoundAtVolume(AudioSource audioSource, float volume)
         {
@@ -251,6 +255,11 @@ namespace GameEntityObjects.Player.Scripts
             {
                 NoisePeterOff(_rotateAudioSource, 1, 0.9f);
             }
+        }
+
+        public void RefuelShip(float amount)
+        {
+            fuelSystem.RefuelShip(amount);
         }
     }
 }
