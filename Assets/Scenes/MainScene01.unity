@@ -57901,7 +57901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachmentPoint: {fileID: 1800907027073970770}
-  accelerationFactor: 0.1
+  accelerationFactor: 2.08
   rotationSpeed: 1.78
   currentAttachment: {fileID: 7759127126114158035}
   identificationTextObject: {fileID: 1029298878271667692}
@@ -57917,6 +57917,9 @@ MonoBehaviour:
   fuelSystem: {fileID: 6068873173909473357}
   thrustPowerInNewtons: 1000
   specificImpulseInSeconds: 1000000
+  flipTorque: 40
+  minVelocityForFlip: 5
+  alignmentThreshold: 0.95
 --- !u!114 &6466664109386322118
 MonoBehaviour:
   m_ObjectHideFlags: 0

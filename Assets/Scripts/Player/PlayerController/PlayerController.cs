@@ -55,6 +55,12 @@ namespace Player.PlayerController
         [SerializeField] private float specificImpulseInSeconds = 1000000f; // Very high for fusion propulsion
         static readonly int IsThrusting = Animator.StringToHash("isThrusting");
 
+        [SerializeField] private float flipTorque = 10f;
+        [SerializeField] private float minVelocityForFlip = 5f;
+        [SerializeField] private float alignmentThreshold = 0.95f;
+        private bool _isFlipping = false;
+        private Vector3 _flipTarget;
+
 
         void Start()
         {
@@ -83,10 +89,21 @@ namespace Player.PlayerController
         // Update is called once per frame
         void Update()
         {
-            ApplyThrust();
-            ApplyRotationalThrust();
-            ApplyBraking();
             LockCameraRotation();
+        }
+
+        void FixedUpdate()
+        {
+            if (!_isFlipping)
+            {
+                ApplyThrust();
+                ApplyRotationalThrust();
+                ApplyBraking();
+            }
+            else
+            {
+                ContinueFlipAndBurn();
+            }
         }
         void AssignAudioSources()
         {
@@ -153,6 +170,10 @@ namespace Player.PlayerController
             if (_verticalInput > 0 && fuelSystem.HasFuel())
             {
                 ApplyForwardThrust();
+            }
+            else if (_verticalInput < 0 && !_isFlipping) // Reverse thrust
+            {
+                StartFlipAndBurn();
             }
 
             else
@@ -224,7 +245,7 @@ namespace Player.PlayerController
         // Poll for input and apply braking to the player
         void ApplyBraking()
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) || _isFlipping)
             {
                 // Braking logic here
                 if (_playerRb.velocity.magnitude > 0) _playerRb.velocity -= _playerRb.velocity * 0.01f;
@@ -235,6 +256,7 @@ namespace Player.PlayerController
                     _playerRb.angularVelocity += _playerRb.angularVelocity * 0.01f;
 
                 if (_thrustAudioSource.isPlaying == false) _thrustAudioSource.Play();
+                fuelSystem.ConsumeFuel(0.1f);
             }
         }
 
@@ -260,6 +282,44 @@ namespace Player.PlayerController
         public void RefuelShip(float amount)
         {
             fuelSystem.RefuelShip(amount);
+        }
+
+        void StartFlipAndBurn()
+        {
+            if (!_isFlipping && _playerRb.velocity.magnitude > minVelocityForFlip)
+            {
+                _isFlipping = true;
+                _flipTarget = -_playerRb.velocity.normalized;
+
+                // Stop any existing rotation
+                _playerRb.angularVelocity = Vector3.zero;
+            }
+        }
+        void ContinueFlipAndBurn()
+        {
+            // Check if we're aligned with the flip target
+            float alignment = Vector3.Dot(transform.forward, _flipTarget);
+
+            if (alignment < alignmentThreshold)
+            {
+                // Calculate the axis of rotation
+                Vector3 rotationAxis = Vector3.Cross(transform.forward, _flipTarget).normalized;
+
+                // Apply torque to rotate the ship
+                _playerRb.AddTorque(rotationAxis * flipTorque, ForceMode.Force);
+
+                // Visual feedback
+                for (var i = 0; i < thrusterAnimator.Length; i++)
+                    thrusterAnimator[i].SetBool("isThrusting", false);
+            }
+            else
+            {
+                // We're aligned, stop rotating and start reverse thrust
+                _playerRb.angularVelocity = Vector3.zero;
+                _isFlipping = false;
+                ApplyForwardThrust();
+                ApplyBraking();
+            }
         }
     }
 }
