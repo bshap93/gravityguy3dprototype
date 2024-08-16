@@ -23,6 +23,10 @@ namespace Quests
         void Start()
         {
             _allQuests = questDBTable.GetAllQuests();
+            foreach (var quest in _allQuests)
+            {
+                quest.ClearCompletedObjectives();
+            }
         }
         private void Awake()
         {

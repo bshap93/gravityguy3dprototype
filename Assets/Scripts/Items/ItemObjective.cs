@@ -1,4 +1,5 @@
 ﻿using Polyperfect.Crafting.Framework;
+using Polyperfect.Crafting.Integration;
 
 namespace Items
 
@@ -10,13 +11,20 @@ namespace Items
         public RuntimeID targetItemID;
         public int requiredAmount;
         public int currentAmount;
+        public ChildSlotsInventory itemTargetInventory;
 
-        public ItemObjective(Objective objective, RuntimeID targetItemID, int requiredAmount)
+        public ItemObjective(Objective objective,
+            RuntimeID targetItemID,
+            int requiredAmount,
+            int currentAmount,
+            ChildSlotsInventory itemTargetInventory
+        )
         {
             this.objective = objective;
             this.targetItemID = targetItemID;
             this.requiredAmount = requiredAmount;
-            this.currentAmount = 0;
+            this.currentAmount = currentAmount;
+            this.itemTargetInventory = itemTargetInventory;
         }
     }
 }

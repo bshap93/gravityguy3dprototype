@@ -45,5 +45,11 @@ namespace Quests
                 }
             }
         }
+
+        public void ClearCompletedObjectives()
+        {
+            completedObjectives.Clear();
+            isCompleted = false;
+        }
     }
 }

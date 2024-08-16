@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Dialogue;
 using UnityEngine;
 
-namespace Dialogue.DialogueConversations
+namespace GameManager.Dialogue.DialogueConversations
 {
     public class DialogueWelcome : MonoBehaviour
     {
@@ -70,10 +71,6 @@ namespace Dialogue.DialogueConversations
                 "End of conversation",
                 new List<string>(),
                 new List<string>());
-        }
-
-        void SetupFreeholdQuartermasterDialogue()
-        {
         }
 
 

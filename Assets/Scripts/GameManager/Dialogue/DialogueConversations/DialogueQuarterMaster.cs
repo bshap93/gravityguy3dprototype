@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Dialogue;
 using UnityEngine;
 
-namespace Dialogue.DialogueConversations
+namespace GameManager.Dialogue.DialogueConversations
 {
     public class DialogueQuarterMaster : MonoBehaviour
     {
@@ -15,8 +16,6 @@ namespace Dialogue.DialogueConversations
         void SetupTestDialogue()
         {
             var playerName = DialogueManager.Instance.playerName;
-            var starshipName = DialogueManager.Instance.starshipName;
-            // Create test dialogue nodes
             CreateAndAddNode(
                 "start_2",
                 $"Good to see you, {playerName}. Have you brought us the farming supplies we requested?",
@@ -70,10 +69,6 @@ namespace Dialogue.DialogueConversations
                 "End of conversation",
                 new List<string>(),
                 new List<string>());
-        }
-
-        void SetupFreeholdQuartermasterDialogue()
-        {
         }
 
 

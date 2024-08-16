@@ -83,17 +83,20 @@ namespace Items
                     var item = itemSlot.Peek();
                     if (!item.IsDefault())
                     {
-                        CheckItemObjectives(item);
+                        CheckItemObjectives(item, changedInventory);
                     }
                 }
             }
         }
 
-        private void CheckItemObjectives(ItemStack item)
+        private void CheckItemObjectives(ItemStack item, ChildSlotsInventory inventory)
         {
             List<ItemObjective> completedObjectives = new List<ItemObjective>();
 
-            foreach (var itemObjective in activeItemObjectives)
+            var inventoryActiveItemObjectives =
+                activeItemObjectives.FindAll(io => io.itemTargetInventory == inventory);
+
+            foreach (var itemObjective in inventoryActiveItemObjectives)
             {
                 if (itemObjective.targetItemID == item.ID && !itemObjective.objective.isCompleted)
                 {
@@ -121,10 +124,13 @@ namespace Items
             onObjectiveCompleted.Invoke(itemObjective.objective.id);
         }
 
-        public void AddItemObjective(string id, string description, RuntimeID targetItemID, int requiredAmount)
+        public void AddItemObjective(string id, string description, RuntimeID targetItemID, int requiredAmount,
+            int currentAmount, ChildSlotsInventory itemTargetInventory)
         {
             Objective newObjective = new Objective(id, description);
-            ItemObjective newItemObjective = new ItemObjective(newObjective, targetItemID, requiredAmount);
+            ItemObjective newItemObjective = new ItemObjective(
+                newObjective, targetItemID, requiredAmount, requiredAmount, itemTargetInventory);
+
             activeItemObjectives.Add(newItemObjective);
         }
 

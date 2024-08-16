@@ -17,5 +17,14 @@ namespace Quests
         {
             return allQuests;
         }
+
+        public void ClearCompletedObjectives(string questId)
+        {
+            var quest = GetQuest(questId);
+            if (quest != null)
+            {
+                quest.ClearCompletedObjectives();
+            }
+        }
     }
 }
