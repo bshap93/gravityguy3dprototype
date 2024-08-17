@@ -359,7 +359,7 @@ MonoBehaviour:
     type: 3}
   atmospherePrefab: {fileID: 6618739999296754934, guid: c02c8a35f49741a48b9226b348d286a5,
     type: 3}
-  planetPrefab: {fileID: 4122628466672866506, guid: 29d95e9e9c2973f4faabc52d03afa660,
+  planetPrefab: {fileID: 3764929229672166048, guid: 2378d5a249cc6c447b9bf17209d58e38,
     type: 3}
   asteroidBeltPrefab: {fileID: 7140407061862776164, guid: 99f1b320a827a1e47ad19c6fe3d3735f,
     type: 3}
@@ -368,6 +368,7 @@ MonoBehaviour:
   syntySpaceStationPrefab: {fileID: 7006187240749633683, guid: 474ce07d78dce934b94ef1e544e27fad,
     type: 3}
   scaleFactor: 10
+  orbitScaleFactor: 1000
 --- !u!114 &2145359523
 MonoBehaviour:
   m_ObjectHideFlags: 0
