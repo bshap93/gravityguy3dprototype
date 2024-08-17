@@ -57902,7 +57902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachmentPoint: {fileID: 1800907027073970770}
   accelerationFactor: 2.08
-  rotationSpeed: 1.78
+  rotationSpeed: 2.77
   currentAttachment: {fileID: 7759127126114158035}
   identificationTextObject: {fileID: 1029298878271667692}
   playerFreeLookCamera: {fileID: 651616622}
@@ -57917,7 +57917,7 @@ MonoBehaviour:
   fuelSystem: {fileID: 6068873173909473357}
   thrustPowerInNewtons: 1000
   specificImpulseInSeconds: 1000000
-  flipTorque: 40
+  flipTorque: 350.4
   minVelocityForFlip: 5
   alignmentThreshold: 0.95
 --- !u!114 &6466664109386322118
