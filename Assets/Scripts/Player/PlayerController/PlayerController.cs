@@ -62,6 +62,10 @@ namespace Player.PlayerController
         private bool _isFlipping = false;
         private Vector3 _flipTarget;
 
+        public GameObject spaceShip;
+        [SerializeField] SpaceShipController spaceShipController;
+        [SerializeField] GameObject CWThrusterCone;
+
 
         void Start()
         {
@@ -70,8 +74,6 @@ namespace Player.PlayerController
             AssignAudioSources();
 
             _originalPlayerThrusterVolume = _thrustAudioSource.volume;
-
-            GameObject.FindWithTag("PlayerThrustFlame");
 
 
             _originalFreeLookXMaxSpeed = playerFreeLookCamera.m_XAxis.m_MaxSpeed;
@@ -86,6 +88,9 @@ namespace Player.PlayerController
             {
                 Debug.LogError("FuelSystem not found on the player ship!");
             }
+
+            spaceShipController = spaceShip.GetComponent<SpaceShipController>();
+            CWThrusterCone = spaceShipController.thruster;
         }
         // Update is called once per frame
         void Update()
@@ -171,10 +176,12 @@ namespace Player.PlayerController
             if (_verticalInput > 0 && fuelSystem.HasFuel())
             {
                 ApplyForwardThrust();
+                CWThrusterCone.SetActive(true);
             }
             else if (_verticalInput < 0 && !_isFlipping) // Reverse thrust
             {
                 StartFlipAndBurn();
+                CWThrusterCone.SetActive(false);
             }
 
             else
@@ -186,6 +193,7 @@ namespace Player.PlayerController
                 }
 
                 NoisePeterOff(_thrustAudioSource, 1, 0.9f);
+                CWThrusterCone.SetActive(false);
             }
 
             Quaternion.Euler(0.0f, cameraTransform.eulerAngles.y, 0.0f);
