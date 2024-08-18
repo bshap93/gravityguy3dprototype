@@ -23,7 +23,6 @@ namespace Player.PlayerController
         public GameObject identificationTextObject;
         public CinemachineFreeLook playerFreeLookCamera;
 
-        public Animator[] thrusterAnimator;
 
         public Transform cameraTransform;
 
@@ -186,12 +185,6 @@ namespace Player.PlayerController
 
             else
             {
-                if (thrusterAnimator[0].GetBool(IsThrusting))
-                {
-                    foreach (var t in thrusterAnimator)
-                        t.SetBool(IsThrusting, false);
-                }
-
                 NoisePeterOff(_thrustAudioSource, 1, 0.9f);
                 CWThrusterCone.SetActive(false);
             }
@@ -206,13 +199,6 @@ namespace Player.PlayerController
 
             if (thrustDuration > 0)
             {
-                if (!reversed)
-                    if (thrusterAnimator[0].GetBool(IsThrusting) == false)
-                    {
-                        for (var i = 0; i < thrusterAnimator.Length; i++)
-                            thrusterAnimator[i].SetBool(IsThrusting, true);
-                    }
-
                 PlaySoundAtVolume(_thrustAudioSource, _originalPlayerThrusterVolume);
 
                 Vector3 thrustForce = transform.forward * (thrustPowerInNewtons * thrustDuration * accelerationFactor);
@@ -316,10 +302,6 @@ namespace Player.PlayerController
 
                 // Apply torque to rotate the ship
                 _playerRb.AddTorque(rotationAxis * flipTorque, ForceMode.Force);
-
-                // Visual feedback
-                for (var i = 0; i < thrusterAnimator.Length; i++)
-                    thrusterAnimator[i].SetBool("isThrusting", false);
             }
             else
             {
