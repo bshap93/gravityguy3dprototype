@@ -56839,7 +56839,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: df13a701b2fdef64db296fd627aaebaf, type: 2}
   - {fileID: -7805965318761107941, guid: 72234eb5d03ec524fa89178723e29342, type: 3}
-  - {fileID: 2100000, guid: 94d4861d2af99074db1acca1468d82f0, type: 2}
+  - {fileID: 2100000, guid: e9c8d304ceef32548b08e023a54feaaa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -57901,8 +57901,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachmentPoint: {fileID: 1800907027073970770}
-  accelerationFactor: 2.08
-  rotationSpeed: 2.77
+  accelerationFactor: 0.32
+  rotationSpeed: 1.72
+  brakingFactor: 0.03
   currentAttachment: {fileID: 7759127126114158035}
   identificationTextObject: {fileID: 1029298878271667692}
   playerFreeLookCamera: {fileID: 651616622}

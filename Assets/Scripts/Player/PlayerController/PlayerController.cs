@@ -15,6 +15,7 @@ namespace Player.PlayerController
 
         [SerializeField] private float accelerationFactor = 0.3f;
         [SerializeField] private float rotationSpeed = 0.1f;
+        [SerializeField] private float brakingFactor = 0.01f;
 
         public Attachment currentAttachment;
 
@@ -206,7 +207,7 @@ namespace Player.PlayerController
 
                 PlaySoundAtVolume(_thrustAudioSource, _originalPlayerThrusterVolume);
 
-                Vector3 thrustForce = transform.forward * (thrustPowerInNewtons * thrustDuration);
+                Vector3 thrustForce = transform.forward * (thrustPowerInNewtons * thrustDuration * accelerationFactor);
                 _playerRb.AddForce(thrustForce, ForceMode.Impulse);
 
                 float fuelConsumedInGrams = (thrustPowerInNewtons * thrustDuration) /
@@ -248,12 +249,12 @@ namespace Player.PlayerController
             if (Input.GetKey(KeyCode.Space) || _isFlipping)
             {
                 // Braking logic here
-                if (_playerRb.velocity.magnitude > 0) _playerRb.velocity -= _playerRb.velocity * 0.01f;
+                if (_playerRb.velocity.magnitude > 0) _playerRb.velocity -= _playerRb.velocity * brakingFactor;
                 // _playerRb.totalTorque -= _playerRb.totalTorque * 0.01f;
                 if (_playerRb.angularVelocity.magnitude > 0)
-                    _playerRb.angularVelocity -= _playerRb.angularVelocity * 0.01f;
+                    _playerRb.angularVelocity -= _playerRb.angularVelocity * brakingFactor;
                 else if (_playerRb.angularVelocity.magnitude < 0)
-                    _playerRb.angularVelocity += _playerRb.angularVelocity * 0.01f;
+                    _playerRb.angularVelocity += _playerRb.angularVelocity * brakingFactor;
 
                 if (_thrustAudioSource.isPlaying == false) _thrustAudioSource.Play();
                 fuelSystem.ConsumeFuel(0.1f);
