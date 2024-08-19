@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using GameManager.Dialogue;
 
 namespace Dialogue
 {
@@ -29,7 +30,7 @@ namespace Dialogue
 
         public void StartDialogue()
         {
-            DialogueManager.StartDialog(this.id);
+            HomebrewDialogueManager.StartDialog(this.id);
         }
 
         // New method to invoke the OnNodeEnter action

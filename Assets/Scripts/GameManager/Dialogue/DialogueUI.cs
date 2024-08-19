@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using Dialogue;
+using GameManager.Dialogue;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class DialogueUI : MonoBehaviour
 
     public void StartConversation(string startNodeId)
     {
-        currentNode = DialogueManager.Instance.GetDialogueNode(startNodeId);
+        currentNode = HomebrewDialogueManager.Instance.GetDialogueNode(startNodeId);
         if (currentNode != null)
         {
             gameObject.SetActive(true);
@@ -72,7 +73,7 @@ public class DialogueUI : MonoBehaviour
         if (choiceIndex < currentNode.nextNodeIds.Count)
         {
             string nextNodeId = currentNode.nextNodeIds[choiceIndex];
-            currentNode = DialogueManager.Instance.GetDialogueNode(nextNodeId);
+            currentNode = HomebrewDialogueManager.Instance.GetDialogueNode(nextNodeId);
             if (currentNode != null)
             {
                 DisplayNode(currentNode);

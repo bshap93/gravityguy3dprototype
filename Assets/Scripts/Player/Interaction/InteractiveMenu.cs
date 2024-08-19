@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Dialogue;
+using GameManager.Dialogue;
+using PixelCrushers.DialogueSystem;
 
 namespace Player.Interaction
 {
@@ -101,7 +103,7 @@ namespace Player.Interaction
         void StartDialogue()
         {
             if (_selectedObject != null)
-                DialogueManager.Instance.dialogueUi.StartConversation(_selectedObject.currentNextDialogueNodeId);
+                DialogueManager.StartConversation("New Conversation 1");
         }
 
         private void OnDestroy()

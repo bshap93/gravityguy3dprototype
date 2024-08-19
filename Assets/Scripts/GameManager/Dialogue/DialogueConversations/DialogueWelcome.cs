@@ -15,8 +15,8 @@ namespace GameManager.Dialogue.DialogueConversations
 
         void SetupTestDialogue()
         {
-            var playerName = DialogueManager.Instance.playerName;
-            var starshipName = DialogueManager.Instance.starshipName;
+            var playerName = HomebrewDialogueManager.Instance.playerName;
+            var starshipName = HomebrewDialogueManager.Instance.starshipName;
             // Create test dialogue nodes
             CreateAndAddNode(
                 "start",
@@ -64,7 +64,7 @@ namespace GameManager.Dialogue.DialogueConversations
                 "Excellent, Officer. Pick up those supplies and head over right away. And stay safe out there.",
                 new List<string> { "Ok, sir" },
                 new List<string> { "end_conversation" },
-                (node) => { DialogueManager.Instance.AddQuestFromDialogue("1"); });
+                (node) => { HomebrewDialogueManager.Instance.AddQuestFromDialogue("1"); });
 
             CreateAndAddNode(
                 "end_conversation",
@@ -86,7 +86,7 @@ namespace GameManager.Dialogue.DialogueConversations
                 OnNodeEnter = onNodeEnter // Assign the action to the OnNodeEnter field
             };
 
-            DialogueManager.Instance.AddDialogueNode(node);
+            HomebrewDialogueManager.Instance.AddDialogueNode(node);
         }
     }
 }

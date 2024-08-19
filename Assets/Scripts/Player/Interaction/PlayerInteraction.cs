@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using Dialogue;
+using GameManager.Dialogue;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    DialogueManager _dialogueManager;
+    HomebrewDialogueManager _homebrewDialogueManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _dialogueManager = DialogueManager.Instance;
+        _homebrewDialogueManager = HomebrewDialogueManager.Instance;
     }
     public void InteractWithCaptain()
     {
@@ -21,7 +22,7 @@ public class PlayerInteraction : MonoBehaviour
     void TalkToCaptain()
     {
         // Start dialogue with the captain
-        DialogueManager.StartDialog("dialogue1");
+        HomebrewDialogueManager.StartDialog("dialogue1");
 
         // When objective is completed
         GameManager.GameManager.QuestManager.CompleteObjective("quest1", "Talk to the captain");

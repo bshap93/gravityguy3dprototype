@@ -1,32 +1,32 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShipMesh : MonoBehaviour
+namespace Player.PlayerController
 {
-    private AudioSource audioSource;
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerShipMesh : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Asteroid"))
+        private AudioSource audioSource;
+        // Start is called before the first frame update
+        void Start()
         {
-            // Play other sfx
+            audioSource = GetComponent<AudioSource>();
         }
 
-        if (other.gameObject.CompareTag("CapitalShipPart"))
+        // Update is called once per frame
+        void Update()
         {
-            Debug.Log("Collided with capital ship part");
+        }
+
+        void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Asteroid"))
+            {
+                // Play other sfx
+            }
+
+            if (other.gameObject.CompareTag("CapitalShipPart"))
+            {
+                Debug.Log("Collided with capital ship part");
+            }
         }
     }
 }

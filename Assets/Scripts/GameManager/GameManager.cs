@@ -2,6 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using Dialogue;
+using GameManager.Dialogue;
 using Quests;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace GameManager
         public static GameManager Instance { get; private set; }
 
         public static QuestManager QuestManager;
-        public static DialogueManager DialogueManager;
+        public static HomebrewDialogueManager HomebrewDialogueManager;
 
         private void Awake()
         {
@@ -26,7 +27,7 @@ namespace GameManager
             }
 
             QuestManager = GetComponent<QuestManager>();
-            DialogueManager = GetComponent<DialogueManager>();
+            HomebrewDialogueManager = GetComponent<HomebrewDialogueManager>();
         }
 
         [System.Serializable]
@@ -43,7 +44,7 @@ namespace GameManager
             {
                 activeQuests = QuestManager.activeQuests,
                 completedQuests = QuestManager.completedQuests,
-                playerName = DialogueManager.playerName
+                playerName = HomebrewDialogueManager.playerName
             };
 
             var formatter = new BinaryFormatter();
@@ -65,7 +66,7 @@ namespace GameManager
             {
                 QuestManager.activeQuests = data.activeQuests;
                 QuestManager.completedQuests = data.completedQuests;
-                DialogueManager.playerName = data.playerName;
+                HomebrewDialogueManager.playerName = data.playerName;
             }
         }
     }
