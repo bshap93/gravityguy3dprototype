@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player.Effects
 {
@@ -7,9 +8,12 @@ namespace Player.Effects
     {
         public List<GameObject> forwardJets;
         public List<GameObject> backwardJets;
-        public List<GameObject> leftJets;
-        public List<GameObject> rightJets;
-        public List<GameObject> strafeHorizontalJets;
+        [FormerlySerializedAs("leftJets")] public List<GameObject> leftTurnJets;
+        [FormerlySerializedAs("rightJets")] public List<GameObject> rightTurnJets;
+        [FormerlySerializedAs("strafeHorizontalJets")]
+        public List<GameObject> strafeRightJets;
+        [FormerlySerializedAs("strafeUpJets")] public List<GameObject> strafeLeftJets;
+
 
         private List<Animator> _forwardJetAnimators;
         static readonly int IsThrusting = Animator.StringToHash("isThrusting");
@@ -21,7 +25,7 @@ namespace Player.Effects
         // Start is called before the first frame update
         void Start()
         {
-            foreach (var jet in strafeHorizontalJets)
+            foreach (var jet in strafeRightJets)
             {
                 jet.SetActive(false);
             }
@@ -36,7 +40,7 @@ namespace Player.Effects
             }
         }
 
-        void ThrustForward()
+        public void ThrustForward()
         {
             foreach (var jet in forwardJets)
             {
@@ -46,7 +50,7 @@ namespace Player.Effects
             }
         }
 
-        void EndThrusterForward()
+        public void EndThrusterForward()
         {
             foreach (var jet in forwardJets)
             {
@@ -56,7 +60,7 @@ namespace Player.Effects
             }
         }
 
-        void ThrustBackward()
+        public void ThrustBackward()
         {
             foreach (var jet in backwardJets)
             {
@@ -66,7 +70,7 @@ namespace Player.Effects
             }
         }
 
-        void EndThrusterBackward()
+        public void EndThrusterBackward()
         {
             foreach (var jet in backwardJets)
             {
@@ -76,9 +80,9 @@ namespace Player.Effects
             }
         }
 
-        void ThrustLeft()
+        public void ThrustLeft()
         {
-            foreach (var jet in leftJets)
+            foreach (var jet in leftTurnJets)
             {
                 Animator animator = jet.GetComponent<Animator>();
                 if (animator.GetBool(IsThrusting) == false)
@@ -86,9 +90,9 @@ namespace Player.Effects
             }
         }
 
-        void EndThrusterLeft()
+        public void EndThrusterLeft()
         {
-            foreach (var jet in leftJets)
+            foreach (var jet in leftTurnJets)
             {
                 Animator animator = jet.GetComponent<Animator>();
                 if (animator.GetBool(IsThrusting) == true)
@@ -96,9 +100,9 @@ namespace Player.Effects
             }
         }
 
-        void ThrustRight()
+        public void ThrustRight()
         {
-            foreach (var jet in rightJets)
+            foreach (var jet in rightTurnJets)
             {
                 Animator animator = jet.GetComponent<Animator>();
                 if (animator.GetBool(IsThrusting) == false)
@@ -106,9 +110,9 @@ namespace Player.Effects
             }
         }
 
-        void EndThrusterRight()
+        public void EndThrusterRight()
         {
-            foreach (var jet in rightJets)
+            foreach (var jet in rightTurnJets)
             {
                 Animator animator = jet.GetComponent<Animator>();
                 if (animator.GetBool(IsThrusting) == true)

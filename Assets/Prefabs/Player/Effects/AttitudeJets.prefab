@@ -39168,14 +39168,18 @@ MonoBehaviour:
   - {fileID: 8306861677843119859}
   backwardJets:
   - {fileID: 1247596962461217703}
-  - {fileID: 7164207325049119163}
-  - {fileID: 8306861677843119859}
-  leftJets:
+  - {fileID: 1676962981296402348}
+  - {fileID: 1876484098553188128}
+  leftTurnJets:
   - {fileID: 4351827830331534530}
   - {fileID: 8741314790574796408}
-  rightJets:
+  rightTurnJets:
   - {fileID: 6687324681132585557}
   - {fileID: 1930692423265837270}
+  strafeRightJets:
+  - {fileID: 1888128545183604747}
+  strafeLeftJets:
+  - {fileID: 5015847361984470411}
 --- !u!1 &6687324681132585557
 GameObject:
   m_ObjectHideFlags: 0
