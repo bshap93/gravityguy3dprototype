@@ -10,8 +10,13 @@ namespace Player.Effects
         public List<GameObject> leftJets;
         public List<GameObject> rightJets;
         public List<GameObject> strafeHorizontalJets;
-        
+
         private List<Animator> _forwardJetAnimators;
+        static readonly int IsThrusting = Animator.StringToHash("isThrusting");
+        public AttitudeJetsController(List<Animator> forwardJetAnimators)
+        {
+            _forwardJetAnimators = forwardJetAnimators;
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -20,22 +25,95 @@ namespace Player.Effects
             {
                 jet.SetActive(false);
             }
-            
-            
 
+            var jets = GameObject.FindGameObjectsWithTag("PlayerThrustFlame");
+
+            foreach (var jet in jets)
+            {
+                Animator animator = jet.GetComponent<Animator>();
+                if (animator.GetBool(IsThrusting) == true)
+                    animator.SetBool(IsThrusting, false);
+            }
         }
 
         void ThrustForward()
         {
             foreach (var jet in forwardJets)
             {
-                jet.SetActive(true);
+                Animator animator = jet.GetComponent<Animator>();
+                if (animator.GetBool(IsThrusting) == false)
+                    animator.SetBool(IsThrusting, true);
             }
         }
 
-        // Update is called once per frame
-        void Update()
+        void EndThrusterForward()
         {
+            foreach (var jet in forwardJets)
+            {
+                Animator animator = jet.GetComponent<Animator>();
+                if (animator.GetBool(IsThrusting) == true)
+                    animator.SetBool(IsThrusting, false);
+            }
+        }
+
+        void ThrustBackward()
+        {
+            foreach (var jet in backwardJets)
+            {
+                Animator animator = jet.GetComponent<Animator>();
+                if (animator.GetBool(IsThrusting) == false)
+                    animator.SetBool(IsThrusting, true);
+            }
+        }
+
+        void EndThrusterBackward()
+        {
+            foreach (var jet in backwardJets)
+            {
+                Animator animator = jet.GetComponent<Animator>();
+                if (animator.GetBool(IsThrusting) == true)
+                    animator.SetBool(IsThrusting, false);
+            }
+        }
+
+        void ThrustLeft()
+        {
+            foreach (var jet in leftJets)
+            {
+                Animator animator = jet.GetComponent<Animator>();
+                if (animator.GetBool(IsThrusting) == false)
+                    animator.SetBool(IsThrusting, true);
+            }
+        }
+
+        void EndThrusterLeft()
+        {
+            foreach (var jet in leftJets)
+            {
+                Animator animator = jet.GetComponent<Animator>();
+                if (animator.GetBool(IsThrusting) == true)
+                    animator.SetBool(IsThrusting, false);
+            }
+        }
+
+        void ThrustRight()
+        {
+            foreach (var jet in rightJets)
+            {
+                Animator animator = jet.GetComponent<Animator>();
+                if (animator.GetBool(IsThrusting) == false)
+                    animator.SetBool(IsThrusting, true);
+            }
+        }
+
+        void EndThrusterRight()
+        {
+            foreach (var jet in rightJets)
+            {
+                Animator animator = jet.GetComponent<Animator>();
+                if (animator.GetBool(IsThrusting) == true)
+                    animator.SetBool(IsThrusting, false);
+            }
         }
     }
 }

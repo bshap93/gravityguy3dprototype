@@ -18,5 +18,9 @@ public class SpaceShipController : MonoBehaviour
         decalVisual = GameObject.Find("Decal Visual");
         thruster = GameObject.Find("Thruster(Clone)");
         colliders = GameObject.Find("Colliders");
+        var attitudeThruster = Instantiate(attitudeThrusterPrefab, transform, true);
+        attitudeThruster.transform.localPosition = new Vector3(0, 0, 0);
+        attitudeThruster.transform.localRotation = new Quaternion(0, 0, 0, 1);
+        attitudeThruster.transform.localScale = new Vector3(1, 1, 1);
     }
 }
