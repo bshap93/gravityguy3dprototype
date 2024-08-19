@@ -537,6 +537,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 89af0374-c99d-4f84-be79-fc2c0479f12d
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -648,6 +652,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: ab958b59-4615-4c81-8e6b-678b1ee2c5a9
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -666,7 +674,19 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: Utilities.DialogueAudioManager, Assembly-CSharp
+            m_MethodName: PlayAudio
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: DialogueChoiceChosenSound
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 10.333336
@@ -873,6 +893,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: a61babe1-c312-46ac-8e58-4dc765d839c3
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -894,8 +918,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 48.052612
-        y: 436.84204
+        x: 44.38289
+        y: 438.67688
         width: 160
         height: 30
     - id: 11
@@ -928,6 +952,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 139d6522-370d-4921-95c2-1a3206f90491
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -949,7 +977,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 223.08772
+        x: 223.69933
         y: 432.45612
         width: 160
         height: 30
@@ -983,6 +1011,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: dde4d20b-9010-488c-a55b-f043242ed5cd
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -995,7 +1027,19 @@ MonoBehaviour:
       userScript: SetQuestState("Freehold Bound", "active")
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: Utilities.DialogueAudioManager, Assembly-CSharp
+            m_MethodName: PlayAudio
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: DialogueChoiceChosenSound
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 450.6666
@@ -1003,8 +1047,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 50.893906}
-    canvasZoom: 0.67000014
+    canvasScrollPosition: {x: 0, y: 63.76649}
+    canvasZoom: 1.09
   - id: 2
     fields:
     - title: Title
