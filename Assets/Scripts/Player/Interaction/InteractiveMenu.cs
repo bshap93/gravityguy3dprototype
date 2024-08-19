@@ -103,7 +103,9 @@ namespace Player.Interaction
         void StartDialogue()
         {
             if (_selectedObject != null)
+            {
                 DialogueManager.StartConversation("New Conversation 1");
+            }
         }
 
         private void OnDestroy()

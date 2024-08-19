@@ -386,11 +386,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -402,15 +402,23 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Will do, sir.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: AudioWait(Keyboard_2_1)
+        value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 65778cb0-b96c-42d8-a13b-4adbfb49b14d
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -433,7 +441,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 446.63156
-        y: 275.85962
+        y: 277.84967
         width: 160
         height: 30
     - id: 3
@@ -463,7 +471,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Keyboard_2_1)
+        value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 78444720-a24e-4fc3-a7e9-92726910d7b6
         type: 0
         typeString: 
       conversationID: 1
@@ -487,8 +499,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 229.82959
-        y: 261.10272
+        x: 224.85446
+        y: 263.09277
         width: 160
         height: 30
     - id: 4
@@ -514,11 +526,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Why can't the AI skiff do it?
+        value: wWhy can't the AI skiff do it?
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Keyboard_2_1)
+        value: 
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -547,7 +559,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 17.952377
-        y: 196.19048
+        y: 197.1855
         width: 160
         height: 30
     - id: 5
@@ -602,8 +614,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 10.333336
-        y: 249.99998
+        x: 8.6455765
+        y: 245.78056
         width: 160
         height: 30
     - id: 6
@@ -987,12 +999,12 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 450.6666
-        y: 431.33322
+        y: 433.238
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 107.14288}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 0, y: 50.893906}
+    canvasZoom: 0.67000014
   - id: 2
     fields:
     - title: Title
