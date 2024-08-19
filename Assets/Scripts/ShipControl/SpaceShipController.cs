@@ -9,6 +9,7 @@ public class SpaceShipController : MonoBehaviour
     [SerializeField] public GameObject decalVisual;
     [SerializeField] public GameObject thruster;
     [SerializeField] public GameObject colliders;
+    [SerializeField] public GameObject attitudeThrusterPrefab;
 
 
     void Start()
