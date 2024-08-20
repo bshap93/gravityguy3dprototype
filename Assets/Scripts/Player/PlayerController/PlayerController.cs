@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Player.Audio;
 using Player.Resources;
 using ShipControl;
 using UnityEngine;
@@ -11,6 +12,9 @@ namespace Player.PlayerController
     public class PlayerController : MonoBehaviour
     {
         public static PlayerController Instance { get; private set; }
+
+        [SerializeField] private EngineAudioManager engineAudioManager;
+        [SerializeField] private float maxSpeed = 100f; // Adjust based on your game's scale
 
         public Transform attachmentPoint;
 
@@ -37,9 +41,7 @@ namespace Player.PlayerController
 
 
         Rigidbody _playerRb;
-        AudioSource _rotateAudioSource;
 
-        AudioSource _thrustAudioSource;
         float _verticalInput;
 
         float _originalFreeLookXMaxSpeed;
@@ -65,9 +67,9 @@ namespace Player.PlayerController
         {
             _playerRb = GetComponent<Rigidbody>();
 
-            AssignAudioSources();
+            // AssignAudioSources();
 
-            _originalPlayerThrusterVolume = _thrustAudioSource.volume;
+            // _originalPlayerThrusterVolume = _thrustAudioSource.volume;
 
 
             _originalFreeLookXMaxSpeed = playerFreeLookCamera.m_XAxis.m_MaxSpeed;
@@ -85,11 +87,22 @@ namespace Player.PlayerController
 
             spaceShipController = spaceShip.GetComponent<SpaceShipController>();
             cwThrusterCone = spaceShipController.thruster;
+
+            if (engineAudioManager == null)
+            {
+                engineAudioManager = GetComponent<EngineAudioManager>();
+            }
+
+            if (engineAudioManager == null)
+            {
+                Debug.LogError("EngineAudioManager not found on the player ship!");
+            }
         }
         // Update is called once per frame
         void Update()
         {
             LockCameraRotation();
+            UpdateEngineAudio();
         }
 
         void FixedUpdate()
@@ -98,11 +111,7 @@ namespace Player.PlayerController
             ApplyRotationalThrust();
             ApplyBraking();
         }
-        void AssignAudioSources()
-        {
-            _thrustAudioSource = GetComponents<AudioSource>()[0];
-            _rotateAudioSource = GetComponents<AudioSource>()[1];
-        }
+
 
         public void AttachUpgrade(Attachment attachmentPrefab)
         {
@@ -153,6 +162,16 @@ namespace Player.PlayerController
             }
         }
 
+        void UpdateEngineAudio()
+        {
+            float currentSpeed = _playerRb.velocity.magnitude;
+            bool isThrusting = _verticalInput != 0;
+            bool hasActiveInput = isThrusting || Input.GetKey(KeyCode.LeftShift);
+            bool hasFuel = fuelSystem.HasFuel();
+
+            engineAudioManager.UpdateEngineSounds(currentSpeed, maxSpeed, isThrusting, hasActiveInput, hasFuel);
+        }
+
 
         // Poll for input and apply thrust to the player
         // ReSharper disable Unity.PerformanceAnalysis
@@ -176,7 +195,7 @@ namespace Player.PlayerController
 
             else
             {
-                NoisePeterOff(_thrustAudioSource, 1, 0.9f);
+                FadeOutAudio(engineAudioManager.mainEngineAudio, 1, 0.1f);
                 cwThrusterCone.SetActive(false);
                 spaceShipController.EndThrusterForward();
                 spaceShipController.EndThrusterBackward();
@@ -193,7 +212,7 @@ namespace Player.PlayerController
 
             if (thrustDuration > 0)
             {
-                PlaySoundAtVolume(_thrustAudioSource, _originalPlayerThrusterVolume);
+                PlaySoundAtVolume(engineAudioManager.mainEngineAudio, _originalPlayerThrusterVolume);
                 if (reversed == 1)
                     spaceShipController.ThrustForward();
                 else
@@ -220,20 +239,29 @@ namespace Player.PlayerController
                 audioSource.Play();
             }
         }
-        void NoisePeterOff(AudioSource audioSource, int lengthSeconds, float volumeDecay)
+        void FadeOutAudio(AudioSource audioSource, float fadeDuration, float endVolume = 0f)
         {
             if (!audioSource.isPlaying) return;
-            StartCoroutine(SoundActionDuration(audioSource, lengthSeconds));
-            // Gradually reduce the volume of the audio source
-            audioSource.volume *= volumeDecay;
+            StartCoroutine(FadeOutCoroutine(audioSource, fadeDuration, endVolume));
         }
 
-        static IEnumerator SoundActionDuration(AudioSource audioSource, int lengthSeconds)
+        static IEnumerator FadeOutCoroutine(AudioSource audioSource, float fadeDuration, float endVolume)
         {
-            yield return new WaitForSeconds(lengthSeconds);
+            float startVolume = audioSource.volume;
+            float elapsedTime = 0f;
 
+            while (elapsedTime < fadeDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                float newVolume = Mathf.Lerp(startVolume, endVolume, elapsedTime / fadeDuration);
+                audioSource.volume = newVolume;
+                yield return null;
+            }
 
-            audioSource.Stop();
+            if (endVolume == 0f)
+            {
+                audioSource.Stop();
+            }
         }
 
         // Poll for input and apply braking to the player
@@ -245,7 +273,7 @@ namespace Player.PlayerController
                 spaceShipController.HandleBrakingThrusters();
                 spaceShipController.HandleBrakingAngularThrusters();
 
-                PlaySoundAtVolume(_thrustAudioSource, _originalPlayerThrusterVolume);
+                PlaySoundAtVolume(engineAudioManager.mainEngineAudio, _originalPlayerThrusterVolume);
 
 
                 // Braking logic here
@@ -256,7 +284,9 @@ namespace Player.PlayerController
                 else if (_playerRb.angularVelocity.magnitude < 0)
                     _playerRb.angularVelocity += _playerRb.angularVelocity * brakingFactor;
 
-                if (_thrustAudioSource.isPlaying == false) _thrustAudioSource.Play();
+                if (engineAudioManager.mainEngineAudio.isPlaying == false)
+                    engineAudioManager.mainEngineAudio.Play();
+
                 fuelSystem.ConsumeFuel(0.1f);
             }
         }
@@ -273,7 +303,7 @@ namespace Player.PlayerController
             {
                 _playerRb.AddTorque(Vector3.up * (_horizontalInput * rotationSpeed), ForceMode.Impulse);
 
-                PlaySoundAtVolume(_rotateAudioSource, 1f);
+                PlaySoundAtVolume(engineAudioManager.idleEngineAudio, 1f);
 
                 spaceShipController.ThrustRight();
             }
@@ -281,13 +311,13 @@ namespace Player.PlayerController
             {
                 _playerRb.AddTorque(Vector3.up * (_horizontalInput * rotationSpeed), ForceMode.Impulse);
 
-                PlaySoundAtVolume(_rotateAudioSource, 1f);
+                PlaySoundAtVolume(engineAudioManager.idleEngineAudio, 1f);
 
                 spaceShipController.ThrustLeft();
             }
             else if (_horizontalInput == 0)
             {
-                NoisePeterOff(_rotateAudioSource, 1, 0.9f);
+                FadeOutAudio(engineAudioManager.idleEngineAudio, 1f);
                 spaceShipController.EndThrusterLeft();
                 spaceShipController.EndThrusterRight();
             }
