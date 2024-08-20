@@ -104,7 +104,8 @@ namespace Player.Interaction
         {
             if (_selectedObject != null)
             {
-                DialogueManager.StartConversation("New Conversation 1");
+                var selectedObjectConversation = _selectedObject.GetCurrentConversationName();
+                DialogueManager.StartConversation(selectedObjectConversation);
             }
         }
 

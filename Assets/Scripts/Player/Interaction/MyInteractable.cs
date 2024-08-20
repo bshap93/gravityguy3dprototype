@@ -1,4 +1,5 @@
-﻿using Polyperfect.Crafting.Demo;
+﻿using System.Collections.Generic;
+using Polyperfect.Crafting.Demo;
 using UnityEngine;
 
 namespace Player.Interaction
@@ -12,8 +13,14 @@ namespace Player.Interaction
         [SerializeField] public string currentNextDialogueNodeId;
         [SerializeField] public BoxCollider boxCollider;
         [SerializeField] public float interactableDistance = 30f;
+        [SerializeField] List<string> conversationNames;
 
         private InteractiveMenu _interactiveMenu;
+
+        public string GetCurrentConversationName()
+        {
+            return conversationNames[0];
+        }
 
         void Awake()
         {

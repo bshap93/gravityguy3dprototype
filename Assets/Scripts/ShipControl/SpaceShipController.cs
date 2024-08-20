@@ -1,5 +1,6 @@
 using Player.Effects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ShipControl
 {
@@ -7,7 +8,8 @@ namespace ShipControl
     {
         [SerializeField] public GameObject shapeVisual;
         [SerializeField] public GameObject decalVisual;
-        [SerializeField] public GameObject thruster;
+        [FormerlySerializedAs("thruster")] [SerializeField]
+        public GameObject mainFusionThruster;
         [SerializeField] public GameObject colliders;
         [SerializeField] public GameObject attitudeThrusterPrefab;
         [SerializeField] public AttitudeJetsController attitudeJetsController;
@@ -21,7 +23,7 @@ namespace ShipControl
         {
             shapeVisual = GameObject.Find("Shape Visual");
             decalVisual = GameObject.Find("Decal Visual");
-            thruster = GameObject.Find("Thruster(Clone)");
+            mainFusionThruster = GameObject.Find("Thruster(Clone)");
             colliders = GameObject.Find("Colliders");
             var attitudeThruster = Instantiate(attitudeThrusterPrefab, transform, true);
             attitudeThruster.transform.localPosition = new Vector3(0, 0, 0);

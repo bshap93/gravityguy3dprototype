@@ -38,6 +38,7 @@ namespace Player.Audio
             idleEngineAudio.Play();
         }
 
+
         public void UpdateEngineSounds(float speed, float maxSpeed, bool isThrusting, bool hasActiveInput, bool hasFuel)
         {
             currentSpeed = speed;
