@@ -5,22 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - CapitalShipPart
-  - PlayerThrustFlame
-  - Thruster
-  - Flame
-  - Debris
-  - Tutorial
-  - Asteroid
-  - CapitalShip
-  - Environment0
-  - ScienceShip
-  - InteractableObjects
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - InteractableObjects
+  - 
   - Water
   - UI
   - 
