@@ -1,4 +1,5 @@
 using System.Collections;
+using JetBrains.Annotations;
 using Player.Audio;
 using Player.PlayerController.Components;
 using Player.Resources;
@@ -12,7 +13,7 @@ namespace Player.PlayerController
         public static PlayerController Instance { get; private set; }
 
         [SerializeField] ShipMovement shipMovement;
-        [SerializeField] PlayerCameraController cameraController;
+        [SerializeField] [CanBeNull] PlayerCameraController cameraController;
         [SerializeField] AttachmentManager attachmentManager;
         [SerializeField] FuelSystem fuelSystem;
         [SerializeField] EngineAudioManager engineAudioManager;
@@ -62,7 +63,7 @@ namespace Player.PlayerController
         // Update is called once per frame
         void Update()
         {
-            cameraController.LockRotation();
+            cameraController?.LockRotation();
             UpdateEngineAudio();
         }
 
@@ -71,6 +72,7 @@ namespace Player.PlayerController
             shipMovement.ApplyThrust(inputManager.VerticalInput);
             shipMovement.ApplyRotationalThrust(inputManager.HorizontalInput);
             shipMovement.ApplyBraking();
+            shipMovement.FireWeapon(inputManager.FireInput);
         }
 
 

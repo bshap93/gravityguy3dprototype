@@ -7,12 +7,14 @@ namespace Player.PlayerController.Components
         public float VerticalInput { get; private set; }
         public float HorizontalInput { get; private set; }
         public bool IsBraking { get; private set; }
+        public bool FireInput { get; set; }
 
         private void Update()
         {
             VerticalInput = Input.GetAxis("Vertical");
             HorizontalInput = Input.GetAxis("Horizontal");
             IsBraking = Input.GetKey(KeyCode.Space);
+            FireInput = Input.GetMouseButton(0);
         }
 
         public void SetVerticalInput(float input)
