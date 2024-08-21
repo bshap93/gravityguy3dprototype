@@ -9,9 +9,14 @@ namespace Player.Audio
         [SerializeField] public AudioSource idleEngineAudio;
         [SerializeField] public AudioSource afterburnerAudio;
 
+        [SerializeField] public AudioSource collisionAudio;
+
         [Header("Audio Clips")] [SerializeField]
         public AudioClip engineStartClip;
         [SerializeField] public AudioClip engineShutdownClip;
+        [SerializeField] public AudioClip collisionMetallic1;
+        [SerializeField] public AudioClip collisionMetallic2;
+        [SerializeField] public float collisionHitVolumeFactor = 0.1f;
 
         [Header("Engine Sound Parameters")] [SerializeField]
         private float minEnginePitch = 0.5f;
@@ -80,6 +85,17 @@ namespace Player.Audio
             mainEngineAudio.Stop();
             mainEngineAudio.PlayOneShot(engineShutdownClip);
             isEngineRunning = false;
+        }
+
+        public void PlayCollisionHit(float linearVelocity)
+        {
+            collisionAudio.Stop();
+            collisionAudio.PlayOneShot(collisionMetallic1, linearVelocity * collisionHitVolumeFactor);
+
+            if (Random.value > 0.5f)
+            {
+                collisionAudio.PlayOneShot(collisionMetallic2, linearVelocity * collisionHitVolumeFactor);
+            }
         }
 
         private void UpdateIdleEngine()

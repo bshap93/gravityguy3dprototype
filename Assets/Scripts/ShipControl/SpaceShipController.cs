@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Player.Effects;
@@ -12,7 +13,6 @@ namespace ShipControl
     public class SpaceShipController : MonoBehaviour
     {
         [SerializeField] public GameObject shapeVisual;
-        [SerializeField] public GameObject decalVisual;
         [FormerlySerializedAs("thruster")] [SerializeField]
         public GameObject mainFusionThruster;
         [FormerlySerializedAs("colliders")] [SerializeField]
@@ -22,6 +22,7 @@ namespace ShipControl
         [SerializeField] public VelocityTracker velocityTracker;
         [SerializeField] public GameObject gunsPrefab;
         [SerializeField] public ShipMainWeapon shipMainWeapon;
+
         // [SerializeField] List<MeshCollider> meshColliderComponents;
 
         public float linearThreshold = 0.1f; // Minimum linear velocity to activate thrusters
@@ -34,24 +35,12 @@ namespace ShipControl
             GetShipBaseComponents();
             // Ship Control Components
             InitiateAttitudeThrusters();
-            var damageReceiver = collidersObject.AddComponent<DamageReceiver>();
             var guns = Instantiate(gunsPrefab, transform, true);
             guns.transform.localPosition = new Vector3(0, 0, 0);
             guns.transform.localRotation = new Quaternion(0, 0, 0, 1);
             guns.transform.localScale = new Vector3(1, 1, 1);
             shipMainWeapon = guns.GetComponent<ShipMainWeapon>();
             if (shipMainWeapon != null) shipMainWeapon.spaceShipController = this;
-
-            collidersObject.SetActive(false);
-
-            var overallMeshCollider = shapeVisual.AddComponent<MeshCollider>();
-            overallMeshCollider.convex = true;
-            shapeVisual.AddComponent<DamageReceiver>();
-
-
-            // meshColliderComponents = new List<MeshCollider>();
-            // var meshColliders = collidersObject.GetComponents<MeshCollider>();
-            // meshColliderComponents.AddRange(meshColliders);
         }
         void InitiateAttitudeThrusters()
         {
@@ -64,7 +53,7 @@ namespace ShipControl
         void GetShipBaseComponents()
         {
             shapeVisual = GameObject.Find("Shape Visual");
-            decalVisual = GameObject.Find("Decal Visual");
+            GameObject.Find("Decal Visual");
             mainFusionThruster = GameObject.Find("Thruster(Clone)");
             collidersObject = GameObject.Find("Colliders");
         }
@@ -123,6 +112,7 @@ namespace ShipControl
 
         public void ThrustForward()
         {
+            Debug.Log("Thrust Forward");
             attitudeJetsController.ThrustForward();
         }
 
@@ -164,6 +154,21 @@ namespace ShipControl
         public void FireMainWeaponOnce(bool isFiring)
         {
             shipMainWeapon.FireWeapon(isFiring);
+        }
+
+        void OnCollisionEnter(Collision other)
+        {
+            Debug.Log("Collision detected");
+        }
+
+        void OnCollisionExit(Collision other)
+        {
+            Debug.Log("Collision Exit");
+        }
+
+        void OnCollisionStay(Collision other)
+        {
+            Debug.Log("Collision Stay");
         }
     }
 }

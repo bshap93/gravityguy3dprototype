@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using JetBrains.Annotations;
 using Player.Audio;
@@ -105,6 +106,14 @@ namespace Player.PlayerController
         public void RefuelShip(float amount)
         {
             fuelSystem.RefuelShip(amount);
+        }
+
+        void OnCollisionEnter(Collision other)
+        {
+            Debug.Log("Collision detected");
+            var velocityTracker = GetComponent<VelocityTracker>();
+            var linearVelocity = velocityTracker.GetLinearVelocity().magnitude;
+            engineAudioManager.PlayCollisionHit(linearVelocity);
         }
     }
 }
