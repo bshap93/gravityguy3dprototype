@@ -1,4 +1,6 @@
+using JetBrains.Annotations;
 using Player.Effects;
+using Player.PlayerController.Components;
 using ShipControl.SCK_Specific;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,7 +18,7 @@ namespace ShipControl
         [SerializeField] public AttitudeJetsController attitudeJetsController;
         [SerializeField] public VelocityTracker velocityTracker;
         [SerializeField] public GameObject gunsPrefab;
-        [SerializeField] public DualGunsController dualGunsController;
+        [SerializeField] public ShipMainWeapon shipMainWeapon;
 
         public float linearThreshold = 0.1f; // Minimum linear velocity to activate thrusters
         public float angularThreshold = 0.1f; // Minimum angular velocity to activate thrusters
@@ -24,20 +26,31 @@ namespace ShipControl
 
         void Start()
         {
-            shapeVisual = GameObject.Find("Shape Visual");
-            decalVisual = GameObject.Find("Decal Visual");
-            mainFusionThruster = GameObject.Find("Thruster(Clone)");
-            colliders = GameObject.Find("Colliders");
-            var attitudeThruster = Instantiate(attitudeThrusterPrefab, transform, true);
+            // Ship Base Components
+            GetShipBaseComponents();
+            // Ship Control Components
+            InitiateAttitudeThrusters();
             var guns = Instantiate(gunsPrefab, transform, true);
+            guns.transform.localPosition = new Vector3(0, 0, 0);
+            guns.transform.localRotation = new Quaternion(0, 0, 0, 1);
+            guns.transform.localScale = new Vector3(1, 1, 1);
+            shipMainWeapon = guns.GetComponent<ShipMainWeapon>();
+            if (shipMainWeapon != null) shipMainWeapon.spaceShipController = this;
+        }
+        void InitiateAttitudeThrusters()
+        {
+            var attitudeThruster = Instantiate(attitudeThrusterPrefab, transform, true);
             attitudeThruster.transform.localPosition = new Vector3(0, 0, 0);
             attitudeThruster.transform.localRotation = new Quaternion(0, 0, 0, 1);
             attitudeThruster.transform.localScale = new Vector3(1, 1, 1);
             attitudeJetsController = attitudeThruster.GetComponent<AttitudeJetsController>();
-            dualGunsController = guns.GetComponent<DualGunsController>();
-            guns.transform.localPosition = new Vector3(0, 0, 0);
-            guns.transform.localRotation = new Quaternion(0, 0, 0, 1);
-            guns.transform.localScale = new Vector3(1, 1, 1);
+        }
+        void GetShipBaseComponents()
+        {
+            shapeVisual = GameObject.Find("Shape Visual");
+            decalVisual = GameObject.Find("Decal Visual");
+            mainFusionThruster = GameObject.Find("Thruster(Clone)");
+            colliders = GameObject.Find("Colliders");
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
@@ -132,9 +145,9 @@ namespace ShipControl
             attitudeJetsController.EndThrusterRight();
         }
 
-        public void Fire()
+        public void FireMainWeaponOnce(bool isFiring)
         {
-            dualGunsController.Fire();
+            shipMainWeapon.FireWeapon(isFiring);
         }
     }
 }

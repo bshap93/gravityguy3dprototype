@@ -7,24 +7,23 @@ namespace Player.PlayerController.Components
         public float VerticalInput { get; private set; }
         public float HorizontalInput { get; private set; }
         public bool IsBraking { get; private set; }
-        public bool FireInput { get; set; }
+        public bool FireInputSustained { get; set; }
+
+        public bool FireInputDown { get; set; }
+        public bool FireInputUp { get; set; }
 
         private void Update()
         {
             VerticalInput = Input.GetAxis("Vertical");
             HorizontalInput = Input.GetAxis("Horizontal");
             IsBraking = Input.GetKey(KeyCode.Space);
-            FireInput = Input.GetMouseButton(0);
+            GetWeaponsFiringInputs();
         }
-
-        public void SetVerticalInput(float input)
+        void GetWeaponsFiringInputs(int mouseButton = 1)
         {
-            VerticalInput = input;
-        }
-
-        public void SetHorizontalInput(float input)
-        {
-            HorizontalInput = input;
+            FireInputSustained = Input.GetMouseButton(mouseButton);
+            FireInputDown = Input.GetMouseButtonDown(mouseButton);
+            FireInputUp = Input.GetMouseButtonUp(mouseButton);
         }
     }
 }

@@ -5,6 +5,7 @@ using Player.PlayerController.Components;
 using Player.Resources;
 using ShipControl;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player.PlayerController
 {
@@ -13,6 +14,7 @@ namespace Player.PlayerController
         public static PlayerController Instance { get; private set; }
 
         [SerializeField] ShipMovement shipMovement;
+
         [SerializeField] [CanBeNull] PlayerCameraController cameraController;
         [SerializeField] AttachmentManager attachmentManager;
         [SerializeField] FuelSystem fuelSystem;
@@ -45,7 +47,6 @@ namespace Player.PlayerController
         [SerializeField] float alignmentThreshold = 0.95f;
         Vector3 _flipTarget;
 
-        public GameObject spaceShip;
         [SerializeField] SpaceShipController spaceShipController;
 
 
@@ -72,7 +73,7 @@ namespace Player.PlayerController
             shipMovement.ApplyThrust(inputManager.VerticalInput);
             shipMovement.ApplyRotationalThrust(inputManager.HorizontalInput);
             shipMovement.ApplyBraking();
-            shipMovement.FireWeapon(inputManager.FireInput);
+            spaceShipController.FireMainWeaponOnce(inputManager.FireInputDown);
         }
 
 

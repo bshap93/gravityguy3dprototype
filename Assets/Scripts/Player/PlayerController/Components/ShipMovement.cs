@@ -196,12 +196,6 @@ namespace Player.PlayerController.Components
             }
         }
 
-        // Fire weapon
-        public void FireWeapon(bool isFiring)
-        {
-            if (isFiring)
-                spaceShipController.Fire();
-        }
 
         void PlaySoundAtVolume(AudioSource audioSource, float volume)
         {
