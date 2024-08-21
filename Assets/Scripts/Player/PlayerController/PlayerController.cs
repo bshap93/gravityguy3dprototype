@@ -75,6 +75,7 @@ namespace Player.PlayerController
             shipMovement.ApplyRotationalThrust(inputManager.HorizontalInput);
             shipMovement.ApplyBraking();
             spaceShipController.FireMainWeaponOnce(inputManager.FireInputDown);
+            spaceShipController.FireMainWeaponContinuous(inputManager.FireInputSustained);
         }
 
 

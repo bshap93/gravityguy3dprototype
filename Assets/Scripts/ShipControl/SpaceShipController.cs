@@ -112,7 +112,6 @@ namespace ShipControl
 
         public void ThrustForward()
         {
-            Debug.Log("Thrust Forward");
             attitudeJetsController.ThrustForward();
         }
 
@@ -156,19 +155,9 @@ namespace ShipControl
             shipMainWeapon.FireWeapon(isFiring);
         }
 
-        void OnCollisionEnter(Collision other)
+        public void FireMainWeaponContinuous(bool isFiring)
         {
-            Debug.Log("Collision detected");
-        }
-
-        void OnCollisionExit(Collision other)
-        {
-            Debug.Log("Collision Exit");
-        }
-
-        void OnCollisionStay(Collision other)
-        {
-            Debug.Log("Collision Stay");
+            shipMainWeapon.FireWeaponContinuous(isFiring);
         }
     }
 }
