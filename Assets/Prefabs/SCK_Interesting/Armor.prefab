@@ -1,0 +1,284 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3366291599565594932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3099780098473568674}
+  - component: {fileID: 1600831856997084004}
+  - component: {fileID: 3167875931235821573}
+  m_Layer: 0
+  m_Name: Armor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3099780098473568674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366291599565594932}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.4}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.8}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8709836861781636976}
+  - {fileID: 8077698516628935239}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600831856997084004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366291599565594932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aeac1c5ca143e46b2071439cfb9deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageableID: 
+  healthType: {fileID: 11400000, guid: bce233b00f3b8cf46bcbec887b28cd04, type: 2}
+  healthCapacity: 2500
+  startingHealth: 2500
+  isDamageable: 1
+  isHealable: 1
+  canHealAfterDestroyed: 0
+  disableGameObjectOnDestroyed: 1
+  restoreOnEnable: 1
+  collisionImpulseToDamageFactor: 0.5
+  collisionHealthModifierType: {fileID: 11400000, guid: 03e326d90c7cda84cbf0ffad37fb024b,
+    type: 2}
+  collisionContactsLimit: 1
+  onCollision:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: VSX.UniversalVehicleCombat.CanvasGroupFader, Assembly-CSharp
+        m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRestored:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3167875931235821573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366291599565594932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e596ed2b24556f7478d1170c6f1e4bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageable: {fileID: 1600831856997084004}
+  defaultDamageAudio: {fileID: 4713750740870974698}
+  healthModifierTypeDamageAudioOverrides:
+  - healthModifierType: {fileID: 11400000, guid: 03e326d90c7cda84cbf0ffad37fb024b,
+      type: 2}
+    audioSource: {fileID: 1879182411395644587}
+  defaultHealingAudio: {fileID: 0}
+  healthModifierTypeHealingAudioOverrides: []
+--- !u!1001 &3067280096767624220
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3099780098473568674}
+    m_Modifications:
+    - target: {fileID: 118427407836170555, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_Name
+      value: CollisionAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eaf7d82eb9d57934ea1d2497059aeacc, type: 3}
+--- !u!82 &1879182411395644587 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3496227680952776887, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3067280096767624220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8709836861781636976 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5930858652921312108, guid: eaf7d82eb9d57934ea1d2497059aeacc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3067280096767624220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4963028010190358181
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3099780098473568674}
+    m_Modifications:
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566137840766678470, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+        type: 3}
+      propertyPath: m_Name
+      value: ArmorHitAudio
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 954389231010da74f9b7cf4c9cf7dc9f, type: 3}
+--- !u!82 &4713750740870974698 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 399321719886350927, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4963028010190358181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8077698516628935239 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3817354489290806498, guid: 954389231010da74f9b7cf4c9cf7dc9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4963028010190358181}
+  m_PrefabAsset: {fileID: 0}
