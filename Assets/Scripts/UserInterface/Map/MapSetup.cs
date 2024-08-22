@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class MapSetup : MonoBehaviour
+namespace UserInterface.Map
 {
-    public MapLocationManager locationManager;
-
-    void Start()
+    public class MapSetup : MonoBehaviour
     {
-        // Add locations (x and y should be between 0 and 1)
-        locationManager.AddLocationName("Hab Skiff", new Vector2(0.4f, 0.3f));
-        locationManager.AddLocationName("Fleet Headquarters", new Vector2(0.6f, 0.8f));
-        locationManager.AddLocationName("Separatists", new Vector2(0.8f, 0.4f));
+        public MapLocationManager locationManager;
+
+        void Start()
+        {
+            // Add locations (x and y should be between 0 and 1)
+            locationManager.AddLocationName("Hab Skiff", new Vector2(0.4f, 0.3f));
+            locationManager.AddLocationName("Fleet Headquarters", new Vector2(0.6f, 0.8f));
+            locationManager.AddLocationName("Separatists", new Vector2(0.8f, 0.4f));
+        }
     }
 }
