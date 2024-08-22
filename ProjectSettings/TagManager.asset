@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - PlayerThrustFlame
+  - Thruster
+  - Flame
+  - ScienceShip
+  - Tutorial
+  - Asteroid
+  - Debris
+  - CapitalShip
+  - CapitalShipPart
+  - Environment0
   layers:
   - Default
   - TransparentFX
@@ -24,8 +34,8 @@ TagManager:
   - NonWalkable
   - Background
   - Map
-  - 
-  - 
+  - GravityMap
+  - InternalGravityExempt
   - 
   - 
   - 

@@ -35,11 +35,12 @@ namespace Player.PlayerController.Components
 
         public void FireWeaponContinuous(bool isFiring)
         {
+            if (!mainWeaponTriggerable) return;
             if (isFiring)
             {
                 mainWeaponTriggerable.StartTriggering();
             }
-            else
+            else if (mainWeaponTriggerable.Triggering)
             {
                 mainWeaponTriggerable.StopTriggering();
             }
