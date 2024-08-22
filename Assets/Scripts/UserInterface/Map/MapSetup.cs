@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utilities;
 
 namespace UserInterface.Map
 {
@@ -11,7 +12,7 @@ namespace UserInterface.Map
             _locationManager = MapLocationManager.Instance;
             // Add locations (x and y should be between 0 and 1)
             _locationManager.AddLocationName("Starship Enoch", new Vector2(0.5f, 0.5f));
-            _locationManager.AddLocationName("", new Vector2(0.6f, 0.8f));
+            _locationManager.AddLocationName(CelestialNameGenerator.GeneratePlanetName(), new Vector2(0.6f, 0.8f));
             _locationManager.AddLocationName("Freehold Station", new Vector2(0.8f, 0.6f));
         }
     }

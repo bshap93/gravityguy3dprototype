@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Player.Resources
+namespace Player.InGameResources
 {
     public class FuelSystem : MonoBehaviour
     {

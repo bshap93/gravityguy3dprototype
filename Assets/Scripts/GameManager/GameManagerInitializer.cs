@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace GameManager
 {
-    public class GameInitializer : MonoBehaviour
+    public class GameManagerInitializer : MonoBehaviour
     {
         void Start()
         {

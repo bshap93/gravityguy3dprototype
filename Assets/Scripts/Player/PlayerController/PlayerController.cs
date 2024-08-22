@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using JetBrains.Annotations;
 using Player.Audio;
+using Player.InGameResources;
 using Player.PlayerController.Components;
-using Player.Resources;
 using ShipControl;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -50,6 +50,8 @@ namespace Player.PlayerController
 
         [SerializeField] SpaceShipController spaceShipController;
 
+        VelocityTracker _velocityTracker;
+
 
         private void Awake()
         {
@@ -60,6 +62,7 @@ namespace Player.PlayerController
         }
         void Start()
         {
+            _velocityTracker = GetComponent<VelocityTracker>();
             _playerRb = GetComponent<Rigidbody>();
         }
         // Update is called once per frame
@@ -71,7 +74,10 @@ namespace Player.PlayerController
 
         void FixedUpdate()
         {
-            shipMovement.ApplyThrust(inputManager.VerticalInput);
+            shipMovement.ApplyThrust(
+                inputManager.VerticalInput,
+                _velocityTracker.GetLinearVelocity().magnitude);
+
             shipMovement.ApplyRotationalThrust(inputManager.HorizontalInput);
             shipMovement.ApplyBraking();
             spaceShipController.FireMainWeaponOnce(inputManager.FireInputDown);
@@ -100,7 +106,8 @@ namespace Player.PlayerController
             bool hasActiveInput = isThrusting || Input.GetKey(KeyCode.LeftShift);
             bool hasFuel = fuelSystem.HasFuel();
 
-            engineAudioManager.UpdateEngineSounds(currentSpeed, maxSpeed, isThrusting, hasActiveInput, hasFuel);
+            engineAudioManager.UpdateEngineSounds(
+                currentSpeed, maxSpeed, isThrusting, hasActiveInput, hasFuel);
         }
 
 
@@ -112,8 +119,7 @@ namespace Player.PlayerController
         void OnCollisionEnter(Collision other)
         {
             Debug.Log("Collision detected");
-            var velocityTracker = GetComponent<VelocityTracker>();
-            var linearVelocity = velocityTracker.GetLinearVelocity().magnitude;
+            var linearVelocity = _velocityTracker.GetLinearVelocity().magnitude;
             engineAudioManager.PlayCollisionHit(linearVelocity);
         }
     }

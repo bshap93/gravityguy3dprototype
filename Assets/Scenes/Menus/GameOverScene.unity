@@ -179,17 +179,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over
+  m_text: You Died
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 42f4474ebcddc8147b6f18e6386df327, type: 2}
+  m_sharedMaterial: {fileID: -3543526638274230194, guid: 42f4474ebcddc8147b6f18e6386df327,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4292138384
+  m_fontColor: {r: 0.56554323, g: 0.836478, b: 0.83138543, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -437,6 +438,7 @@ GameObject:
   - component: {fileID: 1802045468}
   - component: {fileID: 1802045467}
   - component: {fileID: 1802045466}
+  - component: {fileID: 1802045469}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -518,6 +520,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &1802045469
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802045465}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: bfc039477360a3e4aaa9bfb95fc33446, type: 2}
 --- !u!1 &2074438671
 GameObject:
   m_ObjectHideFlags: 0

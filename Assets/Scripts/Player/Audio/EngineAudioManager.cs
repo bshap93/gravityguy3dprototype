@@ -9,14 +9,17 @@ namespace Player.Audio
         public AudioSource mainEngineAudio;
         [SerializeField] public AudioSource idleEngineAudio;
         [SerializeField] public AudioSource afterburnerAudio;
+        [SerializeField] public AudioSource fusionDriveAudio;
 
         [SerializeField] public AudioSource collisionAudio;
 
         [FormerlySerializedAs("engineStartClip")] [Header("Audio Clips")] [SerializeField]
         public AudioClip boostStartClip;
+        [SerializeField] public AudioClip boostEndClunk;
         [SerializeField] public AudioClip engineShutdownClip;
         [SerializeField] public AudioClip collisionMetallic1;
         [SerializeField] public AudioClip collisionMetallic2;
+        [SerializeField] public AudioClip fusionDriveClip;
         [SerializeField] public float collisionHitVolumeFactor = 0.1f;
 
         [Header("Engine Sound Parameters")] [SerializeField]
@@ -24,11 +27,11 @@ namespace Player.Audio
         [SerializeField] private float maxEnginePitch = 1.5f;
         [SerializeField] private float enginePitchFactor = 0.1f;
 
-        private float currentSpeed;
-        private float normalizedSpeed;
+        private float _currentSpeed;
+        private float _normalizedSpeed;
 
-        private bool isEngineRunning;
-        private bool isAfterburnerActive;
+        private bool _isEngineRunning;
+        private bool _isAfterburnerActive;
 
         private void Start()
         {
@@ -45,10 +48,11 @@ namespace Player.Audio
         }
 
 
-        public void UpdateEngineSounds(float speed, float maxSpeed, bool isThrusting, bool hasActiveInput, bool hasFuel)
+        public void UpdateEngineSounds(float speed, float maxSpeed, bool isThrusting, bool hasActiveInput, bool hasFuel
+        )
         {
-            currentSpeed = speed;
-            normalizedSpeed = Mathf.Clamp01(currentSpeed / maxSpeed);
+            _currentSpeed = speed;
+            _normalizedSpeed = Mathf.Clamp01(_currentSpeed / maxSpeed);
 
             UpdateMainEngine(isThrusting && hasFuel);
             UpdateIdleEngine();
@@ -57,20 +61,20 @@ namespace Player.Audio
 
         private void UpdateMainEngine(bool shouldBeRunning)
         {
-            if (shouldBeRunning && !isEngineRunning)
+            if (shouldBeRunning && !_isEngineRunning)
             {
                 StartEngine();
             }
-            else if (!shouldBeRunning && isEngineRunning)
+            else if (!shouldBeRunning && _isEngineRunning)
             {
                 StopEngine();
             }
 
-            if (isEngineRunning)
+            if (_isEngineRunning)
             {
-                float pitch = Mathf.Lerp(minEnginePitch, maxEnginePitch, normalizedSpeed);
+                float pitch = Mathf.Lerp(minEnginePitch, maxEnginePitch, _normalizedSpeed);
                 mainEngineAudio.pitch = pitch;
-                mainEngineAudio.volume = Mathf.Lerp(0.5f, 1f, normalizedSpeed);
+                mainEngineAudio.volume = Mathf.Lerp(0.5f, 1f, _normalizedSpeed);
             }
         }
 
@@ -78,14 +82,14 @@ namespace Player.Audio
         {
             mainEngineAudio.PlayOneShot(boostStartClip);
             mainEngineAudio.Play();
-            isEngineRunning = true;
+            _isEngineRunning = true;
         }
 
         private void StopEngine()
         {
             mainEngineAudio.Stop();
             mainEngineAudio.PlayOneShot(engineShutdownClip);
-            isEngineRunning = false;
+            _isEngineRunning = false;
         }
 
         public void PlayCollisionHit(float linearVelocity)
@@ -101,27 +105,27 @@ namespace Player.Audio
 
         private void UpdateIdleEngine()
         {
-            idleEngineAudio.volume = Mathf.Lerp(0.8f, 0.2f, normalizedSpeed);
+            idleEngineAudio.volume = Mathf.Lerp(0.8f, 0.2f, _normalizedSpeed);
         }
 
         private void UpdateAfterburner(bool shouldBeActive)
         {
-            if (shouldBeActive && !isAfterburnerActive)
+            if (shouldBeActive && !_isAfterburnerActive)
             {
                 afterburnerAudio.Play();
-                isAfterburnerActive = true;
+                _isAfterburnerActive = true;
             }
 
-            if (isAfterburnerActive)
+            if (_isAfterburnerActive)
             {
                 afterburnerAudio.volume = shouldBeActive
-                    ? Mathf.Lerp(0f, 1f, normalizedSpeed)
+                    ? Mathf.Lerp(0f, 1f, _normalizedSpeed)
                     : Mathf.Lerp(afterburnerAudio.volume, 0f, Time.deltaTime * 2f);
 
                 if (afterburnerAudio.volume < 0.01f)
                 {
                     afterburnerAudio.Stop();
-                    isAfterburnerActive = false;
+                    _isAfterburnerActive = false;
                 }
             }
         }

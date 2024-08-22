@@ -17,13 +17,18 @@ namespace Utilities
             { "New", "Old", "Great", "Lesser", "Upper", "Lower", "Inner", "Outer" };
 
         // Suffixes for planets
-        private static readonly string[] PlanetSuffixes = { "world", "terra", "globe", "sphere", "orb" };
+        private static readonly string[] PlanetSuffixes = { "world", "terra", "globe", "sphere", };
 
         // Root words for planet names
         private static readonly string[] PlanetRoots =
         {
             "Aether", "Chrom", "Dyn", "Eos", "Ferra", "Gaia", "Helio", "Io", "Jovia", "Krypto", "Luna", "Meso", "Nova",
             "Ocea", "Plu", "Quantum", "Rego", "Sola", "Terra", "Umbra", "Vortex", "Xeno", "Yggdra", "Zephyr"
+        };
+
+        private static readonly string[] RomanNumeral =
+        {
+            "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"
         };
 
         public static string GenerateStarName()
@@ -39,6 +44,8 @@ namespace Utilities
             bool usePrefix = Random.value > 0.5f;
             // 30% chance of using a suffix
             bool useSuffix = Random.value > 0.7f;
+            // 20% chance of using a Roman numeral
+            bool useRomanNumeral = Random.value > 0.8f;
 
             string name = PlanetRoots[Random.Range(0, PlanetRoots.Length)];
 
@@ -52,6 +59,12 @@ namespace Utilities
             {
                 string suffix = PlanetSuffixes[Random.Range(0, PlanetSuffixes.Length)];
                 name = $"{name}{suffix}";
+            }
+
+            if (useRomanNumeral)
+            {
+                string numeral = RomanNumeral[Random.Range(0, RomanNumeral.Length)];
+                name = $"{name} {numeral}";
             }
 
             return name;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Player.Audio;
-using Player.Resources;
+using Player.InGameResources;
 using ShipControl;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -24,6 +24,7 @@ namespace Player.PlayerController.Components
 
         [SerializeField] float thrustPowerInNewtons = 1000f; // 1 kN of thrust
         [SerializeField] float specificImpulseInSeconds = 1000000f; // Very high for fusion propulsion
+        [SerializeField] bool isFusionDriveActive;
 
 
         public void Start()
@@ -64,7 +65,7 @@ namespace Player.PlayerController.Components
 
         // Poll for input and apply thrust to the player
         // ReSharper disable Unity.PerformanceAnalysis
-        public void ApplyThrust(float verticalInput)
+        public void ApplyThrust(float verticalInput, float currentVelocity)
         {
             if (verticalInput > 0 && _fuelSystem.HasFuel())
             {
