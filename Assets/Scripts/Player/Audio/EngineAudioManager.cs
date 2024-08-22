@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player.Audio
 {
@@ -11,8 +12,8 @@ namespace Player.Audio
 
         [SerializeField] public AudioSource collisionAudio;
 
-        [Header("Audio Clips")] [SerializeField]
-        public AudioClip engineStartClip;
+        [FormerlySerializedAs("engineStartClip")] [Header("Audio Clips")] [SerializeField]
+        public AudioClip boostStartClip;
         [SerializeField] public AudioClip engineShutdownClip;
         [SerializeField] public AudioClip collisionMetallic1;
         [SerializeField] public AudioClip collisionMetallic2;
@@ -75,7 +76,7 @@ namespace Player.Audio
 
         private void StartEngine()
         {
-            mainEngineAudio.PlayOneShot(engineStartClip);
+            mainEngineAudio.PlayOneShot(boostStartClip);
             mainEngineAudio.Play();
             isEngineRunning = true;
         }
