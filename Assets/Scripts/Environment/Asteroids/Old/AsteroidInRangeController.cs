@@ -1,50 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-
-public class AsteroidInRangeController : MonoBehaviour
+namespace Environment.Asteroids.Old
 {
-    public GameObject asteroid;
-    public readonly GameObjectEvent TargetInRange = new();
-    public readonly GameObjectEvent TargetOutOfRange = new();
-    public bool isInView;
-    public GameObject mainCamera;
-
-    // Start is called before the first frame update
-    void Start()
-
+    public class AsteroidInRangeController : MonoBehaviour
     {
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        asteroid = gameObject;
-    }
+        public GameObject asteroid;
+        public readonly GameObjectEvent TargetInRange = new();
+        public readonly GameObjectEvent TargetOutOfRange = new();
+        public bool isInView;
+        public GameObject mainCamera;
 
-    // Update is called once per frame
-    void Update()
-    {
-        CheckIfThisObjectIsInView();
-    }
+        // Start is called before the first frame update
+        void Start()
 
-    void CheckIfThisObjectIsInView()
-    {
-        Vector3 screenPoint = mainCamera.GetComponent<Camera>().WorldToViewportPoint(asteroid.transform.position);
-        isInView = screenPoint is { z: > 0, x: > 0 and < 1, y: > 0 and < 1 };
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
         {
-            TargetInRange.Invoke(asteroid);
+            mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+            asteroid = gameObject;
         }
-    }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        // Update is called once per frame
+        void Update()
         {
-            TargetOutOfRange.Invoke(asteroid);
+            CheckIfThisObjectIsInView();
+        }
+
+        void CheckIfThisObjectIsInView()
+        {
+            Vector3 screenPoint = mainCamera.GetComponent<UnityEngine.Camera>()
+                .WorldToViewportPoint(asteroid.transform.position);
+
+            isInView = screenPoint is { z: > 0, x: > 0 and < 1, y: > 0 and < 1 };
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                TargetInRange.Invoke(asteroid);
+            }
+        }
+
+        void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                TargetOutOfRange.Invoke(asteroid);
+            }
         }
     }
 }

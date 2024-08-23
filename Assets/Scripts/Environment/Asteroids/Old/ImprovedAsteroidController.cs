@@ -45,7 +45,8 @@ public class ImprovedAsteroidController : MonoBehaviour
     {
         if (healthBarInstance != null)
         {
-            healthBarInstance.transform.rotation = Camera.main.transform.rotation;
+            if (UnityEngine.Camera.main != null)
+                healthBarInstance.transform.rotation = UnityEngine.Camera.main.transform.rotation;
         }
     }
 

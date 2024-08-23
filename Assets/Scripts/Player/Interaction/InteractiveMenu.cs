@@ -15,12 +15,12 @@ namespace Player.Interaction
         public Button dialogueButton;
         public GameObject player;
 
-        private Camera _mainCamera;
+        private UnityEngine.Camera _mainCamera;
         private MyInteractable _selectedObject;
 
         void Start()
         {
-            _mainCamera = Camera.main;
+            _mainCamera = UnityEngine.Camera.main;
             menuPanel.SetActive(false);
 
             infoButton.onClick.AddListener(ShowInfo);

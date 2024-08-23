@@ -109,85 +109,7 @@ MonoBehaviour:
     spritePortrait: {fileID: 21300000, guid: 705732df676b4b340ac6567be30af81d, type: 3}
     alternatePortraits: []
     spritePortraits: []
-  items:
-  - id: 1
-    fields:
-    - title: Name
-      value: Freehold Bound
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Pictures
-      value: '[]'
-      type: 3
-      typeString: CustomFieldType_Files
-    - title: Description
-      value: Proceed to the Freehold with the gear they need.
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Success Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Failure Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: State
-      value: unassigned
-      type: 0
-      typeString: CustomFieldType_QuestState
-    - title: Is Item
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Display Name
-      value: Bring Supplies to the Freehold Station
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Trackable
-      value: True
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Track
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Entry Count
-      value: 4
-      type: 1
-      typeString: CustomFieldType_Number
-    - title: Entry 1 State
-      value: unassigned
-      type: 0
-      typeString: 
-    - title: Entry 1
-      value: Pick up 30 nitrogen pellets.
-      type: 0
-      typeString: 
-    - title: Entry 2 State
-      value: unassigned
-      type: 0
-      typeString: 
-    - title: Entry 2
-      value: Pick up Soil Printer
-      type: 0
-      typeString: 
-    - title: Entry 3 State
-      value: unassigned
-      type: 0
-      typeString: 
-    - title: Entry 3
-      value: Deliver Nitrogen Pellets
-      type: 0
-      typeString: 
-    - title: Entry 4 State
-      value: unassigned
-      type: 0
-      typeString: 
-    - title: Entry 4
-      value: Deliver Soil Printer
-      type: 0
-      typeString: 
+  items: []
   locations:
   - id: 1
     fields:
@@ -302,18 +224,6 @@ MonoBehaviour:
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
-      - originConversationID: 1
-        originDialogueID: 0
-        destinationConversationID: 1
-        destinationDialogueID: 13
-        isConnector: 0
-        priority: 2
-      - originConversationID: 1
-        originDialogueID: 0
-        destinationConversationID: 1
-        destinationDialogueID: 18
-        isConnector: 0
-        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -386,7 +296,7 @@ MonoBehaviour:
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
-      conditionsString: CurrentQuestState("Freehold Bound") == "unassigned"
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1424,7 +1334,7 @@ MonoBehaviour:
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
-      conditionsString: CurrentQuestState("Freehold Bound") == "returnToNPC"
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1611,8 +1521,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Good to see you, {playerName}. Have you brought us the farming supplies
-          we requested?
+        value: Good to see you, Emir. Have you brought us the farming supplies we
+          requested?
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2435,55 +2345,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 18.666672
         y: 256.66666
-        width: 160
-        height: 30
-    - id: 16
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: Where can I find the Freehold Station. It's been a while.
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 589.33325
-        y: 98.33334
         width: 160
         height: 30
     entryGroups: []

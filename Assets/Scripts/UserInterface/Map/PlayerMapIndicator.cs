@@ -6,7 +6,7 @@ public class PlayerMapIndicator : MonoBehaviour
     public Transform player;
     public RectTransform mapRectTransform;
     public RectTransform indicatorRectTransform;
-    public Camera mapCamera;
+    public UnityEngine.Camera mapCamera;
 
     void Update()
     {
