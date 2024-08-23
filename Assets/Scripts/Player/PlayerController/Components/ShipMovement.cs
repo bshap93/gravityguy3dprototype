@@ -10,7 +10,7 @@ namespace Player.PlayerController.Components
 {
     public class ShipMovement : MonoBehaviour
     {
-        private Rigidbody _playerRb;
+        [FormerlySerializedAs("_playerRb")] public Rigidbody playerRb;
         [SerializeField] SpaceShipController spaceShipController;
         [SerializeField] GameObject spaceShip;
 
@@ -57,10 +57,23 @@ namespace Player.PlayerController.Components
             _fuelSystem = GetComponent<FuelSystem>();
         }
 
+        public void UpdateMovement(float verticalInput, float horizontalInput, bool isBraking, float currentVelocity)
+        {
+            if (isBraking)
+            {
+                ApplyBraking();
+            }
+            else
+            {
+                ApplyThrust(verticalInput, currentVelocity);
+                ApplyRotationalThrust(horizontalInput);
+            }
+        }
+
 
         public void Initialize(Rigidbody shipRigidbody)
         {
-            _playerRb = shipRigidbody;
+            playerRb = shipRigidbody;
         }
 
         // Poll for input and apply thrust to the player
@@ -95,7 +108,7 @@ namespace Player.PlayerController.Components
         {
             if (horizontalInput > 0)
             {
-                _playerRb.AddTorque(Vector3.up * (horizontalInput * rotationSpeed), ForceMode.Impulse);
+                playerRb.AddTorque(Vector3.up * (horizontalInput * rotationSpeed), ForceMode.Impulse);
 
                 PlaySoundAtVolume(engineAudioManager.idleEngineAudio, 1f);
 
@@ -103,7 +116,7 @@ namespace Player.PlayerController.Components
             }
             else if (horizontalInput < 0)
             {
-                _playerRb.AddTorque(Vector3.up * (horizontalInput * rotationSpeed), ForceMode.Impulse);
+                playerRb.AddTorque(Vector3.up * (horizontalInput * rotationSpeed), ForceMode.Impulse);
 
                 PlaySoundAtVolume(engineAudioManager.idleEngineAudio, 1f);
 
@@ -155,12 +168,12 @@ namespace Player.PlayerController.Components
 
 
                 // Braking logic here
-                if (_playerRb.velocity.magnitude > 0) _playerRb.velocity -= _playerRb.velocity * brakingFactor;
+                if (playerRb.velocity.magnitude > 0) playerRb.velocity -= playerRb.velocity * brakingFactor;
                 // _playerRb.totalTorque -= _playerRb.totalTorque * 0.01f;
-                if (_playerRb.angularVelocity.magnitude > 0)
-                    _playerRb.angularVelocity -= _playerRb.angularVelocity * brakingFactor;
-                else if (_playerRb.angularVelocity.magnitude < 0)
-                    _playerRb.angularVelocity += _playerRb.angularVelocity * brakingFactor;
+                if (playerRb.angularVelocity.magnitude > 0)
+                    playerRb.angularVelocity -= playerRb.angularVelocity * brakingFactor;
+                else if (playerRb.angularVelocity.magnitude < 0)
+                    playerRb.angularVelocity += playerRb.angularVelocity * brakingFactor;
 
                 if (engineAudioManager.mainEngineAudio.isPlaying == false)
                     engineAudioManager.mainEngineAudio.Play();
@@ -188,13 +201,19 @@ namespace Player.PlayerController.Components
                 Vector3 thrustForce = transform.forward * (thrustPowerInNewtons * thrustDuration * accelerationFactor) *
                                       reversed;
 
-                _playerRb.AddForce(thrustForce, ForceMode.Impulse);
+                playerRb.AddForce(thrustForce, ForceMode.Impulse);
 
                 float fuelConsumedInGrams = (thrustPowerInNewtons * thrustDuration) /
                     (specificImpulseInSeconds * 9.81f) * 1000f;
 
                 _fuelSystem.ConsumeFuel(fuelConsumedInGrams);
             }
+        }
+
+        public void ResetVelocityAfterTravel()
+        {
+            playerRb.velocity = Vector3.zero;
+            playerRb.angularVelocity = Vector3.zero;
         }
 
 

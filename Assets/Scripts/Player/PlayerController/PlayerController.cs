@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Environment.Area;
 using JetBrains.Annotations;
 using Player.Audio;
 using Player.InGameResources;
@@ -16,11 +17,15 @@ namespace Player.PlayerController
 
         [SerializeField] ShipMovement shipMovement;
 
+
         [SerializeField] [CanBeNull] PlayerCameraController cameraController;
         [SerializeField] AttachmentManager attachmentManager;
         [SerializeField] FuelSystem fuelSystem;
         [SerializeField] EngineAudioManager engineAudioManager;
         [SerializeField] InputManager inputManager;
+
+        [SerializeField] private AreaManager areaManager;
+
 
         [SerializeField] float maxSpeed = 100f; // Adjust based on your game's scale
 
@@ -35,9 +40,6 @@ namespace Player.PlayerController
         float _originalPlayerRotationVolume;
 
         float _originalPlayerThrusterVolume;
-
-
-        Rigidbody _playerRb;
 
 
         [SerializeField] float thrustPowerInNewtons = 1000f; // 1 kN of thrust
@@ -63,7 +65,6 @@ namespace Player.PlayerController
         void Start()
         {
             _velocityTracker = GetComponent<VelocityTracker>();
-            _playerRb = GetComponent<Rigidbody>();
         }
         // Update is called once per frame
         void Update()
@@ -74,14 +75,20 @@ namespace Player.PlayerController
 
         void FixedUpdate()
         {
-            shipMovement.ApplyThrust(
+            shipMovement.UpdateMovement(
                 inputManager.VerticalInput,
+                inputManager.HorizontalInput,
+                inputManager.IsBraking,
                 _velocityTracker.GetLinearVelocity().magnitude);
 
-            shipMovement.ApplyRotationalThrust(inputManager.HorizontalInput);
-            shipMovement.ApplyBraking();
+
             spaceShipController.FireMainWeaponOnce(inputManager.FireInputDown);
             spaceShipController.FireMainWeaponContinuous(inputManager.FireInputSustained);
+        }
+
+        public void InitiateTravel()
+        {
+            areaManager.TravelToNewArea();
         }
 
 
@@ -101,7 +108,7 @@ namespace Player.PlayerController
 
         void UpdateEngineAudio()
         {
-            float currentSpeed = _playerRb.velocity.magnitude;
+            float currentSpeed = shipMovement.playerRb.velocity.magnitude;
             bool isThrusting = inputManager.VerticalInput != 0;
             bool hasActiveInput = isThrusting || Input.GetKey(KeyCode.LeftShift);
             bool hasFuel = fuelSystem.HasFuel();
