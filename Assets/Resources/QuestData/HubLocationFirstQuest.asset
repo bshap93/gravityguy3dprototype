@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isInstance: 0
   m_originalAsset: {fileID: 0}
-  m_fileVersion: 0
+  m_fileVersion: 1
   m_id:
     m_text: Quest-162250
     m_stringAsset: {fileID: 0}
@@ -113,7 +113,22 @@ MonoBehaviour:
       m_stringAsset: {fileID: 0}
       m_textTable: {fileID: 0}
       m_textTableFieldID: 0
-    m_stateInfoList: []
+    m_stateInfoList:
+    - m_actionList: []
+      m_categorizedContentList:
+      - m_contentList: []
+      - m_contentList: []
+      - m_contentList: []
+    - m_actionList: []
+      m_categorizedContentList:
+      - m_contentList: []
+      - m_contentList: []
+      - m_contentList: []
+    - m_actionList: []
+      m_categorizedContentList:
+      - m_contentList: []
+      - m_contentList: []
+      - m_contentList: []
     m_conditionSet:
       m_conditionList: []
       m_conditionCountMode: 0

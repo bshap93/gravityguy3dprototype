@@ -20,6 +20,7 @@ public class EventManager : MonoBehaviour
 
     [CanBeNull] public CapitalShipDockingBayCollider01 capitalShipDockingBayCollider01;
     public readonly StringEvent CommenceShipDocking = new StringEvent();
+
     void Start()
     {
         capitalShipDockingBayCollider01.onPlayerShipInDockingRange.AddListener(CommenceDocking);
