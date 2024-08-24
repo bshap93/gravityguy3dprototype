@@ -8,6 +8,7 @@ using Player.PlayerController.Components;
 using ShipControl;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Player.PlayerController
 {
@@ -16,6 +17,36 @@ namespace Player.PlayerController
         public static PlayerController Instance { get; private set; }
 
         [SerializeField] ShipMovement shipMovement;
+
+        public AreaGenerator areaGenerator;
+        public Transform playerShip;
+
+        public void TravelToNewArea()
+        {
+            // Play transition effect
+            StartCoroutine(TransitionToNewArea());
+        }
+
+        private IEnumerator TransitionToNewArea()
+        {
+            // Fade out
+            yield return StartCoroutine(FadeEffect(1f));
+
+            // Generate new area and move player
+            Vector3 newAreaCenter = Random.insideUnitSphere * 10000f;
+            areaGenerator.GenerateNewArea(newAreaCenter);
+            playerShip.position = newAreaCenter;
+
+            // Fade in
+            yield return StartCoroutine(FadeEffect(0f));
+        }
+
+        private IEnumerator FadeEffect(float targetAlpha)
+        {
+            // Implement fade effect here
+
+            yield return null;
+        }
 
 
         [SerializeField] [CanBeNull] PlayerCameraController cameraController;
@@ -84,11 +115,6 @@ namespace Player.PlayerController
 
             spaceShipController.FireMainWeaponOnce(inputManager.FireInputDown);
             spaceShipController.FireMainWeaponContinuous(inputManager.FireInputSustained);
-        }
-
-        public void InitiateTravel()
-        {
-            areaManager.TravelToNewArea();
         }
 
 
