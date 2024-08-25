@@ -519,7 +519,12 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'SetQuestEntryState("Freehold Bound", 1, "success");
+
+        SetQuestEntryState("Freehold
+        Bound", 2, "active");
+
+        SetQuestEntryState("Freehold Bound", 3, "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
