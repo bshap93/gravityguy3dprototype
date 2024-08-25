@@ -118,7 +118,6 @@ namespace Player.Interaction
         {
             if (_selectedObject != null)
             {
-                _selectedObject.StartQuestDialogue();
             }
         }
         public void TradeAndExchange()

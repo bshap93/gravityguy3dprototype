@@ -101,7 +101,7 @@ MonoBehaviour:
       m_textTable: {fileID: 0}
       m_textTableFieldID: 0
     m_internalName:
-      m_text: Get
+      m_text: Talk to Lisa Chen
       m_stringAsset: {fileID: 0}
       m_textTable: {fileID: 0}
       m_textTableFieldID: 0
@@ -137,8 +137,8 @@ MonoBehaviour:
     m_childIndexList: 0100000002000000
     m_canvasRect:
       serializedVersion: 2
-      x: 57.999992
-      y: 35.333336
+      x: 57.33332
+      y: 37.333336
       width: 120
       height: 48
   - m_id:
