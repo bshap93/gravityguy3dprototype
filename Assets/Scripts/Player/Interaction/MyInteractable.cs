@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using PixelCrushers.QuestMachine;
 using Polyperfect.Crafting.Demo;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace Player.Interaction
         [SerializeField] public BoxCollider boxCollider;
         [SerializeField] public float interactableDistance = 30f;
         [SerializeField] List<string> conversationNames;
+        [SerializeField] List<QuestGiver> questGivers;
 
         private InteractiveMenu _interactiveMenu;
 
@@ -37,6 +39,22 @@ namespace Player.Interaction
         {
             if (_interactiveMenu != null)
                 _interactiveMenu.SelectObject(this);
+        }
+
+        public void StartQuestDialogue()
+        {
+            if (questGivers != null && questGivers.Count == 1) // Only one quest giver
+            {
+                questGivers[0].StartDialogueWithPlayer();
+            }
+            else if (questGivers != null && questGivers.Count > 1) // Multiple quest givers
+            {
+                // let the Player choose which quest giver to interact with
+            }
+            else // No quest givers
+            {
+                Debug.Log("No quest givers found.");
+            }
         }
 
         public void OnHoverEnter()

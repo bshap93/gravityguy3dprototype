@@ -1,19 +1,26 @@
+using Michsky.MUIP;
 using UnityEngine;
 using UnityEngine.UI;
-using Dialogue;
-using GameManager.Dialogue;
 using PixelCrushers.DialogueSystem;
+using TMPro;
 
 namespace Player.Interaction
 {
     public class InteractiveMenu : MonoBehaviour
     {
         public GameObject menuPanel;
-        public Text objectNameText;
-        public Button infoButton;
-        public Button exchangeItemsButton;
-        public Button dialogueButton;
+        public TMP_Text objectNameText;
+        public ButtonManager infoButton;
+        public ButtonManager exchangeItemsButton;
+        public ButtonManager dialogueButton;
+        public ButtonManager questInfoButton;
         public GameObject player;
+        public AudioSource interactiveMenuUISound;
+
+        public AudioClip openingSound;
+        public AudioClip closingSound;
+        public AudioClip selectSound;
+        public AudioClip tooFarSound;
 
         private UnityEngine.Camera _mainCamera;
         private MyInteractable _selectedObject;
@@ -24,7 +31,7 @@ namespace Player.Interaction
             menuPanel.SetActive(false);
 
             infoButton.onClick.AddListener(ShowInfo);
-            exchangeItemsButton.onClick.AddListener(ExchangeItems);
+            exchangeItemsButton.onClick.AddListener(TradeAndExchange);
             dialogueButton.onClick.AddListener(StartDialogue);
         }
 
@@ -58,11 +65,12 @@ namespace Player.Interaction
             {
                 _selectedObject = interactable;
                 menuPanel.SetActive(true);
-                objectNameText.text = interactable.GetName();
+                objectNameText.SetText(interactable.GetName());
 
                 infoButton.gameObject.SetActive(interactable.HasInfo());
                 exchangeItemsButton.gameObject.SetActive(interactable.CanInteract());
                 dialogueButton.gameObject.SetActive(interactable.HasDialogue());
+                interactiveMenuUISound.PlayOneShot(openingSound);
             }
             else
             {
@@ -70,6 +78,7 @@ namespace Player.Interaction
                     player.transform, interactable.boxCollider.transform);
 
                 Debug.Log($"Object is {distance} units away, too far to interact.");
+                interactiveMenuUISound.PlayOneShot(tooFarSound);
             }
         }
 
@@ -81,39 +90,53 @@ namespace Player.Interaction
 
             _selectedObject = null;
             menuPanel.SetActive(false);
+
+            interactiveMenuUISound.PlayOneShot(closingSound);
         }
 
-        void ShowInfo()
+        public void ShowInfo()
         {
             if (_selectedObject != null)
             {
                 Debug.Log($"Showing info for {_selectedObject.interactableName}");
                 _selectedObject.ShowInfo();
+                interactiveMenuUISound.PlayOneShot(selectSound);
             }
         }
 
-        void ExchangeItems()
-        {
-            if (_selectedObject?.baseInteractable != null)
-                _selectedObject.baseInteractable.BeginInteract(gameObject);
-            else
-                Debug.LogWarning("No interactable found for crafting system!");
-        }
-
-        void StartDialogue()
+        public void StartDialogue()
         {
             if (_selectedObject != null)
             {
                 var selectedObjectConversation = _selectedObject.GetCurrentConversationName();
                 DialogueManager.StartConversation(selectedObjectConversation);
             }
+
+            interactiveMenuUISound.PlayOneShot(selectSound);
         }
+        public void GetQuestInfo()
+        {
+            if (_selectedObject != null)
+            {
+                _selectedObject.StartQuestDialogue();
+            }
+        }
+        public void TradeAndExchange()
+        {
+            if (_selectedObject?.baseInteractable != null)
+                _selectedObject.baseInteractable.BeginInteract(gameObject);
+            else
+                Debug.LogWarning("No interactable found for crafting system!");
+
+            interactiveMenuUISound.PlayOneShot(selectSound);
+        }
+
 
         private void OnDestroy()
         {
             // Remove listeners to prevent potential memory leaks
             infoButton.onClick.RemoveListener(ShowInfo);
-            exchangeItemsButton.onClick.RemoveListener(ExchangeItems);
+            exchangeItemsButton.onClick.RemoveListener(TradeAndExchange);
             dialogueButton.onClick.RemoveListener(StartDialogue);
         }
     }

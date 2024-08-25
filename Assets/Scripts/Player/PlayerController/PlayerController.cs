@@ -53,7 +53,8 @@ namespace Player.PlayerController
         [SerializeField] AttachmentManager attachmentManager;
         [SerializeField] FuelSystem fuelSystem;
         [SerializeField] EngineAudioManager engineAudioManager;
-        [SerializeField] InputManager inputManager;
+        [FormerlySerializedAs("inputManager")] [SerializeField]
+        PlayerShipControlInput playerShipControlInput;
 
         [SerializeField] private AreaManager areaManager;
 
@@ -107,14 +108,14 @@ namespace Player.PlayerController
         void FixedUpdate()
         {
             shipMovement.UpdateMovement(
-                inputManager.VerticalInput,
-                inputManager.HorizontalInput,
-                inputManager.IsBraking,
+                playerShipControlInput.VerticalInput,
+                playerShipControlInput.HorizontalInput,
+                playerShipControlInput.IsBraking,
                 _velocityTracker.GetLinearVelocity().magnitude);
 
 
-            spaceShipController.FireMainWeaponOnce(inputManager.FireInputDown);
-            spaceShipController.FireMainWeaponContinuous(inputManager.FireInputSustained);
+            spaceShipController.FireMainWeaponOnce(playerShipControlInput.FireInputDown);
+            spaceShipController.FireMainWeaponContinuous(playerShipControlInput.FireInputSustained);
         }
 
 
@@ -135,7 +136,7 @@ namespace Player.PlayerController
         void UpdateEngineAudio()
         {
             float currentSpeed = shipMovement.playerRb.velocity.magnitude;
-            bool isThrusting = inputManager.VerticalInput != 0;
+            bool isThrusting = playerShipControlInput.VerticalInput != 0;
             bool hasActiveInput = isThrusting || Input.GetKey(KeyCode.LeftShift);
             bool hasFuel = fuelSystem.HasFuel();
 

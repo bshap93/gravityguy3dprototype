@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: FirstQuestDatabase
   m_EditorClassIdentifier: 
   m_description: 
-  m_questAssets: []
+  m_questAssets:
+  - {fileID: 11400000, guid: 76b7ba4e93ea684479a562c7bbc4d1be, type: 2}
   m_images: []

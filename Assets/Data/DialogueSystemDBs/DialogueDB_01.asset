@@ -379,7 +379,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 446.63156
-        y: 278.53693
+        y: 279.2695
         width: 160
         height: 30
     - id: 3
@@ -758,13 +758,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'SetQuestState("Freehold Bound", "active");
-
-        SetQuestState("Freehold
-        Bound", "unassigned");
-
-        ShowAlert("Freehold Bound: Bring the Freehold
-        Colony Necessary Agriculture Supplies")'
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1395,8 +1389,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1.0416565}
-    canvasZoom: 0.6400006
+    canvasScrollPosition: {x: 0, y: 60.371567}
+    canvasZoom: 0.67000055
   - id: 2
     fields:
     - title: Title
