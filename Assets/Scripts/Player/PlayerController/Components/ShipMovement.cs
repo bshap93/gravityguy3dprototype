@@ -15,7 +15,6 @@ namespace Player.PlayerController.Components
         [SerializeField] GameObject spaceShip;
 
         [SerializeField] EngineAudioManager engineAudioManager;
-        FuelSystem _fuelSystem;
 
         [SerializeField] float accelerationFactor = 0.3f;
         [SerializeField] float rotationSpeed = 0.1f;
@@ -26,17 +25,17 @@ namespace Player.PlayerController.Components
         [SerializeField] float specificImpulseInSeconds = 1000000f; // Very high for fusion propulsion
         [SerializeField] bool isFusionDriveActive;
 
+        [SerializeField] FuelSystem fuelSystem;
+
+        [SerializeField] float brakingFuelConsumptionFactor = 0.1f;
+
 
         public void Start()
         {
             _originalPlayerThrusterVolume = engineAudioManager.mainEngineAudio.volume;
 
-            if (_fuelSystem == null)
-            {
-                _fuelSystem = GetComponent<FuelSystem>();
-            }
 
-            if (_fuelSystem == null)
+            if (fuelSystem == null)
             {
                 Debug.LogError("FuelSystem not found on the player ship!");
             }
@@ -52,9 +51,6 @@ namespace Player.PlayerController.Components
             {
                 Debug.LogError("EngineAudioManager not found on the player ship!");
             }
-
-
-            _fuelSystem = GetComponent<FuelSystem>();
         }
 
         public void UpdateMovement(float verticalInput, float horizontalInput, bool isBraking, float currentVelocity)
@@ -80,7 +76,7 @@ namespace Player.PlayerController.Components
         // ReSharper disable Unity.PerformanceAnalysis
         public void ApplyThrust(float verticalInput, float currentVelocity)
         {
-            if (verticalInput > 0 && _fuelSystem.HasFuel())
+            if (verticalInput > 0 && fuelSystem.HasFuel())
             {
                 ApplyForwardThrust();
                 spaceShipController.ThrustForward();
@@ -178,14 +174,14 @@ namespace Player.PlayerController.Components
                 if (engineAudioManager.mainEngineAudio.isPlaying == false)
                     engineAudioManager.mainEngineAudio.Play();
 
-                _fuelSystem.ConsumeFuel(0.1f);
+                fuelSystem.ConsumeFuel(brakingFuelConsumptionFactor);
             }
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
         void ApplyForwardThrust(int reversed = 1)
         {
-            float availableEnergyInJoules = _fuelSystem.GetAvailableEnergyInJoules();
+            float availableEnergyInJoules = fuelSystem.GetAvailableEnergyInJoules();
             float maxThrustDuration = availableEnergyInJoules / (thrustPowerInNewtons * specificImpulseInSeconds);
             float thrustDuration = Mathf.Min(Time.deltaTime, maxThrustDuration);
 
@@ -206,7 +202,7 @@ namespace Player.PlayerController.Components
                 float fuelConsumedInGrams = (thrustPowerInNewtons * thrustDuration) /
                     (specificImpulseInSeconds * 9.81f) * 1000f;
 
-                _fuelSystem.ConsumeFuel(fuelConsumedInGrams);
+                fuelSystem.ConsumeFuel(fuelConsumedInGrams);
             }
         }
 
