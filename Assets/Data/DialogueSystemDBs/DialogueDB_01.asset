@@ -257,7 +257,7 @@ MonoBehaviour:
   - id: 2
     fields:
     - title: Name
-      value: Agri-Printer Parts
+      value: Agri-Printer Parts Kit
       type: 0
       typeString: 
     - title: Initial Value
@@ -443,7 +443,7 @@ MonoBehaviour:
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: CurrentQuestEntryState("Freehold Bound", 1) ~= "success"
       userScript: SetQuestEntryState("Freehold Bound", 1, "success")
       onExecute:
         m_PersistentCalls:
@@ -530,8 +530,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 446.63156
-        y: 279.2695
+        x: 447.62662
+        y: 277.27945
         width: 160
         height: 30
     - id: 3
@@ -921,7 +921,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 451.5438
+        x: 452.53885
         y: 359.33923
         width: 160
         height: 30
@@ -1166,7 +1166,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 450.6666
-        y: 433.238
+        y: 435.22806
         width: 160
         height: 30
     - id: 13

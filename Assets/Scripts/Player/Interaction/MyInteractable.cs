@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using PixelCrushers.DialogueSystem;
 using Polyperfect.Crafting.Demo;
 using UnityEngine;
 
@@ -16,6 +18,8 @@ namespace Player.Interaction
         [SerializeField] List<string> conversationNames;
 
         private InteractiveMenu _interactiveMenu;
+        private Transform playerTransform;
+
 
         public string GetCurrentConversationName()
         {
@@ -27,6 +31,8 @@ namespace Player.Interaction
             baseInteractable = GetComponent<BaseInteractable>();
             currentNextDialogueNodeId = defaultDialogueNodeId;
             _interactiveMenu = FindObjectOfType<InteractiveMenu>();
+
+            playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
         }
 
         public string GetName() => interactableName;
@@ -73,6 +79,30 @@ namespace Player.Interaction
             // Clean up any resources if needed
             baseInteractable = null;
             _interactiveMenu = null;
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            // Check if the collider belongs to the player
+            if (other.CompareTag("Player") && playerTransform != null)
+            {
+                float distance = Vector3.Distance(playerTransform.position, transform.position);
+
+                // Check if the player is within interaction range
+                if (distance <= interactableDistance)
+                {
+                    // Set the quest entry to success
+                    SetQuestEntryToSuccess();
+                }
+            }
+        }
+
+        private void SetQuestEntryToSuccess(string questName = "Freehold Bound", int entryNumber = 4)
+
+        {
+            // Set the specified quest entry to success
+            QuestLog.SetQuestEntryState(questName, entryNumber, QuestState.Success);
+            Debug.Log($"Quest entry {entryNumber} for quest '{questName}' set to success.");
         }
     }
 }

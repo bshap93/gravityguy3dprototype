@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class StringEvent : UnityEvent<string>
 {
@@ -15,31 +16,42 @@ public class GameObjectEvent : UnityEvent<GameObject>
 
 public class EventManager : MonoBehaviour
 {
-    // Instance
     public static EventManager Instance { get; private set; }
 
-    [CanBeNull] public CapitalShipDockingBayCollider01 capitalShipDockingBayCollider01;
-    public readonly StringEvent CommenceShipDocking = new StringEvent();
+    [FormerlySerializedAs("DeathEvent")] public UnityEvent<string> deathEvent;
 
-    void Start()
+    private void Awake()
     {
-        capitalShipDockingBayCollider01.onPlayerShipInDockingRange.AddListener(CommenceDocking);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        // Initialize your events here
+        deathEvent = new UnityEvent<string>();
     }
 
-    void CommenceDocking()
+
+    public void PlayerDeath()
     {
-        CommenceShipDocking.Invoke("Press 'X' to dock");
+        deathEvent = new StringEvent();
+        deathEvent.Invoke("Player has died");
     }
 
 
     public void StartFadeToBlack()
     {
-        SceneManager.LoadScene("GameOverScene");
-        // after 1 second, change to game over scene 
+        StartCoroutine(ChangeScene());
     }
     IEnumerator ChangeScene()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("GameOverScene");
+        // Restart the scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

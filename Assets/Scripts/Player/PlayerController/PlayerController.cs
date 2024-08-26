@@ -85,6 +85,7 @@ namespace Player.PlayerController
         [SerializeField] SpaceShipController spaceShipController;
 
         VelocityTracker _velocityTracker;
+        Vector3 _initialPosition;
 
 
         private void Awake()
@@ -93,10 +94,18 @@ namespace Player.PlayerController
             Instance = this;
             // Initialize components
             shipMovement.Initialize(GetComponent<Rigidbody>());
+            _initialPosition = transform.position;
+            // Subscribe to EventManager DetahEvent
+        }
+        void OnPlayerDeath(string arg0)
+        {
+            transform.position = _initialPosition;
         }
         void Start()
         {
             _velocityTracker = GetComponent<VelocityTracker>();
+
+            EventManager.Instance.deathEvent.AddListener(OnPlayerDeath);
         }
         // Update is called once per frame
         void Update()
