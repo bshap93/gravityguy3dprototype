@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Items;
+using JetBrains.Annotations;
 using PixelCrushers.DialogueSystem;
 using Polyperfect.Crafting.Demo;
 using UnityEngine;
@@ -19,7 +21,16 @@ namespace Player.Interaction
 
         private InteractiveMenu _interactiveMenu;
         private Transform playerTransform;
+        [CanBeNull] InteractableRangeEntered interactableRangeEntered;
 
+        void Start()
+        {
+            // if component is not found, add it
+            if (interactableRangeEntered == null)
+
+
+                interactableRangeEntered = GetComponent<InteractableRangeEntered>();
+        }
 
         public string GetCurrentConversationName()
         {
@@ -83,21 +94,26 @@ namespace Player.Interaction
 
         void OnTriggerEnter(Collider other)
         {
-            // Check if the collider belongs to the player
-            if (other.CompareTag("Player") && playerTransform != null)
-            {
-                float distance = Vector3.Distance(playerTransform.position, transform.position);
-
-                // Check if the player is within interaction range
-                if (distance <= interactableDistance)
+            if (interactableRangeEntered != null)
+                // Check if the collider belongs to the player
+                if (other.CompareTag("Player") && playerTransform != null)
                 {
-                    // Set the quest entry to success
-                    SetQuestEntryToSuccess();
+                    float distance = Vector3.Distance(playerTransform.position, transform.position);
+
+                    // Check if the player is within interaction range
+                    if (distance <= interactableDistance)
+                    {
+                        // Set the quest entry to success
+
+                        SetQuestEntryToState(
+                            interactableRangeEntered.QuestName,
+                            interactableRangeEntered.QuestEntryNumber);
+                    }
                 }
-            }
         }
 
-        private void SetQuestEntryToSuccess(string questName = "Freehold Bound", int entryNumber = 4)
+        private void SetQuestEntryToState(string questName, int entryNumber,
+            QuestState questState = QuestState.Success)
 
         {
             // Set the specified quest entry to success
