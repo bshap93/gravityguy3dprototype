@@ -34,10 +34,6 @@ namespace GameManager.Quests
                 QuestLog.SetQuestEntryState(questName, 5, QuestState.Active);
                 // QuestLog.SetQuestEntryState(questName, 5, QuestState.Active);
 
-                  FreeholdAsteroidBaseInventoryController.AddItemObjectiveWrapper("3D Printer");
-                FreeholdAsteroidBaseInventoryController.AddItemObjectiveWrapper("Nitrogen Pellet");
-
-
                 Debug.Log($"Entries 4 of quest '{questName}' have been activated.");
             }
 

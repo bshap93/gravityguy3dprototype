@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Environment.Area;
+using GameManager;
 using JetBrains.Annotations;
 using Player.Audio;
 using Player.InGameResources;
@@ -106,6 +107,13 @@ namespace Player.PlayerController
             _velocityTracker = GetComponent<VelocityTracker>();
 
             EventManager.Instance.deathEvent.AddListener(OnPlayerDeath);
+
+            OdinDebugStartManager debugManager = FindObjectOfType<OdinDebugStartManager>();
+            if (debugManager != null && debugManager.debugStartPoints.Count > 0)
+            {
+                // The game was started in debug mode, so don't do normal initialization
+                return;
+            }
         }
         // Update is called once per frame
         void Update()

@@ -1,8 +1,10 @@
+using System.Diagnostics;
 using Michsky.MUIP;
 using UnityEngine;
 using UnityEngine.UI;
 using PixelCrushers.DialogueSystem;
 using TMPro;
+using Debug = UnityEngine.Debug;
 
 namespace Player.Interaction
 {
@@ -109,7 +111,12 @@ namespace Player.Interaction
             if (_selectedObject != null)
             {
                 var selectedObjectConversation = _selectedObject.GetCurrentConversationName();
+                Debug.Log("Starting dialogue with " + selectedObjectConversation);
                 DialogueManager.StartConversation(selectedObjectConversation);
+            }
+            else
+            {
+                Debug.LogWarning("No interactable found for dialogue system!");
             }
 
             interactiveMenuUISound.PlayOneShot(selectSound);

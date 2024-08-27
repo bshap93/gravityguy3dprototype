@@ -21,15 +21,9 @@ namespace Player.Interaction
 
         private InteractiveMenu _interactiveMenu;
         private Transform playerTransform;
-        [CanBeNull] InteractableRangeEntered interactableRangeEntered;
 
         void Start()
         {
-            // if component is not found, add it
-            if (interactableRangeEntered == null)
-
-
-                interactableRangeEntered = GetComponent<InteractableRangeEntered>();
         }
 
         public string GetCurrentConversationName()
@@ -94,20 +88,6 @@ namespace Player.Interaction
 
         void OnTriggerEnter(Collider other)
         {
-            if (interactableRangeEntered != null)
-                // Check if the collider belongs to the player
-                if (other.CompareTag("Player") && playerTransform != null)
-                {
-                    float distance = Vector3.Distance(playerTransform.position, transform.position);
-
-                    // Check if the player is within interaction range
-                    if (distance <= interactableDistance)
-                    {
-                        // Set the quest entry to success
-
-                        Debug.Log("Player is within interaction range.");
-                    }
-                }
         }
 
         private void SetQuestEntryToState(string questName, int entryNumber,

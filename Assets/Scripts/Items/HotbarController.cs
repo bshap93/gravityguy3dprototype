@@ -4,6 +4,7 @@ using PixelCrushers.DialogueSystem;
 using Polyperfect.Crafting.Framework;
 using Polyperfect.Crafting.Integration;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Items
 {
@@ -16,6 +17,8 @@ namespace Items
         public GameObject[] hotbarSlots;
         public List<ItemObjective> ItemObjectives = new List<ItemObjective>();
         // Start is called before the first frame update
+
+        [FormerlySerializedAs("ItemList")] public List<ItemStack> itemList = new List<ItemStack>();
 
         void Awake()
         {
@@ -45,6 +48,7 @@ namespace Items
                 "AddItemObjective", this,
                 SymbolExtensions.GetMethodInfo(() => HotbarController.AddItemObjectiveWrapper(null)));
         }
+
 
         public void AddItemObjective(ItemObjective itemObjective)
         {
@@ -135,6 +139,33 @@ namespace Items
         {
             // Unregister the method when this object is destroyed
             Lua.UnregisterFunction("AddItemObjective");
+        }
+
+        public static void DeliverItemsToNpcWrapper(string npcName)
+        {
+            if (Instance != null)
+            {
+                Instance.DeliverItemsToNpc(npcName);
+            }
+            else
+            {
+                Debug.LogError("HotbarController instance is not set.");
+            }
+        }
+
+        public void DeliverItemsToNpc(string npcName)
+        {
+            if (npcName == "Nathan Hale")
+            {
+                var childSlotsInventotry = GetComponent<ChildSlotsInventory>();
+                // Empty the hotbar slots
+                foreach (var hotbarSlot in hotbarSlots)
+                {
+                    var hotbarSlotItem = hotbarSlot.GetComponent<UGUITransferableItemSlot>();
+                    hotbarSlotItem.ExtractAll();
+                    Debug.Log("Items delivered to Nathan Hale.");
+                }
+            }
         }
     }
 }

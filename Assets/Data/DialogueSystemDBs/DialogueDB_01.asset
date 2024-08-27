@@ -109,6 +109,32 @@ MonoBehaviour:
     spritePortrait: {fileID: 21300000, guid: 705732df676b4b340ac6567be30af81d, type: 3}
     alternatePortraits: []
     spritePortraits: []
+  - id: 4
+    fields:
+    - title: Name
+      value: DanaThompson
+      type: 0
+      typeString: 
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Rear-Admiral of the Enoch
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: Dana Thompson
+      type: 0
+      typeString: 
+    portrait: {fileID: 2800000, guid: f9ed946de487afe498c93e196d2c5e8a, type: 3}
+    spritePortrait: {fileID: 21300000, guid: f9ed946de487afe498c93e196d2c5e8a, type: 3}
+    alternatePortraits: []
+    spritePortraits: []
   items:
   - id: 1
     fields:
@@ -206,9 +232,59 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: Group
-      value: Main Quest
+      value: Delivery
       type: 0
       typeString: CustomFieldType_Text
+  - id: 2
+    fields:
+    - title: Name
+      value: Rescue the Mayor's Daughter
+      type: 0
+      typeString: 
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: 
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: 
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Group
+      value: Rescue
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Talk to Rear-Admiral Dana Thompson
+      type: 0
+      typeString: 
   locations:
   - id: 1
     fields:
@@ -436,6 +512,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: CurrentQuestEntryState("Freehold Bound", 1) ~= "success"
+        and (CurrentQuestState("Freehold Bound") ~= "success")
       userScript: SetQuestEntryState("Freehold Bound", 1, "success")
       onExecute:
         m_PersistentCalls:
@@ -1214,7 +1291,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: CurrentQuestEntryState("Freehold Bound", 5) == "success"
-        and (CurrentQuestEntryState("Freehold Bound", 6) == "success")
+        and (CurrentQuestEntryState("Freehold Bound", 6) == "success") and (CurrentQuestState("Freehold
+        Bound") ~= "success")
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1222,7 +1300,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 602.2252
-        y: 140.82307
+        y: 140.0655
         width: 160
         height: 30
     - id: 14
@@ -1279,7 +1357,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 691.24945
+        x: 692.0071
         y: 241.45831
         width: 160
         height: 30
@@ -1338,7 +1416,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 899.58264
-        y: 239.37488
+        y: 238.61731
         width: 160
         height: 30
     - id: 16
@@ -1462,7 +1540,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: What's on your mind?
+        value: 'We have another situation. '
         type: 0
         typeString: 
       - title: Sequence
@@ -1483,6 +1561,12 @@ MonoBehaviour:
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
+      - originConversationID: 1
+        originDialogueID: 18
+        destinationConversationID: 1
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
       conditionsString: CurrentQuestState("Freehold Bound") == "success"
       userScript: 
       onExecute:
@@ -1490,8 +1574,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 902.93604
-        y: 126.90033
+        x: 1015.0571
+        y: 129.17305
         width: 160
         height: 30
     - id: 19
@@ -1539,13 +1623,62 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1104.7906
-        y: 202.9166
+        x: 1113.1239
+        y: 205.18933
+        width: 160
+        height: 30
+    - id: 20
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1312.7843
+        y: 206.44574
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.67000055
+    canvasZoom: 0.8800005
   - id: 2
     fields:
     - title: Title
@@ -2288,7 +2421,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Excellent, Officer. Pick up those supplies and head over right away.
+        value: Excellent, Officer. Drop off those supplies and head over right away.
           And stay safe out there.
         type: 0
         typeString: CustomFieldType_Text
@@ -2297,7 +2430,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
-        value: 8a0e17d1-441b-41fe-b624-45717226c75f
+        value: 0c53c80b-6c2d-4b76-8d10-471a22c3d5f0
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -2315,26 +2448,19 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'SetQuestEntryState("Freehold Bound", 4, "success");
+
+        SetQuestEntryState("Freehold
+        Bound", 5, "success");
+
+        SetQuestEntryState("Freehold Bound", 6, "active")'
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 0}
-            m_TargetAssemblyTypeName: Utilities.DialogueAudioManager, Assembly-CSharp
-            m_MethodName: PlayAudio
-            m_Mode: 5
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: Button_2_1
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 486.4389
-        y: 389.3502
+        y: 362.3502
         width: 160
         height: 30
     - id: 12
@@ -2497,8 +2623,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1.0000002
+    canvasScrollPosition: {x: 54.893143, y: 135.58252}
+    canvasZoom: 1.0300002
   syncInfo:
     syncActors: 0
     syncItems: 0

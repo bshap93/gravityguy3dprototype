@@ -134,7 +134,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: State
-      value: unassigned
+      value: active
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Is Item
@@ -153,24 +153,62 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
-  - id: 2
-    fields:
-    - title: Name
-      value: New Item 2
+    - title: Entry Count
+      value: 6
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 2 State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 2
+      value: Collect 30 Nitrogen Pellets
       type: 0
       typeString: CustomFieldType_Text
-    - title: Pictures
-      value: '[]'
-      type: 3
-      typeString: CustomFieldType_Files
-    - title: Description
-      value: 
+    - title: Entry 3 State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 3
+      value: Collect Printer Parts
       type: 0
       typeString: CustomFieldType_Text
-    - title: Is Item
-      value: True
-      type: 2
-      typeString: CustomFieldType_Boolean
+    - title: Entry 1
+      value: Speak with Science Officer Lisa Chen
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 4 State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 4
+      value: Deliver the Nitrogen Pellets
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 5 State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 5
+      value: Deliver the Printer Parts
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 6 State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 6
+      value: Return to Lisa Chen
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Group
+      value: Main Quest
+      type: 0
+      typeString: CustomFieldType_Text
   locations:
   - id: 1
     fields:
@@ -197,15 +235,29 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: New Variable 1
+      value: Nitrogen Pellets
       type: 0
       typeString: 
     - title: Initial Value
-      value: 
-      type: 6
-      typeString: CustomFieldType_Item
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
     - title: Description
-      value: 
+      value: Nitrogen Pellets
+      type: 0
+      typeString: 
+  - id: 2
+    fields:
+    - title: Name
+      value: Agri-Printer Parts Kit
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: Agricultural Printer Parts
       type: 0
       typeString: 
   conversations:
@@ -299,6 +351,18 @@ MonoBehaviour:
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
+      - originConversationID: 1
+        originDialogueID: 0
+        destinationConversationID: 1
+        destinationDialogueID: 13
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 0
+        destinationConversationID: 1
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -371,8 +435,8 @@ MonoBehaviour:
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: 
+      conditionsString: CurrentQuestEntryState("Freehold Bound", 1) ~= "success"
+      userScript: SetQuestEntryState("Freehold Bound", 1, "success")
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -447,14 +511,19 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'SetQuestEntryState("Freehold Bound", 1, "success");
+
+        SetQuestEntryState("Freehold
+        Bound", 2, "active");
+
+        SetQuestEntryState("Freehold Bound", 3, "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 446.63156
-        y: 279.2695
+        x: 447.62662
+        y: 277.27945
         width: 160
         height: 30
     - id: 3
@@ -833,13 +902,18 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'SetQuestEntryState("Freehold Bound", 1, "success");
+
+        SetQuestEntryState("Freehold
+        Bound", 2, "active");
+
+        SetQuestEntryState("Freehold Bound", 3, "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 451.5438
+        x: 452.53885
         y: 359.33923
         width: 160
         height: 30
@@ -1065,7 +1139,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: SetQuestState("Freehold Bound", "active")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -1084,7 +1158,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 450.6666
-        y: 433.238
+        y: 435.22806
         width: 160
         height: 30
     - id: 13
@@ -1139,7 +1213,8 @@ MonoBehaviour:
         destinationDialogueID: 15
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: CurrentQuestEntryState("Freehold Bound", 5) == "success"
+        and (CurrentQuestEntryState("Freehold Bound", 6) == "success")
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1147,7 +1222,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 602.2252
-        y: 141.63608
+        y: 140.82307
         width: 160
         height: 30
     - id: 14
@@ -1194,8 +1269,10 @@ MonoBehaviour:
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
-      conditionsString: CurrentQuestState("Freehold Bound") == "active" and (CurrentQuestState("Freehold
-        Bound") == "active")
+      conditionsString: (CurrentQuestEntryState("Freehold Bound", 4) == "active")
+        or (CurrentQuestEntryState("Freehold Bound", 5) == "active") or (CurrentQuestEntryState("Freehold
+        Bound", 6) == "active") or (CurrentQuestEntryState("Freehold Bound", 2) ==
+        "active") or (CurrentQuestEntryState("Freehold Bound", 3) == "active")
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1250,8 +1327,11 @@ MonoBehaviour:
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
-      conditionsString: CurrentQuestState("Freehold Bound") == "success"
-      userScript: 
+      conditionsString: 
+      userScript: 'SetQuestEntryState("Freehold Bound", 7, "success");
+
+        SetQuestState("Freehold
+        Bound", "success")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1403,15 +1483,15 @@ MonoBehaviour:
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: CurrentQuestState("Freehold Bound") == "success"
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1103.749
-        y: 152.9166
+        x: 902.93604
+        y: 126.90033
         width: 160
         height: 30
     - id: 19
@@ -1465,7 +1545,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8200004
+    canvasZoom: 0.67000055
   - id: 2
     fields:
     - title: Title
@@ -2217,7 +2297,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
-        value: 8a0e17d1-441b-41fe-b624-45717226c75f
+        value: 0c53c80b-6c2d-4b76-8d10-471a22c3d5f0
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -2254,7 +2334,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 486.4389
-        y: 389.3502
+        y: 362.3502
         width: 160
         height: 30
     - id: 12
@@ -2417,7 +2497,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 57.333313, y: 226.66666}
     canvasZoom: 1.0000002
   syncInfo:
     syncActors: 0
