@@ -1,4 +1,5 @@
-﻿using PixelCrushers.DialogueSystem;
+﻿using Items;
+using PixelCrushers.DialogueSystem;
 using UnityEngine;
 
 namespace GameManager.Quests
@@ -30,17 +31,27 @@ namespace GameManager.Quests
             {
                 // Set entries 4 and 5 to active
                 QuestLog.SetQuestEntryState(questName, 4, QuestState.Active);
+                QuestLog.SetQuestEntryState(questName, 5, QuestState.Active);
                 // QuestLog.SetQuestEntryState(questName, 5, QuestState.Active);
+
+                  FreeholdAsteroidBaseInventoryController.AddItemObjectiveWrapper("3D Printer");
+                FreeholdAsteroidBaseInventoryController.AddItemObjectiveWrapper("Nitrogen Pellet");
+
 
                 Debug.Log($"Entries 4 of quest '{questName}' have been activated.");
             }
 
-            if (QuestLog.GetQuestEntryState(questName, 4) == QuestState.Success)
+            if (QuestLog.GetQuestEntryState(questName, 4) == QuestState.Success &&
+                QuestLog.GetQuestEntryState(questName, 5) == QuestState.Success)
             {
-                QuestLog.SetQuestEntryState(questName, 5, QuestState.Active);
-                Debug.Log($"Entry 5 of quest '{questName}' has been activated.");
                 QuestLog.SetQuestEntryState(questName, 6, QuestState.Active);
-                Debug.Log($"Entry 6 of quest '{questName}' has been activated.");
+
+                Debug.Log($"Entries 6 of quest '{questName}' have been activated.");
+            }
+
+            if (QuestLog.GetQuestEntryState(questName, 6) == QuestState.Success)
+            {
+                QuestLog.SetQuestState(questName, QuestState.Active);
             }
         }
 

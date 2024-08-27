@@ -4,7 +4,7 @@ namespace CameraScripts.Minimap
 {
     public class PointOfInterest : MonoBehaviour
     {
-        public enum POIType
+        public enum PoiType
         {
             Player,
             Asteroid,
@@ -15,7 +15,7 @@ namespace CameraScripts.Minimap
             // Add more types as needed
         }
 
-        public POIType type;
+        public PoiType type;
         public Sprite minimapIcon;
         public string poiName;
     }

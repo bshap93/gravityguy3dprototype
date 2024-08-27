@@ -105,9 +105,7 @@ namespace Player.Interaction
                     {
                         // Set the quest entry to success
 
-                        SetQuestEntryToState(
-                            interactableRangeEntered.QuestName,
-                            interactableRangeEntered.QuestEntryNumber);
+                        Debug.Log("Player is within interaction range.");
                     }
                 }
         }
