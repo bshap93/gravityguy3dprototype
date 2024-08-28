@@ -18,14 +18,159 @@ namespace Player.PlayerController
     {
         public static PlayerController Instance { get; private set; }
 
-        [SerializeField] ShipMovement shipMovement;
+        [SerializeField] private ShipMovement shipMovement;
+        [SerializeField] private PlayerCameraController cameraController;
+        [SerializeField] private AttachmentManager attachmentManager;
+        [SerializeField] private FuelSystem fuelSystem;
+        [SerializeField] private EngineAudioManager engineAudioManager;
+        [SerializeField] private PlayerShipControlInput playerShipControlInput;
+        [SerializeField] private AreaManager areaManager;
+        [SerializeField] private float maxSpeed = 100f;
+
+        private IShip currentShip;
+        private VelocityTracker velocityTracker;
+        private Vector3 initialPosition;
+
 
         public AreaGenerator areaGenerator;
         public Transform playerShip;
+        public Transform attachmentPoint;
+        public Attachment currentAttachment;
+        GameObject _focalPoint;
+        float _originalPlayerRotationVolume;
+        float _originalPlayerThrusterVolume;
+        [SerializeField] float thrustPowerInNewtons = 1000f; // 1 kN of thrust
+        [SerializeField] float specificImpulseInSeconds = 1000000f; // Very high for fusion propulsion
+        [SerializeField] float flipTorque = 10f;
+        [SerializeField] float minVelocityForFlip = 5f;
+        [SerializeField] float alignmentThreshold = 0.95f;
+        Vector3 _flipTarget;
+        [SerializeField] SpaceShipController spaceShipController;
+        VelocityTracker _velocityTracker;
+        Vector3 _initialPosition;
+
+
+        private void Awake()
+        {
+            Instance = this;
+            _initialPosition = transform.position;
+        }
+
+        void Start()
+        {
+            _velocityTracker = GetComponent<VelocityTracker>();
+            InitializeShip();
+            EventManager.Instance.deathEvent.AddListener(OnPlayerDeath);
+
+            OdinDebugStartManager debugManager = FindObjectOfType<OdinDebugStartManager>();
+            if (debugManager != null && debugManager.debugStartPoints.Count > 0)
+            {
+                // The game was started in debug mode, so don't do normal initialization
+                return;
+            }
+        }
+
+        private void InitializeShip()
+        {
+            currentShip = GetComponent<IShip>();
+            if (currentShip == null)
+            {
+                Debug.LogError("No IShip component found on the player object!");
+            }
+
+            shipMovement.Initialize(GetComponent<Rigidbody>());
+        }
+
+        void Update()
+        {
+            cameraController?.LockRotation();
+            UpdateEngineAudio();
+        }
+
+        void FixedUpdate()
+        {
+            HandleMovement();
+            HandleWeaponFiring();
+        }
+
+        private void HandleMovement()
+        {
+            shipMovement.UpdateMovement(
+                playerShipControlInput.VerticalInput,
+                playerShipControlInput.HorizontalInput,
+                playerShipControlInput.IsBraking,
+                velocityTracker.GetLinearVelocity().magnitude
+            );
+
+            if (playerShipControlInput.IsBraking)
+            {
+                currentShip.HandleBrakingThrusters();
+                currentShip.HandleBrakingAngularThrusters();
+            }
+        }
+
+        private void HandleWeaponFiring()
+        {
+            currentShip.FireMainWeaponOnce(playerShipControlInput.FireInputDown);
+            currentShip.FireMainWeaponContinuous(playerShipControlInput.FireInputSustained);
+        }
+        
+        
+        void UpdateEngineAudio()
+        {
+            float currentSpeed = shipMovement.playerRb.velocity.magnitude;
+            bool isThrusting = playerShipControlInput.VerticalInput != 0;
+            bool hasActiveInput = isThrusting || Input.GetKey(KeyCode.LeftShift);
+            bool hasFuel = fuelSystem.HasFuel();
+
+            engineAudioManager.UpdateEngineSounds(
+                currentSpeed, maxSpeed, isThrusting, hasActiveInput, hasFuel);
+        }
+        
+        public void RefuelShip(float amount)
+        {
+            fuelSystem.RefuelShip(amount);
+        }
+        
+        void OnPlayerDeath(string arg0)
+        {
+            transform.position = _initialPosition;
+        } 
+        
+        void OnCollisionEnter(Collision other)
+        {
+            Debug.Log("Collision detected");
+            var linearVelocity = _velocityTracker.GetLinearVelocity().magnitude;
+            engineAudioManager.PlayCollisionHit(linearVelocity);
+        }
+        
+        /// <summary>
+        /// Future implementation of switching ships
+        /// and attaching upgrades and moving to new areas
+        /// </summary>
+        /// <param name="newShip"></param>
+        
+        public void SwitchShip(IShip newShip)
+        {
+            // Disable the current ship
+            if (currentShip != null)
+            {
+                (currentShip as MonoBehaviour)?.gameObject.SetActive(false);
+            }
+
+            // Enable the new ship
+            currentShip = newShip;
+            (currentShip as MonoBehaviour)?.gameObject.SetActive(true);
+
+            // Reinitialize components with the new ship
+            InitializeShip();
+        }
+        
+
+
 
         public void TravelToNewArea()
         {
-            // Play transition effect
             StartCoroutine(TransitionToNewArea());
         }
 
@@ -51,90 +196,7 @@ namespace Player.PlayerController
         }
 
 
-        [SerializeField] [CanBeNull] PlayerCameraController cameraController;
-        [SerializeField] AttachmentManager attachmentManager;
-        [SerializeField] FuelSystem fuelSystem;
-        [SerializeField] EngineAudioManager engineAudioManager;
-        [FormerlySerializedAs("inputManager")] [SerializeField]
-        PlayerShipControlInput playerShipControlInput;
 
-        [SerializeField] private AreaManager areaManager;
-
-
-        [SerializeField] float maxSpeed = 100f; // Adjust based on your game's scale
-
-        public Transform attachmentPoint;
-
-        public Attachment currentAttachment;
-
-
-        GameObject _focalPoint;
-
-
-        float _originalPlayerRotationVolume;
-
-        float _originalPlayerThrusterVolume;
-
-
-        [SerializeField] float thrustPowerInNewtons = 1000f; // 1 kN of thrust
-        [SerializeField] float specificImpulseInSeconds = 1000000f; // Very high for fusion propulsion
-
-        [SerializeField] float flipTorque = 10f;
-        [SerializeField] float minVelocityForFlip = 5f;
-        [SerializeField] float alignmentThreshold = 0.95f;
-        Vector3 _flipTarget;
-
-        [SerializeField] SpaceShipController spaceShipController;
-
-        VelocityTracker _velocityTracker;
-        Vector3 _initialPosition;
-
-
-        private void Awake()
-        {
-            // Initialize Instance
-            Instance = this;
-            // Initialize components
-            shipMovement.Initialize(GetComponent<Rigidbody>());
-            _initialPosition = transform.position;
-            // Subscribe to EventManager DetahEvent
-        }
-        void OnPlayerDeath(string arg0)
-        {
-            transform.position = _initialPosition;
-        }
-        void Start()
-        {
-            _velocityTracker = GetComponent<VelocityTracker>();
-
-            EventManager.Instance.deathEvent.AddListener(OnPlayerDeath);
-
-            OdinDebugStartManager debugManager = FindObjectOfType<OdinDebugStartManager>();
-            if (debugManager != null && debugManager.debugStartPoints.Count > 0)
-            {
-                // The game was started in debug mode, so don't do normal initialization
-                return;
-            }
-        }
-        // Update is called once per frame
-        void Update()
-        {
-            cameraController?.LockRotation();
-            UpdateEngineAudio();
-        }
-
-        void FixedUpdate()
-        {
-            shipMovement.UpdateMovement(
-                playerShipControlInput.VerticalInput,
-                playerShipControlInput.HorizontalInput,
-                playerShipControlInput.IsBraking,
-                _velocityTracker.GetLinearVelocity().magnitude);
-
-
-            spaceShipController.FireMainWeaponOnce(playerShipControlInput.FireInputDown);
-            spaceShipController.FireMainWeaponContinuous(playerShipControlInput.FireInputSustained);
-        }
 
 
         public void AttachUpgrade(Attachment attachmentPrefab)
@@ -151,28 +213,8 @@ namespace Player.PlayerController
         }
 
 
-        void UpdateEngineAudio()
-        {
-            float currentSpeed = shipMovement.playerRb.velocity.magnitude;
-            bool isThrusting = playerShipControlInput.VerticalInput != 0;
-            bool hasActiveInput = isThrusting || Input.GetKey(KeyCode.LeftShift);
-            bool hasFuel = fuelSystem.HasFuel();
-
-            engineAudioManager.UpdateEngineSounds(
-                currentSpeed, maxSpeed, isThrusting, hasActiveInput, hasFuel);
-        }
 
 
-        public void RefuelShip(float amount)
-        {
-            fuelSystem.RefuelShip(amount);
-        }
 
-        void OnCollisionEnter(Collision other)
-        {
-            Debug.Log("Collision detected");
-            var linearVelocity = _velocityTracker.GetLinearVelocity().magnitude;
-            engineAudioManager.PlayCollisionHit(linearVelocity);
-        }
     }
 }

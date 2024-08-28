@@ -10,61 +10,68 @@ using VSX.UniversalVehicleCombat;
 
 namespace ShipControl
 {
-    public class SpaceShipController : MonoBehaviour
+    public class SpaceShipController : MonoBehaviour, IShip
     {
-        [SerializeField] public GameObject shapeVisual;
-        [FormerlySerializedAs("thruster")] [SerializeField]
-        public GameObject mainFusionThruster;
-        [FormerlySerializedAs("colliders")] [SerializeField]
-        public GameObject collidersObject;
-        [SerializeField] public GameObject attitudeThrusterPrefab;
-        [SerializeField] public AttitudeJetsController attitudeJetsController;
-        [SerializeField] public VelocityTracker velocityTracker;
-        [SerializeField] public GameObject gunsPrefab;
-        [SerializeField] public ShipMainWeapon shipMainWeapon;
+        [SerializeField] private GameObject shapeVisual;
+        [SerializeField] public GameObject mainFusionThruster;
+        [SerializeField] private GameObject collidersObject;
+        [SerializeField] private GameObject attitudeThrusterPrefab;
+        [SerializeField] private AttitudeJetsController attitudeJetsController;
+        [SerializeField] private VelocityTracker velocityTracker;
+        [SerializeField] private GameObject gunsPrefab;
+        [SerializeField] private ShipMainWeapon shipMainWeapon;
 
         // [SerializeField] List<MeshCollider> meshColliderComponents;
 
-        public float linearThreshold = 0.1f; // Minimum linear velocity to activate thrusters
-        public float angularThreshold = 0.1f; // Minimum angular velocity to activate thrusters
-
+        public float LinearThreshold { get; set; } = 0.1f;
+        public float AngularThreshold { get; set; } = 0.1f;
 
         void Start()
         {
-            // Ship Base Components
+            InitializeShipComponents();
+        }
+
+        private void InitializeShipComponents()
+        {
             GetShipBaseComponents();
-            // Ship Control Components
             InitiateAttitudeThrusters();
-            var guns = Instantiate(gunsPrefab, transform, true);
-            guns.transform.localPosition = new Vector3(0, 0, 0);
-            guns.transform.localRotation = new Quaternion(0, 0, 0, 1);
-            guns.transform.localScale = new Vector3(1, 1, 1);
+            InitializeWeapons();
+        }
+
+        private void GetShipBaseComponents()
+        {
+            shapeVisual = transform.Find("Shape Visual")?.gameObject;
+            mainFusionThruster = transform.Find("Thruster(Clone)")?.gameObject;
+            collidersObject = transform.Find("Colliders")?.gameObject;
+        }
+
+
+        private void InitiateAttitudeThrusters()
+        {
+            var attitudeThruster = Instantiate(attitudeThrusterPrefab, transform);
+            attitudeThruster.transform.localPosition = Vector3.zero;
+            attitudeThruster.transform.localRotation = Quaternion.identity;
+            attitudeThruster.transform.localScale = Vector3.one;
+            attitudeJetsController = attitudeThruster.GetComponent<AttitudeJetsController>();
+        }
+
+        private void InitializeWeapons()
+        {
+            var guns = Instantiate(gunsPrefab, transform);
+            guns.transform.localPosition = Vector3.zero;
+            guns.transform.localRotation = Quaternion.identity;
+            guns.transform.localScale = Vector3.one;
             shipMainWeapon = guns.GetComponent<ShipMainWeapon>();
             if (shipMainWeapon != null) shipMainWeapon.spaceShipController = this;
         }
-        void InitiateAttitudeThrusters()
-        {
-            var attitudeThruster = Instantiate(attitudeThrusterPrefab, transform, true);
-            attitudeThruster.transform.localPosition = new Vector3(0, 0, 0);
-            attitudeThruster.transform.localRotation = new Quaternion(0, 0, 0, 1);
-            attitudeThruster.transform.localScale = new Vector3(1, 1, 1);
-            attitudeJetsController = attitudeThruster.GetComponent<AttitudeJetsController>();
-        }
-        void GetShipBaseComponents()
-        {
-            shapeVisual = GameObject.Find("Shape Visual");
-            GameObject.Find("Decal Visual");
-            mainFusionThruster = GameObject.Find("Thruster(Clone)");
-            collidersObject = GameObject.Find("Colliders");
-        }
 
-        // ReSharper disable Unity.PerformanceAnalysis
+
         public void HandleBrakingThrusters()
         {
             var linearVelocity = velocityTracker.GetLinearVelocity();
 
 
-            if (linearVelocity.magnitude > linearThreshold)
+            if (linearVelocity.magnitude > LinearThreshold)
             {
                 Vector2 oppositeForce = -linearVelocity.normalized;
 
@@ -87,7 +94,7 @@ namespace ShipControl
         public void HandleBrakingAngularThrusters()
         {
             var angularVelocity = velocityTracker.GetAngularVelocity();
-            if (Mathf.Abs(angularVelocity) > angularThreshold)
+            if (Mathf.Abs(angularVelocity) > AngularThreshold)
             {
                 if (angularVelocity > 0)
                 {
@@ -98,7 +105,7 @@ namespace ShipControl
                     ThrustRight();
                 }
             }
-            else if (Mathf.Abs(angularVelocity) < angularThreshold)
+            else if (Mathf.Abs(angularVelocity) < AngularThreshold)
             {
                 EndThrusterLeft();
                 EndThrusterRight();
@@ -110,54 +117,34 @@ namespace ShipControl
             }
         }
 
-        public void ThrustForward()
-        {
-            attitudeJetsController.ThrustForward();
-        }
+        public void ThrustForward() => attitudeJetsController.ThrustForward();
+        public void EndThrusterForward() => attitudeJetsController.EndThrusterForward();
+        public void ThrustBackward() => attitudeJetsController.ThrustBackward();
+        public void EndThrusterBackward() => attitudeJetsController.EndThrusterBackward();
+        public void ThrustLeft() => attitudeJetsController.ThrustLeft();
+        public void EndThrusterLeft() => attitudeJetsController.EndThrusterLeft();
+        public void ThrustRight() => attitudeJetsController.ThrustRight();
 
-        public void EndThrusterForward()
-        {
-            attitudeJetsController.EndThrusterForward();
-        }
+        public void EndThrusterRight() => attitudeJetsController.EndThrusterRight();
+        public void FireMainWeaponOnce(bool isFiring) => shipMainWeapon.FireWeapon(isFiring);
+        public void FireMainWeaponContinuous(bool isFiring) => shipMainWeapon.FireWeaponContinuous(isFiring);
 
-        public void ThrustBackward()
+        // Not sure if needed
+        public void EndThrustForward()
         {
-            attitudeJetsController.ThrustBackward();
+            throw new NotImplementedException();
         }
-
-        public void EndThrusterBackward()
+        public void EndThrustBackward()
         {
-            attitudeJetsController.EndThrusterBackward();
+            throw new NotImplementedException();
         }
-
-        public void ThrustLeft()
+        public void EndThrustLeft()
         {
-            attitudeJetsController.ThrustLeft();
+            throw new NotImplementedException();
         }
-
-        public void EndThrusterLeft()
+        public void EndThrustRight()
         {
-            attitudeJetsController.EndThrusterLeft();
-        }
-
-        public void ThrustRight()
-        {
-            attitudeJetsController.ThrustRight();
-        }
-
-        public void EndThrusterRight()
-        {
-            attitudeJetsController.EndThrusterRight();
-        }
-
-        public void FireMainWeaponOnce(bool isFiring)
-        {
-            shipMainWeapon.FireWeapon(isFiring);
-        }
-
-        public void FireMainWeaponContinuous(bool isFiring)
-        {
-            shipMainWeapon.FireWeaponContinuous(isFiring);
+            throw new NotImplementedException();
         }
     }
 }
