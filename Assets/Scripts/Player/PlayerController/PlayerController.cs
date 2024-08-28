@@ -10,6 +10,7 @@ using ShipControl;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
+using Sirenix.OdinInspector;
 
 namespace Player.PlayerController
 {
