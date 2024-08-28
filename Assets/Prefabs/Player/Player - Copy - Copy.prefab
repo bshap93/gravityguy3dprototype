@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 4070448486954680986}
   - component: {fileID: 5899444314834960996}
   m_Layer: 18
-  m_Name: Player
+  m_Name: Player - Copy - Copy
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

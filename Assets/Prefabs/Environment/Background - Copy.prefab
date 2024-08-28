@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 7283272686522172673}
   - component: {fileID: 5300763236543932345}
   m_Layer: 2
-  m_Name: Background
+  m_Name: Background - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

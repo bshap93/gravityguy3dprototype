@@ -28335,7 +28335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6286ddfe55132f48a4f9f77e394b69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capitalShipDockingBayCollider01: {fileID: 0}
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2882414783168917849
 GameObject:
   m_ObjectHideFlags: 0
@@ -37428,6 +37430,8 @@ MonoBehaviour:
   thrustPowerInNewtons: 1000
   specificImpulseInSeconds: 1000000
   isFusionDriveActive: 0
+  fuelSystem: {fileID: 0}
+  brakingFuelConsumptionFactor: 0.1
 --- !u!114 &4531657135524730194
 MonoBehaviour:
   m_ObjectHideFlags: 0
