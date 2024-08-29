@@ -2,6 +2,7 @@
 using Player.PlayerController;
 using Player.PlayerController.Components;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Environment.Area
 {
@@ -10,7 +11,8 @@ namespace Environment.Area
         public GameObject[] asteroidPrefabs;
         public GameObject[] stationPrefabs;
         public float generationRadius = 5000f;
-        public PlayerController playerController;
+        [FormerlySerializedAs("playerController")]
+        public PlayerShipController playerShipController;
         public ShipMovement shipMovement;
 
         public void TravelToNewArea()
@@ -21,7 +23,7 @@ namespace Environment.Area
         private IEnumerator TransitionToNewArea()
         {
             // Disable player controls
-            playerController.enabled = false;
+            playerShipController.enabled = false;
             shipMovement.enabled = false;
 
             // Fade out
@@ -30,14 +32,14 @@ namespace Environment.Area
             // Generate new area and move player
             var newAreaCenter = Random.insideUnitSphere * 10000f;
             GenerateNewArea(newAreaCenter);
-            playerController.transform.position = newAreaCenter;
+            playerShipController.transform.position = newAreaCenter;
             shipMovement.ResetVelocityAfterTravel();
 
             // Fade in
             yield return StartCoroutine(FadeEffect(0f));
 
             // Re-enable player controls
-            playerController.enabled = true;
+            playerShipController.enabled = true;
             shipMovement.enabled = true;
         }
 
