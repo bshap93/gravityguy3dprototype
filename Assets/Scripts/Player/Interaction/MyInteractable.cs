@@ -13,7 +13,6 @@ namespace Player.Interaction
     {
         [SerializeField] public string interactableName;
         public BaseInteractable baseInteractable;
-        [SerializeField] public string defaultDialogueNodeId;
         [SerializeField] public string currentNextDialogueNodeId;
         [SerializeField] public Collider boxCollider;
         [SerializeField] public float interactableDistance = 30f;
@@ -34,7 +33,6 @@ namespace Player.Interaction
         void Awake()
         {
             baseInteractable = GetComponent<BaseInteractable>();
-            currentNextDialogueNodeId = defaultDialogueNodeId;
             _interactiveMenu = FindObjectOfType<InteractiveMenu>();
 
             playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
