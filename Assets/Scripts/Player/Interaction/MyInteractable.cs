@@ -15,7 +15,7 @@ namespace Player.Interaction
         public BaseInteractable baseInteractable;
         [SerializeField] public string defaultDialogueNodeId;
         [SerializeField] public string currentNextDialogueNodeId;
-        [SerializeField] public BoxCollider boxCollider;
+        [SerializeField] public Collider boxCollider;
         [SerializeField] public float interactableDistance = 30f;
         [SerializeField] List<string> conversationNames;
 
