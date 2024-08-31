@@ -6,12 +6,14 @@ namespace Player.Interaction.Common
 {
     public abstract class InteractiveMenu : MonoBehaviour
     {
-        public GameObject MenuPanel;
-        public TMP_Text ObjectNameText;
+        public GameObject menuPanel;
+        public TMP_Text objectNameText;
 
-        public GameObject Player;
-        public AudioSource InteractiveMenuUISound;
+        public GameObject player;
+        public AudioSource interactiveMenuUISound;
 
+        IInteractable _selectedObject;
+        Camera _mainCamera;
 
         public AudioClip openingSound;
         public AudioClip closingSound;
@@ -25,19 +27,7 @@ namespace Player.Interaction.Common
         protected abstract void ToggleSelectionOfMouse();
         public abstract void SelectObject(IInteractable interactable);
 
-        IInteractable _selectedObject;
-        Camera _mainCamera;
-        bool _hasDialogue;
-        bool _hasInfo;
-        bool _hasQuest;
-        bool _hasTrade;
 
-
-        public void Start()
-        {
-            _mainCamera = Camera.main;
-            MenuPanel.SetActive(false);
-        }
         public abstract void DeselectObject();
         public abstract void ShowInfo();
         public abstract void TradeAndExchange();

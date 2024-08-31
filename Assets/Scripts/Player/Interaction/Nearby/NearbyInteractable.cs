@@ -58,6 +58,14 @@ namespace Player.Interaction.Nearby
             // Implement actual logic 
             return true;
         }
+        public bool HasQuest()
+        {
+            throw new System.NotImplementedException();
+        }
+        public bool HasTrade()
+        {
+            throw new System.NotImplementedException();
+        }
         public void ShowInfo()
         {
             /* Implement if needed */

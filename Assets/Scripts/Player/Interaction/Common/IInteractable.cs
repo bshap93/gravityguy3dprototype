@@ -12,6 +12,8 @@ namespace Player.Interaction.Common
         bool HasInfo();
         bool CanInteract();
         bool HasDialogue();
+        bool HasQuest();
+        bool HasTrade();
         void ShowInfo();
         void Interact();
         void StartDialogue();

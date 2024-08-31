@@ -7,23 +7,16 @@ using Debug = UnityEngine.Debug;
 
 namespace Player.Interaction.Nearby
 {
-    public class NearbyInteractiveMenu : MonoBehaviour
+    public class NearbyInteractiveMenu : InteractiveMenu
     {
-        public GameObject menuPanel;
-        public TMP_Text objectNameText;
         public ButtonManager infoButton;
         public ButtonManager exchangeItemsButton;
         public ButtonManager dialogueButton;
-        public GameObject player;
-        public AudioSource interactiveMenuUISound;
 
-        public AudioClip openingSound;
-        public AudioClip closingSound;
-        public AudioClip selectSound;
-        public AudioClip tooFarSound;
 
         private UnityEngine.Camera _mainCamera;
         private NearbyInteractable _selectedObject;
+        InteractiveMenu _interactiveMenuImplementation;
 
         void Start()
         {
@@ -47,7 +40,35 @@ namespace Player.Interaction.Nearby
                 DeselectObject();
             }
         }
-        void ToggleSelectionOfMouse()
+        protected override bool HasDialogue()
+        {
+            if (_selectedObject != null)
+                return _selectedObject.HasDialogue();
+
+            return false;
+        }
+        protected override bool HasInfo()
+        {
+            if (_selectedObject != null)
+                return _selectedObject.HasInfo();
+
+            return false;
+        }
+        protected override bool HasQuest()
+        {
+            if (_selectedObject != null)
+                return _selectedObject.HasQuest();
+
+            return false;
+        }
+        protected override bool HasTrade()
+        {
+            if (_selectedObject != null)
+                return _selectedObject.HasTrade();
+
+            return false;
+        }
+        protected override void ToggleSelectionOfMouse()
         {
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
@@ -60,6 +81,10 @@ namespace Player.Interaction.Nearby
             }
             else
                 DeselectObject();
+        }
+        public override void SelectObject(IInteractable interactable)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void SelectObject(NearbyInteractable interactable)
@@ -86,7 +111,7 @@ namespace Player.Interaction.Nearby
             }
         }
 
-        public void DeselectObject()
+        public override void DeselectObject()
         {
             _selectedObject?.OnInteractionEnd();
             if (_selectedObject?.baseInteractable != null)
@@ -98,7 +123,7 @@ namespace Player.Interaction.Nearby
             interactiveMenuUISound.PlayOneShot(closingSound);
         }
 
-        public void ShowInfo()
+        public override void ShowInfo()
         {
             if (_selectedObject != null)
             {
@@ -108,7 +133,7 @@ namespace Player.Interaction.Nearby
             }
         }
 
-        public void StartDialogue()
+        public override void StartDialogue()
         {
             if (_selectedObject != null)
             {
@@ -123,13 +148,13 @@ namespace Player.Interaction.Nearby
 
             interactiveMenuUISound.PlayOneShot(selectSound);
         }
-        public void GetQuestInfo()
+        public override void GetQuestInfo()
         {
             if (_selectedObject != null)
             {
             }
         }
-        public void TradeAndExchange()
+        public override void TradeAndExchange()
         {
             if (_selectedObject?.baseInteractable != null)
                 _selectedObject.baseInteractable.BeginInteract(gameObject);
