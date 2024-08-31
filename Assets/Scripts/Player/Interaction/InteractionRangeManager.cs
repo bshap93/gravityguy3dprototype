@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Player.Interaction.Common;
+using Player.Interaction.Nearby;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -13,11 +15,11 @@ namespace Player.Interaction
         public Transform player;
         public float checkInterval = 1f; // Check every second
 
-        private Dictionary<MyInteractable, bool> interactablesInRange = new Dictionary<MyInteractable, bool>();
+        private Dictionary<NearbyInteractable, bool> interactablesInRange = new Dictionary<NearbyInteractable, bool>();
 
         // UnityEvent that fires when player enters interaction range
         [System.Serializable]
-        public class InteractionRangeEnteredEvent : UnityEvent<MyInteractable>
+        public class InteractionRangeEnteredEvent : UnityEvent<NearbyInteractable>
         {
         }
 
@@ -46,7 +48,7 @@ namespace Player.Interaction
             StartCoroutine(CheckInteractionRanges());
         }
 
-        public void RegisterInteractable(MyInteractable interactable)
+        public void RegisterInteractable(NearbyInteractable interactable)
         {
             if (!interactablesInRange.ContainsKey(interactable))
             {
@@ -54,7 +56,7 @@ namespace Player.Interaction
             }
         }
 
-        public void UnregisterInteractable(MyInteractable interactable)
+        public void UnregisterInteractable(NearbyInteractable interactable)
         {
             if (interactablesInRange.ContainsKey(interactable))
             {
@@ -68,7 +70,7 @@ namespace Player.Interaction
             {
                 foreach (var kvp in interactablesInRange)
                 {
-                    MyInteractable interactable = kvp.Key;
+                    NearbyInteractable interactable = kvp.Key;
                     bool wasInRange = kvp.Value;
 
                     bool isInRange = DistanceUtility.IsWithinInteractionDistance(

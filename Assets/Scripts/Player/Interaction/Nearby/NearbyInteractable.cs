@@ -1,29 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using Items;
-using JetBrains.Annotations;
+﻿using System.Collections.Generic;
 using PixelCrushers.DialogueSystem;
+using Player.Interaction.Common;
 using Polyperfect.Crafting.Demo;
 using UnityEngine;
 
-namespace Player.Interaction
+namespace Player.Interaction.Nearby
 {
     [System.Serializable]
-    public class MyInteractable : MonoBehaviour, IInteractable
+    public class NearbyInteractable : MonoBehaviour, IInteractable
     {
         [SerializeField] public string interactableName;
         public BaseInteractable baseInteractable;
-        [SerializeField] public string currentNextDialogueNodeId;
         [SerializeField] public Collider boxCollider;
-        [SerializeField] public float interactableDistance = 30f;
+        [SerializeField] public float interactableDistance;
         [SerializeField] List<string> conversationNames;
 
-        private InteractiveMenu _interactiveMenu;
-        private Transform playerTransform;
-
-        void Start()
-        {
-        }
+        NearbyInteractiveMenu _nearbyInteractiveMenu;
 
         public string GetCurrentConversationName()
         {
@@ -33,9 +25,7 @@ namespace Player.Interaction
         void Awake()
         {
             baseInteractable = GetComponent<BaseInteractable>();
-            _interactiveMenu = FindObjectOfType<InteractiveMenu>();
-
-            playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+            _nearbyInteractiveMenu = FindObjectOfType<NearbyInteractiveMenu>();
         }
 
         public string GetName() => interactableName;
@@ -44,8 +34,8 @@ namespace Player.Interaction
 
         public void OnMouseDown()
         {
-            if (_interactiveMenu != null)
-                _interactiveMenu.SelectObject(this);
+            if (_nearbyInteractiveMenu != null)
+                _nearbyInteractiveMenu.SelectObject(this);
         }
 
 
@@ -63,7 +53,11 @@ namespace Player.Interaction
         }
         public bool HasInfo() => true; // Implement actual logic
         public bool CanInteract() => baseInteractable != null;
-        public bool HasDialogue() => !string.IsNullOrEmpty(currentNextDialogueNodeId);
+        public bool HasDialogue()
+        {
+            // Implement actual logic 
+            return true;
+        }
         public void ShowInfo()
         {
             /* Implement if needed */
@@ -81,7 +75,7 @@ namespace Player.Interaction
         {
             // Clean up any resources if needed
             baseInteractable = null;
-            _interactiveMenu = null;
+            _nearbyInteractiveMenu = null;
         }
 
         void OnTriggerEnter(Collider other)

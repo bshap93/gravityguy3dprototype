@@ -1,21 +1,19 @@
-using System.Diagnostics;
 using Michsky.MUIP;
-using UnityEngine;
-using UnityEngine.UI;
 using PixelCrushers.DialogueSystem;
+using Player.Interaction.Common;
 using TMPro;
+using UnityEngine;
 using Debug = UnityEngine.Debug;
 
-namespace Player.Interaction
+namespace Player.Interaction.Nearby
 {
-    public class InteractiveMenu : MonoBehaviour
+    public class NearbyInteractiveMenu : MonoBehaviour
     {
         public GameObject menuPanel;
         public TMP_Text objectNameText;
         public ButtonManager infoButton;
         public ButtonManager exchangeItemsButton;
         public ButtonManager dialogueButton;
-        public ButtonManager questInfoButton;
         public GameObject player;
         public AudioSource interactiveMenuUISound;
 
@@ -25,11 +23,11 @@ namespace Player.Interaction
         public AudioClip tooFarSound;
 
         private UnityEngine.Camera _mainCamera;
-        private MyInteractable _selectedObject;
+        private NearbyInteractable _selectedObject;
 
         void Start()
         {
-            _mainCamera = UnityEngine.Camera.main;
+            _mainCamera = Camera.main;
             menuPanel.SetActive(false);
 
             infoButton.onClick.AddListener(ShowInfo);
@@ -41,17 +39,7 @@ namespace Player.Interaction
         {
             if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
             {
-                Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out RaycastHit hit))
-                {
-                    MyInteractable interactable = hit.collider.GetComponent<MyInteractable>();
-                    if (interactable)
-                        SelectObject(interactable);
-                    else
-                        DeselectObject();
-                }
-                else
-                    DeselectObject();
+                ToggleSelectionOfMouse();
             }
 
             if (Input.GetKey(KeyCode.Escape))
@@ -59,8 +47,22 @@ namespace Player.Interaction
                 DeselectObject();
             }
         }
+        void ToggleSelectionOfMouse()
+        {
+            Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                NearbyInteractable interactable = hit.collider.GetComponent<NearbyInteractable>();
+                if (interactable)
+                    SelectObject(interactable);
+                else
+                    DeselectObject();
+            }
+            else
+                DeselectObject();
+        }
 
-        public void SelectObject(MyInteractable interactable)
+        public void SelectObject(NearbyInteractable interactable)
         {
             if (DistanceUtility.IsWithinInteractionDistance(
                     player.transform, interactable.boxCollider.transform, interactable.interactableDistance))
