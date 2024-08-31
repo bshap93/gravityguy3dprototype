@@ -12,11 +12,9 @@ namespace ShipControl
 {
     public class SpaceShipController : MonoBehaviour
     {
-        [SerializeField] public GameObject shapeVisual;
         [FormerlySerializedAs("thruster")] [SerializeField]
         public GameObject mainFusionThruster;
-        [FormerlySerializedAs("colliders")] [SerializeField]
-        public GameObject collidersObject;
+
         [SerializeField] public GameObject attitudeThrusterPrefab;
         [SerializeField] public AttitudeJetsController attitudeJetsController;
         [SerializeField] public VelocityTracker velocityTracker;
@@ -31,8 +29,6 @@ namespace ShipControl
 
         void Start()
         {
-            // Ship Base Components
-            GetShipBaseComponents();
             // Ship Control Components
             InitiateAttitudeThrusters();
             var guns = Instantiate(gunsPrefab, transform, true);
@@ -50,13 +46,7 @@ namespace ShipControl
             attitudeThruster.transform.localScale = new Vector3(1, 1, 1);
             attitudeJetsController = attitudeThruster.GetComponent<AttitudeJetsController>();
         }
-        void GetShipBaseComponents()
-        {
-            shapeVisual = GameObject.Find("Shape Visual");
-            GameObject.Find("Decal Visual");
-            mainFusionThruster = GameObject.Find("Thruster(Clone)");
-            collidersObject = GameObject.Find("Colliders");
-        }
+
 
         // ReSharper disable Unity.PerformanceAnalysis
         public void HandleBrakingThrusters()
