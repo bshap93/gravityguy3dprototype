@@ -54,12 +54,13 @@ namespace Player.Audio
             _currentSpeed = speed;
             _normalizedSpeed = Mathf.Clamp01(_currentSpeed / maxSpeed);
 
-            UpdateMainEngine(isThrusting && hasFuel);
+            UpdateAttitudeEngine(isThrusting && hasFuel);
+            UpdateTorchEngine(_isAfterburnerActive && hasFuel);
             UpdateIdleEngine();
             UpdateAfterburner(hasActiveInput && hasFuel);
         }
 
-        private void UpdateMainEngine(bool shouldBeRunning)
+        private void UpdateAttitudeEngine(bool shouldBeRunning)
         {
             if (shouldBeRunning && !_isEngineRunning)
             {
@@ -76,6 +77,40 @@ namespace Player.Audio
                 mainEngineAudio.pitch = pitch;
                 mainEngineAudio.volume = Mathf.Lerp(0.5f, 1f, _normalizedSpeed);
             }
+        }
+
+        private void UpdateTorchEngine(bool shouldBeRunning)
+        {
+            if (shouldBeRunning && !_isEngineRunning)
+            {
+                StartTorch();
+            }
+            else if (!shouldBeRunning && _isEngineRunning)
+            {
+                StopTorch();
+            }
+
+            if (_isEngineRunning)
+            {
+                float pitch = Mathf.Lerp(minEnginePitch, maxEnginePitch, _normalizedSpeed);
+                mainEngineAudio.pitch = pitch;
+                mainEngineAudio.volume = Mathf.Lerp(0.5f, 1f, _normalizedSpeed);
+            }
+        }
+
+
+        private void StartTorch()
+        {
+            mainEngineAudio.PlayOneShot(boostStartClip);
+            fusionDriveAudio.Play();
+            _isEngineRunning = true;
+        }
+
+        private void StopTorch()
+        {
+            fusionDriveAudio.Stop();
+            mainEngineAudio.PlayOneShot(boostEndClunk);
+            _isEngineRunning = false;
         }
 
         private void StartEngine()

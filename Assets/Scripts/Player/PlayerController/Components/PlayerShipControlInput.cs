@@ -11,12 +11,14 @@ namespace Player.PlayerController.Components
 
         public bool FireInputDown { get; set; }
         public bool FireInputUp { get; set; }
+        public bool IsFiringTorch { get; set; }
 
         private void Update()
         {
             VerticalInput = Input.GetAxis("Vertical");
             HorizontalInput = Input.GetAxis("Horizontal");
             IsBraking = Input.GetKey(KeyCode.Space);
+            IsFiringTorch = Input.GetKey(KeyCode.LeftShift);
             GetWeaponsFiringInputs();
         }
         void GetWeaponsFiringInputs(int mouseButton = 1)

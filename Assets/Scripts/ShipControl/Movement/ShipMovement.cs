@@ -14,6 +14,7 @@ namespace Player.PlayerController.Components
         [FormerlySerializedAs("_playerRb")] public Rigidbody playerRb;
         [SerializeField] SpaceShipController spaceShipController;
         [SerializeField] GameObject spaceShip;
+        [SerializeField] MainTorchController mainTorchController;
 
         [SerializeField] EngineAudioManager engineAudioManager;
 
@@ -87,17 +88,22 @@ namespace Player.PlayerController.Components
             else if (verticalInput < 0) // Reverse thrust
             {
                 ApplyForwardThrust(ThrustType.AttitudeJet, -1);
-                spaceShipController.mainFusionThruster.SetActive(false);
+                TorchOff();
                 spaceShipController.ThrustBackward();
             }
 
             else
             {
                 FadeOutAudio(engineAudioManager.mainEngineAudio, 1, 0.1f);
-                spaceShipController.mainFusionThruster.SetActive(false);
+                TorchOff();
                 spaceShipController.EndThrusterForward();
                 spaceShipController.EndThrusterBackward();
             }
+        }
+
+        void TorchOff()
+        {
+            mainTorchController.SetTorchState(TorchState.Off);
         }
 
         public void ApplyTorchThrust()
@@ -197,12 +203,11 @@ namespace Player.PlayerController.Components
         // ReSharper disable Unity.PerformanceAnalysis
         void ApplyForwardThrust(ThrustType thrustType, int reversed = 1)
         {
+            float availableEnergyInJoules = fuelSystem.GetAvailableEnergyInJoules();
+            float maxThrustDuration = availableEnergyInJoules / (thrustPowerInNewtons * specificImpulseInSeconds);
+            float thrustDuration = Mathf.Min(Time.deltaTime, maxThrustDuration);
             if (thrustType == ThrustType.AttitudeJet)
             {
-                float availableEnergyInJoules = fuelSystem.GetAvailableEnergyInJoules();
-                float maxThrustDuration = availableEnergyInJoules / (thrustPowerInNewtons * specificImpulseInSeconds);
-                float thrustDuration = Mathf.Min(Time.deltaTime, maxThrustDuration);
-
                 if (thrustDuration > 0)
                 {
                     PlaySoundAtVolume(engineAudioManager.mainEngineAudio, _originalPlayerThrusterVolume);
@@ -226,12 +231,9 @@ namespace Player.PlayerController.Components
             }
             else if (thrustType == ThrustType.Torch)
             {
-                float availableEnergyInJoules = fuelSystem.GetAvailableEnergyInJoules();
-                float maxThrustDuration = availableEnergyInJoules / (thrustPowerInNewtons * specificImpulseInSeconds);
-                float thrustDuration = Mathf.Min(Time.deltaTime, maxThrustDuration);
-
                 if (thrustDuration > 0)
                 {
+                    PlaySoundAtVolume(engineAudioManager.mainEngineAudio, _originalPlayerThrusterVolume);
                     PlaySoundAtVolume(engineAudioManager.afterburnerAudio, _originalPlayerThrusterVolume);
                     if (reversed == 1)
                         spaceShipController.ThrustForward(ThrustType.Torch);

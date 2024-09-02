@@ -18,70 +18,39 @@ namespace ShipControl
 
     public class MainTorchController : MonoBehaviour
     {
-        public List<GameObject> torchFlames;
+        [SerializeField] GameObject torchFlame;
 
-        public List<Animator> _torchAnimators;
+        Animator _animator;
 
 
-        public bool singleTorch;
         static readonly int TorchIsOff = Animator.StringToHash("torchIsOff");
         static readonly int TorchIsMid = Animator.StringToHash("torchIsMid");
         static readonly int TorchIsFull = Animator.StringToHash("torchIsFull");
 
         void Start()
         {
-            if (singleTorch)
-            {
-                GameObject torchFlame = torchFlames[0];
-                torchFlame.gameObject.SetActive(true);
-                SetTorchState(TorchState.Off);
-            }
-            else
-            {
-                // Do this when there are multiple torches
-            }
+            if (_animator == null) _animator = torchFlame.GetComponent<Animator>();
         }
 
         public void SetTorchState(TorchState torchState)
         {
-            switch (torchState)
+            if (torchState == TorchState.Off)
             {
-                case TorchState.Off:
-                    foreach (GameObject torchFlame in torchFlames)
-                    {
-                        if (singleTorch)
-                        {
-                            _torchAnimators[0].SetBool(TorchIsOff, true);
-                            _torchAnimators[0].SetBool(TorchIsMid, false);
-                            _torchAnimators[0].SetBool(TorchIsFull, false);
-                        }
-                    }
-
-                    break;
-                case TorchState.Mid:
-                    foreach (GameObject torchFlame in torchFlames)
-                    {
-                        if (singleTorch)
-                        {
-                            _torchAnimators[0].SetBool(TorchIsOff, false);
-                            _torchAnimators[0].SetBool(TorchIsMid, true);
-                            _torchAnimators[0].SetBool(TorchIsFull, false);
-                        }
-                    }
-
-                    break;
-                case TorchState.Full:
-                    foreach (GameObject torchFlame in torchFlames)
-                    {
-                        if (singleTorch)
-                        {
-                            _torchAnimators[0].SetBool(TorchIsOff, false);
-                            _torchAnimators[0].SetBool(TorchIsMid, false);
-                            _torchAnimators[0].SetBool(TorchIsFull, true);
-                        }
-                    }
-
-                    break;
+                _animator.SetBool(TorchIsOff, true);
+                _animator.SetBool(TorchIsMid, false);
+                _animator.SetBool(TorchIsFull, false);
+            }
+            else if (torchState == TorchState.Mid)
+            {
+                _animator.SetBool(TorchIsOff, false);
+                _animator.SetBool(TorchIsMid, true);
+                _animator.SetBool(TorchIsFull, false);
+            }
+            else if (torchState == TorchState.Full)
+            {
+                _animator.SetBool(TorchIsOff, false);
+                _animator.SetBool(TorchIsMid, false);
+                _animator.SetBool(TorchIsFull, true);
             }
         }
     }

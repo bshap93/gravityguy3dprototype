@@ -154,8 +154,12 @@ namespace Player.PlayerController
         void UpdateEngineAudio()
         {
             float currentSpeed = shipMovement.playerRb.velocity.magnitude;
-            bool isThrusting = playerShipControlInput.VerticalInput != 0;
-            bool hasActiveInput = isThrusting || Input.GetKey(KeyCode.LeftShift);
+            bool isThrusting = playerShipControlInput.VerticalInput != 0
+                ;
+
+            bool isAfterburnerActive = playerShipControlInput.IsFiringTorch;
+
+            bool hasActiveInput = isThrusting;
             bool hasFuel = fuelSystem.HasFuel();
 
             engineAudioManager.UpdateEngineSounds(
