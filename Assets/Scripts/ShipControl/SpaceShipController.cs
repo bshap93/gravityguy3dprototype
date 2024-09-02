@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Player.Effects;
 using Player.PlayerController.Components;
+using ShipControl.Movement;
 using ShipControl.SCK_Specific;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -17,11 +18,11 @@ namespace ShipControl
 
         [SerializeField] public GameObject attitudeThrusterPrefab;
         [SerializeField] public AttitudeJetsController attitudeJetsController;
+        [SerializeField] public MainTorchController mainTorchController;
         [SerializeField] public VelocityTracker velocityTracker;
         [SerializeField] public GameObject gunsPrefab;
         [SerializeField] public ShipMainWeapon shipMainWeapon;
 
-        // [SerializeField] List<MeshCollider> meshColliderComponents;
 
         public float linearThreshold = 0.1f; // Minimum linear velocity to activate thrusters
         public float angularThreshold = 0.1f; // Minimum angular velocity to activate thrusters
@@ -60,7 +61,7 @@ namespace ShipControl
 
                 if (Vector2.Dot(oppositeForce, Vector2.right) > 0)
                 {
-                    ThrustForward();
+                    ThrustForward(ThrustType.AttitudeJet);
                 }
                 else
                 {
@@ -100,9 +101,16 @@ namespace ShipControl
             }
         }
 
-        public void ThrustForward()
+        public void ThrustForward(ThrustType thrustType)
         {
-            attitudeJetsController.ThrustForward();
+            if (thrustType == ThrustType.Torch)
+            {
+                mainTorchController.SetTorchState(TorchState.Full);
+            }
+            else
+            {
+                attitudeJetsController.AttitudeThrustForward();
+            }
         }
 
         public void EndThrusterForward()

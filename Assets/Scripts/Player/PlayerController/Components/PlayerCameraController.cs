@@ -15,9 +15,9 @@ namespace Player.PlayerController.Components
             _originalFreeLookYMaxSpeed = playerFreeLookCamera.m_YAxis.m_MaxSpeed;
         }
 
-        public void LockRotation()
+        public void LockRotation(bool isLocked)
         {
-            if (!Input.GetMouseButton(2))
+            if (isLocked)
             {
                 playerFreeLookCamera.m_YAxis.m_MaxSpeed = 0;
                 playerFreeLookCamera.m_XAxis.m_MaxSpeed = 0;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Player.Audio;
 using Player.InGameResources;
 using ShipControl;
+using ShipControl.Movement;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -62,6 +63,7 @@ namespace Player.PlayerController.Components
             else
             {
                 ApplyThrust(verticalInput, currentVelocity);
+                ApplyTorchThrust();
                 ApplyRotationalThrust(horizontalInput);
             }
         }
@@ -78,13 +80,13 @@ namespace Player.PlayerController.Components
         {
             if (verticalInput > 0 && fuelSystem.HasFuel())
             {
-                ApplyForwardThrust();
-                spaceShipController.ThrustForward();
+                ApplyForwardThrust(ThrustType.AttitudeJet);
+                spaceShipController.ThrustForward(ThrustType.AttitudeJet);
                 // cwThrusterCone.SetActive(true);
             }
             else if (verticalInput < 0) // Reverse thrust
             {
-                ApplyForwardThrust(-1);
+                ApplyForwardThrust(ThrustType.AttitudeJet, -1);
                 spaceShipController.mainFusionThruster.SetActive(false);
                 spaceShipController.ThrustBackward();
             }
@@ -95,6 +97,20 @@ namespace Player.PlayerController.Components
                 spaceShipController.mainFusionThruster.SetActive(false);
                 spaceShipController.EndThrusterForward();
                 spaceShipController.EndThrusterBackward();
+            }
+        }
+
+        public void ApplyTorchThrust()
+        {
+            if (Input.GetKey(KeyCode.LeftShift)) // Torch thrust
+            {
+                ApplyForwardThrust(ThrustType.Torch);
+                spaceShipController.ThrustForward(ThrustType.Torch);
+            }
+            else
+            {
+                FadeOutAudio(engineAudioManager.afterburnerAudio, 1, 0.1f);
+                spaceShipController.EndThrusterForward();
             }
         }
 
@@ -179,30 +195,59 @@ namespace Player.PlayerController.Components
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
-        void ApplyForwardThrust(int reversed = 1)
+        void ApplyForwardThrust(ThrustType thrustType, int reversed = 1)
         {
-            float availableEnergyInJoules = fuelSystem.GetAvailableEnergyInJoules();
-            float maxThrustDuration = availableEnergyInJoules / (thrustPowerInNewtons * specificImpulseInSeconds);
-            float thrustDuration = Mathf.Min(Time.deltaTime, maxThrustDuration);
-
-            if (thrustDuration > 0)
+            if (thrustType == ThrustType.AttitudeJet)
             {
-                PlaySoundAtVolume(engineAudioManager.mainEngineAudio, _originalPlayerThrusterVolume);
-                if (reversed == 1)
-                    spaceShipController.ThrustForward();
-                else
-                    spaceShipController.ThrustBackward();
+                float availableEnergyInJoules = fuelSystem.GetAvailableEnergyInJoules();
+                float maxThrustDuration = availableEnergyInJoules / (thrustPowerInNewtons * specificImpulseInSeconds);
+                float thrustDuration = Mathf.Min(Time.deltaTime, maxThrustDuration);
+
+                if (thrustDuration > 0)
+                {
+                    PlaySoundAtVolume(engineAudioManager.mainEngineAudio, _originalPlayerThrusterVolume);
+                    if (reversed == 1)
+                        spaceShipController.ThrustForward(ThrustType.AttitudeJet);
+                    else
+                        spaceShipController.ThrustBackward();
 
 
-                Vector3 thrustForce = transform.forward * (thrustPowerInNewtons * thrustDuration * accelerationFactor) *
-                                      reversed;
+                    Vector3 thrustForce = transform.forward *
+                                          (thrustPowerInNewtons * thrustDuration * accelerationFactor) *
+                                          reversed;
 
-                playerRb.AddForce(thrustForce, ForceMode.Impulse);
+                    playerRb.AddForce(thrustForce, ForceMode.Impulse);
 
-                float fuelConsumedInGrams = (thrustPowerInNewtons * thrustDuration) /
-                    (specificImpulseInSeconds * 9.81f) * 1000f;
+                    float fuelConsumedInGrams = (thrustPowerInNewtons * thrustDuration) /
+                        (specificImpulseInSeconds * 9.81f) * 1000f;
 
-                fuelSystem.ConsumeFuel(fuelConsumedInGrams);
+                    fuelSystem.ConsumeFuel(fuelConsumedInGrams);
+                }
+            }
+            else if (thrustType == ThrustType.Torch)
+            {
+                float availableEnergyInJoules = fuelSystem.GetAvailableEnergyInJoules();
+                float maxThrustDuration = availableEnergyInJoules / (thrustPowerInNewtons * specificImpulseInSeconds);
+                float thrustDuration = Mathf.Min(Time.deltaTime, maxThrustDuration);
+
+                if (thrustDuration > 0)
+                {
+                    PlaySoundAtVolume(engineAudioManager.afterburnerAudio, _originalPlayerThrusterVolume);
+                    if (reversed == 1)
+                        spaceShipController.ThrustForward(ThrustType.Torch);
+
+
+                    Vector3 thrustForce = transform.forward *
+                                          (thrustPowerInNewtons * thrustDuration * accelerationFactor) * 1.5f
+                        ;
+
+                    playerRb.AddForce(thrustForce, ForceMode.Impulse);
+
+                    float fuelConsumedInGrams = (thrustPowerInNewtons * thrustDuration) /
+                                                (specificImpulseInSeconds * 9.81f);
+
+                    fuelSystem.ConsumeFuel(fuelConsumedInGrams);
+                }
             }
         }
 

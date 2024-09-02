@@ -20,7 +20,7 @@ namespace ShipControl
     {
         public List<GameObject> torchFlames;
 
-        private List<Animator> _torchAnimators;
+        public List<Animator> _torchAnimators;
 
 
         public bool singleTorch;
@@ -34,7 +34,6 @@ namespace ShipControl
             {
                 GameObject torchFlame = torchFlames[0];
                 torchFlame.gameObject.SetActive(true);
-                _torchAnimators[0] = torchFlame.GetComponent<Animator>();
                 SetTorchState(TorchState.Off);
             }
             else

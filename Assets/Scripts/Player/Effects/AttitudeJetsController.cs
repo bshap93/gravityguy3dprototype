@@ -40,7 +40,7 @@ namespace Player.Effects
             }
         }
 
-        public void ThrustForward()
+        public void AttitudeThrustForward()
         {
             foreach (var jet in forwardJets)
             {
@@ -49,6 +49,7 @@ namespace Player.Effects
                     animator.SetBool(IsThrusting, true);
             }
         }
+
 
         public void EndThrusterForward()
         {

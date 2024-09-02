@@ -119,7 +119,7 @@ namespace Player.PlayerController
         // Update is called once per frame
         void Update()
         {
-            cameraController?.LockRotation();
+            cameraController?.LockRotation(!Input.GetMouseButton(2));
             UpdateEngineAudio();
         }
 
