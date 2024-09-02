@@ -81,7 +81,7 @@ namespace Player.PlayerController.Components
         {
             if (verticalInput > 0 && fuelSystem.HasFuel())
             {
-                ApplyForwardThrust(ThrustType.AttitudeJet);
+                ApplyForwardThrust(ThrustType.Torch);
                 spaceShipController.ThrustForward(ThrustType.AttitudeJet);
                 // cwThrusterCone.SetActive(true);
             }
