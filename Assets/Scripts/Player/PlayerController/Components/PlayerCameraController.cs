@@ -17,7 +17,7 @@ namespace Player.PlayerController.Components
 
         public void LockRotation()
         {
-            if (!Input.GetKey(KeyCode.LeftShift))
+            if (!Input.GetMouseButton(2))
             {
                 playerFreeLookCamera.m_YAxis.m_MaxSpeed = 0;
                 playerFreeLookCamera.m_XAxis.m_MaxSpeed = 0;
